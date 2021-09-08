@@ -1,4 +1,4 @@
-name: stactools-ephemeral
+name: stactools-sentinel5p
 channels:
   - conda-forge
   - defaults
