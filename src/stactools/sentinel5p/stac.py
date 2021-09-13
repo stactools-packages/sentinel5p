@@ -6,6 +6,7 @@ from pystac.extensions.projection import ProjectionExtension
 from pystac.extensions.sat import SatExtension
 
 from .product_metadata import ProductMetadata
+from .properties import fill_sat_properties, fill_proj_properties
 
 logger = logging.getLogger(__name__)
 
@@ -20,11 +21,11 @@ def create_item(file_path: str) -> pystac.Item:
     """
 
     product_metadata = ProductMetadata(file_path)
-
+    
     item = pystac.Item(
         id=product_metadata.scene_id,
-        geometry=product_metadata.geometry,
-        bbox=product_metadata.bbox,
+        geometry=product_metadata.get_geometry,
+        bbox=product_metadata.get_bbox,
         datetime=product_metadata.get_datetime,
         properties={},
         stac_extensions=[],
@@ -33,5 +34,13 @@ def create_item(file_path: str) -> pystac.Item:
     # ---- Add Extensions ----
     # sat
     sat = SatExtension.ext(item, add_if_missing=True)
+    fill_sat_properties(sat, file_path)
+
+    # eo
+    EOExtension.ext(item, add_if_missing=True)
+
+    # proj
+    proj = ProjectionExtension.ext(item, add_if_missing=True)
+    fill_proj_properties(proj, file_path)
 
     return item
