@@ -13,22 +13,6 @@ class ProductMetadata:
     def __init__(self, file_path) -> None:
         self.file_path = file_path
         self._root = nc.Dataset(file_path)
-        
-        def _get_geometries():
-            footprint_text = self._root['/METADATA/EOP_METADATA/om:featureOfInterest/eop:multiExtentOf/gml:surfaceMembers/gml:exterior'].getncattr('gml:posList')
-            if footprint_text is None:
-                ProductMetadataError(
-                    f"Cannot parse footprint from product metadata at {self.file_path}"
-                )
-            footprint_value = [float(coord) for coord in footprint_text.replace(" ", ",").split(",")]
-            footprint_points = [point[::-1] for point in list(zip(*[iter(footprint_value)] * 2))]
-            footprint_polygon = Polygon(footprint_points)
-            geometry = mapping(footprint_polygon)
-            bbox = list(footprint_polygon.bounds)
-
-            return (bbox, geometry)
-
-        self.bbox, self.geometry = _get_geometries()
     
     @property
     def scene_id(self) -> str:
@@ -49,7 +33,7 @@ class ProductMetadata:
     
     @property
     def product_id(self) -> str:
-        result = self._root.id
+        result = self.file_path.split("/")[-1].split(".")[0]
         if result is None:
             raise ValueError(
                 "Cannot determine product ID using product metadata "
@@ -59,14 +43,48 @@ class ProductMetadata:
             return result
     
     @property
+    def get_geometry(self) -> list:
+        if "O3_TCL" in self.file_path:
+            latitude_ccd = self._root['/PRODUCT/latitude_ccd'][:]
+            longitude_ccd = self._root['/PRODUCT/longitude_ccd'][:]
+            footprint_polygon = Polygon(list(
+                [[coord, latitude_ccd[0]] for coord in longitude_ccd] + 
+                [[longitude_ccd[-1], coord] for coord in latitude_ccd] + 
+                [[coord, latitude_ccd[-1]] for coord in longitude_ccd[::-1]] + 
+                [[longitude_ccd[0], coord] for coord in latitude_ccd[::-1]]
+            ))
+        else:
+            footprint_text = self._root['/METADATA/EOP_METADATA/om:featureOfInterest/eop:multiExtentOf/gml:surfaceMembers/gml:exterior'].getncattr('gml:posList')
+            if footprint_text is None:
+                ProductMetadataError(
+                    f"Cannot parse footprint from product metadata at {self.file_path}"
+                )
+            footprint_value = [float(coord) for coord in footprint_text.replace(" ", ",").split(",")]
+            footprint_points = [point[::-1] for point in list(zip(*[iter(footprint_value)] * 2))]
+            footprint_polygon = Polygon(footprint_points)
+        geometry = mapping(footprint_polygon)
+        self.footprint_polygon = footprint_polygon
+        return geometry
+
+    @property
+    def get_bbox(self) -> list:
+        bbox = list(self.footprint_polygon.bounds)
+        return bbox
+    
+    @property
     def get_datetime(self) -> datetime:
         start_time = self._root.time_coverage_start
         end_time = self._root.time_coverage_end
-
+        format_1 = "%Y-%m-%dT%H:%M:%SZ"
+        format_2 = "%Y-%m-%dT%H:%M:%S"
+        if len(start_time) == 20:
+            datetime_format = format_1
+        elif len(start_time) == 19:
+            datetime_format = format_2
         central_time = (
-            datetime.strptime(start_time, "%Y-%m-%dT%H:%M:%SZ") +
-            (datetime.strptime(end_time, "%Y-%m-%dT%H:%M:%SZ") - 
-             datetime.strptime(start_time, "%Y-%m-%dT%H:%M:%SZ")) / 2
+            datetime.strptime(start_time, datetime_format) +
+            (datetime.strptime(end_time, datetime_format) - 
+            datetime.strptime(start_time, datetime_format)) / 2
         )
 
         if central_time is None:
