@@ -5,6 +5,10 @@
   "properties": {
     "sat:platform_international_designator": "2017-064A",
     "proj:epsg": 4326,
+    "proj:shape": [
+      80,
+      360
+    ],
     "datetime": "2020-03-06T12:29:35.500000Z"
   },
   "geometry": {
