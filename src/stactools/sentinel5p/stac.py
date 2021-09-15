@@ -21,7 +21,7 @@ def create_item(file_path: str) -> pystac.Item:
     """
 
     product_metadata = ProductMetadata(file_path)
-    
+
     item = pystac.Item(
         id=product_metadata.scene_id,
         geometry=product_metadata.get_geometry,
@@ -42,5 +42,8 @@ def create_item(file_path: str) -> pystac.Item:
     # proj
     proj = ProjectionExtension.ext(item, add_if_missing=True)
     fill_proj_properties(proj, file_path)
+
+    # s5p product properties
+    item.properties.update({**product_metadata.metadata_dict})
 
     return item

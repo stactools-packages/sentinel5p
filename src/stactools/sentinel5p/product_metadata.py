@@ -94,3 +94,193 @@ class ProductMetadata:
             )
         else:
             return str_to_datetime(str(central_time))
+
+    @property
+    def metadata_dict(self) -> Dict[str, Any]:
+        if "_AER_AI_" in self.file_path:
+            result = {
+                "start_datetime":
+                str(self._root.time_coverage_start),
+                "end_datetime":
+                str(self._root.time_coverage_end),
+                "s5p:instrument":
+                self._root.sensor,
+                "s5p:processing_mode":
+                self._root['METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing'].getncattr('eop:processingMode'),
+                "s5p:product_type":
+                self._root['METADATA/GRANULE_DESCRIPTION'].getncattr('ProductShortName'),
+                "aer_ai:spatial_resolution":
+                self._root.spatial_resolution,
+                "aer_ai:geolocation_grid_from_band":
+                self._root.geolocation_grid_from_band,
+                "aer_ai:input_band":
+                self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.1.type'),
+                "aer_ai:irradiance_accompanied":
+                self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.1.irrType'),
+            }
+        elif "_AER_LH_" in self.file_path:
+            result = {
+                "start_datetime":
+                str(self._root.time_coverage_start),
+                "end_datetime":
+                str(self._root.time_coverage_end),
+                "s5p:instrument":
+                self._root.sensor,
+                "s5p:processing_mode":
+                self._root['METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing'].getncattr('eop:processingMode'),
+                "s5p:product_type":
+                self._root['METADATA/GRANULE_DESCRIPTION'].getncattr('ProductShortName'),
+                "aer_lh:spatial_resolution":
+                self._root.spatial_resolution,
+                "aer_lh:geolocation_grid_from_band":
+                self._root.geolocation_grid_from_band,
+                "aer_lh:input_band":
+                [
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.1.type'),
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.2.type'),
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.3.type'),
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.4.type'),
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.5.type'),
+                ],
+                "aer_lh:irradiance_accompanied":
+                self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.1.irrType'),
+            }
+        elif "_CH4_" in self.file_path:
+            result = {
+                "start_datetime":
+                str(self._root.time_coverage_start),
+                "end_datetime":
+                str(self._root.time_coverage_end),
+                "s5p:instrument":
+                self._root.sensor,
+                "s5p:processing_mode":
+                self._root['METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing'].getncattr('eop:processingMode'),
+                "s5p:product_type":
+                self._root['METADATA/GRANULE_DESCRIPTION'].getncattr('ProductShortName'),
+                "ch4:spatial_resolution":
+                self._root.spatial_resolution,
+                "ch4:geolocation_grid_from_band":
+                self._root.geolocation_grid_from_band,
+                "ch4:input_band":
+                [
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.1.type'),
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.2.type'),
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.3.type'),
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.4.type'),
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.5.type'),
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.6.type'),
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.7.type'),
+                ],
+                "ch4:irradiance_accompanied":
+                [
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.1.irrType'),
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.2.irrType'),
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.3.irrType'),
+                ],
+            }
+        elif "_CLOUD_" in self.file_path:
+            result = {
+                "start_datetime":
+                str(self._root.time_coverage_start),
+                "end_datetime":
+                str(self._root.time_coverage_end),
+                "s5p:instrument":
+                self._root.sensor,
+                "s5p:processing_mode":
+                self._root['METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing'].getncattr('eop:processingMode'),
+                "s5p:product_type":
+                self._root['METADATA/GRANULE_DESCRIPTION'].getncattr('ProductShortName'),
+                "cloud:spatial_resolution":
+                self._root.spatial_resolution,
+                "cloud:geolocation_grid_from_band":
+                self._root.geolocation_grid_from_band,
+                "cloud:cloud_mode":
+                self._root.cloud_mode,
+            }
+        elif "_CO_" in self.file_path:
+            result = {
+                "start_datetime":
+                str(self._root.time_coverage_start),
+                "end_datetime":
+                str(self._root.time_coverage_end),
+                "s5p:instrument":
+                self._root.sensor,
+                "s5p:processing_mode":
+                self._root['METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing'].getncattr('eop:processingMode'),
+                "s5p:product_type":
+                self._root['METADATA/GRANULE_DESCRIPTION'].getncattr('ProductShortName'),
+                "co:spatial_resolution":
+                self._root.spatial_resolution,
+                "co:geolocation_grid_from_band":
+                self._root.geolocation_grid_from_band,
+                "co:input_band":
+                [
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.1.type'),
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.2.type')
+                ],
+                "co:irradiance_accompanied":
+                self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.1.irrType'),
+            }
+        elif "_HCHO_" in self.file_path:
+            result = {
+                "start_datetime":
+                str(self._root.time_coverage_start),
+                "end_datetime":
+                str(self._root.time_coverage_end),
+                "s5p:instrument":
+                self._root.sensor,
+                "s5p:processing_mode":
+                self._root['METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing'].getncattr('eop:processingMode'),
+                "s5p:product_type":
+                self._root['METADATA/GRANULE_DESCRIPTION'].getncattr('ProductShortName'),
+                "hcho:spatial_resolution":
+                self._root.spatial_resolution,
+                "hcho:geolocation_grid_from_band":
+                self._root.geolocation_grid_from_band,
+                "hcho:input_band":
+                [
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.1.type'),
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.2.type')
+                ],
+                "hcho:irradiance_accompanied":
+                self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.1.irrType'),
+            }
+        elif "O3_TCL" in self.file_path:
+            result = {
+                "proj:shape_ccd":
+                [
+                    int(self._root['PRODUCT'].dimensions['latitude_ccd'].size),
+                    int(self._root['PRODUCT'].dimensions['longitude_ccd'].size)
+                ],
+                "proj:shape_csa":
+                [
+                    int(self._root['PRODUCT'].dimensions['latitude_csa'].size),
+                    int(self._root['PRODUCT'].dimensions['longitude_csa'].size)
+                ],
+                "s5p:instrument":
+                self._root['METADATA/GRANULE_DESCRIPTION'].InstrumentName.upper(),
+                "s5p:processing_mode":
+                self._root['METADATA'].processingMode,
+                "s5p:product_type":
+                self._root['METADATA/GRANULE_DESCRIPTION'].getncattr('ProductShortName'),
+                "o3_tcl:stratosphere_start_datetime":
+                str(self._root.time_coverage_start),
+                "o3_tcl:stratosphere_start_datetime_end_datetime":
+                str(self._root.time_coverage_end),
+                "o3_tcl:troposphere_start_datetime":
+                str(self._root.time_coverage_troposphere_start),
+                "o3_tcl:troposphere_end_datetime":
+                str(self._root.time_coverage_troposphere_end),
+                "o3_tcl:input_orbits":
+                [
+                    int(num)
+                    for num in self._root['METADATA'].input_orbits.split(" ")
+                ],
+                "o3_tcl:input_files":
+                [
+                    file.split("/")[-1].split(".")[0] 
+                    for file in self._root['METADATA'].input_files.split(" ")
+                ],
+            }
+
+        return {k: v for k, v in result.items() if v is not None}

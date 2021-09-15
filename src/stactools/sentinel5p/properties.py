@@ -38,13 +38,9 @@ def fill_proj_properties(proj_ext, href):
         path_to_dimensions = "PRODUCT"
     proj_ext.epsg = 4326
     if "O3_TCL" in href:
-        proj_ext.shape_ccd = [
+        proj_ext.shape = [
             root[path_to_dimensions].dimensions['latitude_ccd'].size,
             root[path_to_dimensions].dimensions['longitude_ccd'].size
-        ]
-        proj_ext.shape_csa = [
-            root[path_to_dimensions].dimensions['latitude_csa'].size,
-            root[path_to_dimensions].dimensions['longitude_csa'].size
         ]
     else:
         proj_ext.shape = [
