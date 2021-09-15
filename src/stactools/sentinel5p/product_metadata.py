@@ -237,13 +237,54 @@ class ProductMetadata:
                 self._root.spatial_resolution,
                 "hcho:geolocation_grid_from_band":
                 self._root.geolocation_grid_from_band,
-                "hcho:input_band":
+                "hcho:cloud_mode":
+                self._root.cloud_mode
+            }
+        elif "_NO2_" in self.file_path:
+            result = {
+                "start_datetime":
+                str(self._root.time_coverage_start),
+                "end_datetime":
+                str(self._root.time_coverage_end),
+                "s5p:instrument":
+                self._root.sensor,
+                "s5p:processing_mode":
+                self._root['METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing'].getncattr('eop:processingMode'),
+                "s5p:product_type":
+                self._root['METADATA/GRANULE_DESCRIPTION'].getncattr('ProductShortName'),
+                "no2:spatial_resolution":
+                self._root.spatial_resolution,
+                "no2:geolocation_grid_from_band":
+                self._root.geolocation_grid_from_band,
+                "no2:input_band":
                 [
                     self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.1.type'),
-                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.2.type')
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.2.type'),
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.3.type'),
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.4.type'),
+                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.5.type'),
                 ],
-                "hcho:irradiance_accompanied":
+                "no2:irradiance_accompanied":
                 self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.1.irrType'),
+            }
+        elif "_O3_" in self.file_path:
+            result = {
+                "start_datetime":
+                str(self._root.time_coverage_start),
+                "end_datetime":
+                str(self._root.time_coverage_end),
+                "s5p:instrument":
+                self._root.sensor,
+                "s5p:processing_mode":
+                self._root['METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing'].getncattr('eop:processingMode'),
+                "s5p:product_type":
+                self._root['METADATA/GRANULE_DESCRIPTION'].getncattr('ProductShortName'),
+                "o3:spatial_resolution":
+                self._root.spatial_resolution,
+                "o3:geolocation_grid_from_band":
+                self._root.geolocation_grid_from_band,
+                "o3:cloud_mode":
+                self._root.cloud_mode
             }
         elif "O3_TCL" in self.file_path:
             result = {
@@ -281,6 +322,39 @@ class ProductMetadata:
                     file.split("/")[-1].split(".")[0] 
                     for file in self._root['METADATA'].input_files.split(" ")
                 ],
+            }
+        elif "_SO2_" in self.file_path:
+            result = {
+                "start_datetime":
+                str(self._root.time_coverage_start),
+                "end_datetime":
+                str(self._root.time_coverage_end),
+                "s5p:instrument":
+                self._root.sensor,
+                "s5p:processing_mode":
+                self._root['METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing'].getncattr('eop:processingMode'),
+                "s5p:product_type":
+                self._root['METADATA/GRANULE_DESCRIPTION'].getncattr('ProductShortName'),
+                "so2:spatial_resolution":
+                self._root.spatial_resolution,
+                "so2:geolocation_grid_from_band":
+                self._root.geolocation_grid_from_band,
+                "so2:cloud_mode":
+                self._root.cloud_mode
+            }
+        elif "_BD3_" in self.file_path:
+            result = {
+                "start_datetime":
+                str(self._root.time_coverage_start),
+                "end_datetime":
+                str(self._root.time_coverage_end),
+                "s5p:instrument":
+                self._root['METADATA/EOP_METADATA/om:procedure/eop:instrument'].getncattr("eop:shortName"),
+                "s5p:processing_mode":
+                self._root['METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing'].getncattr('eop:processingMode'),
+                "s5p:product_type":
+                self._root['METADATA/GRANULE_DESCRIPTION'].getncattr('ProductShortName'),
+                
             }
 
         return {k: v for k, v in result.items() if v is not None}
