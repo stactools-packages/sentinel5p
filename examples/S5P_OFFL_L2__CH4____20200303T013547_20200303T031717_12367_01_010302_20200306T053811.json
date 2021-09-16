@@ -10,6 +10,39 @@
       4172,
       215
     ],
+    "start_datetime": "2020-03-03T01:57:22Z",
+    "end_datetime": "2020-03-03T02:55:45Z",
+    "s5p:instrument": "TROPOMI",
+    "s5p:processing_mode": "OFFL",
+    "s5p:product_type": "L2__CH4___",
+    "ch4:spatial_resolution": "7x7km2",
+    "ch4:geolocation_grid_from_band": 7,
+    "ch4:input_band": [
+      "L1B_RA_BD7",
+      "L1B_RA_BD8",
+      "L1B_RA_BD6",
+      "L2__CO____",
+      "L2__FRESCO",
+      "L2__NP_BD6",
+      "L2__NP_BD7"
+    ],
+    "ch4:irradiance_accompanied": [
+      "L1B_IR_SIR",
+      "L1B_IR_UVN"
+    ],
+    "providers": [
+      {
+        "name": "ESA",
+        "roles": [
+          "producer",
+          "processor",
+          "licensor"
+        ],
+        "url": "https://earth.esa.int/web/guest/home"
+      }
+    ],
+    "platform": "Sentinel 5 Precursor",
+    "constellation": "Sentinel-5P",
     "datetime": "2020-03-03T02:26:33.500000Z"
   },
   "geometry": {
@@ -1334,7 +1367,54 @@
       "type": "application/json"
     }
   ],
-  "assets": {},
+  "assets": {
+    "safe-manifest": {
+      "href": "/opt/stactools-sentinel5p/tests/data-files/S5P_OFFL_L2__CH4____20200303T013547_20200303T031717_12367_01_010302_20200306T053811.nc",
+      "type": "application/nc",
+      "roles": [
+        "metadata"
+      ]
+    },
+    "eo:bands": {
+      "href": "/opt/stactools-sentinel5p/tests/data-files/S5P_OFFL_L2__CH4____20200303T013547_20200303T031717_12367_01_010302_20200306T053811.nc",
+      "type": "application/nc",
+      "band_fields": [
+        {
+          "name": "Band 6",
+          "spectrometer": "NIR",
+          "performance range": "710-775",
+          "spectral range": "725-786",
+          "spectral resoluton": "0.34-0.35",
+          "slit width": 280,
+          "spectral dispersion": 0.126,
+          "spectral magnification": 0.263
+        },
+        {
+          "name": "Band 7",
+          "spectrometer": "SWIR",
+          "performance range": "2305-2385",
+          "spectral range": "2300-2343",
+          "spectral resoluton": 0.227,
+          "slit width": 308,
+          "spectral dispersion": 0.094,
+          "spectral magnification": 0.025
+        },
+        {
+          "name": "Band 8",
+          "spectrometer": "SWIR",
+          "performance range": "2305-2385",
+          "spectral range": "2343-2389",
+          "spectral resoluton": 0.225,
+          "slit width": 308,
+          "spectral dispersion": 0.094,
+          "spectral magnification": 0.021
+        }
+      ],
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
   "bbox": [
     -179.9934,
     -85.990204,

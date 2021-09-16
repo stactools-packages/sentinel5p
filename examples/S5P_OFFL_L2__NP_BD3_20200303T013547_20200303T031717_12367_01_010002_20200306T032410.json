@@ -10,6 +10,31 @@
       4172,
       450
     ],
+    "start_datetime": "2020-03-03T01:57:22Z",
+    "end_datetime": "2020-03-03T02:55:45Z",
+    "s5p:instrument": "TROPOMI",
+    "s5p:processing_mode": "OFFL",
+    "s5p:product_type": "L2__NP_BD3",
+    "npbd3:analysed_s5p_band": 3,
+    "npbd3:VIIRS_band": [
+      7,
+      9,
+      11
+    ],
+    "npbd3:number_of_scaled_fov": 4,
+    "providers": [
+      {
+        "name": "ESA",
+        "roles": [
+          "producer",
+          "processor",
+          "licensor"
+        ],
+        "url": "https://earth.esa.int/web/guest/home"
+      }
+    ],
+    "platform": "Sentinel 5 Precursor",
+    "constellation": "Sentinel-5P",
     "datetime": "2020-03-03T02:26:33.500000Z"
   },
   "geometry": {
@@ -1334,7 +1359,34 @@
       "type": "application/json"
     }
   ],
-  "assets": {},
+  "assets": {
+    "safe-manifest": {
+      "href": "/opt/stactools-sentinel5p/tests/data-files/S5P_OFFL_L2__NP_BD3_20200303T013547_20200303T031717_12367_01_010002_20200306T032410.nc",
+      "type": "application/nc",
+      "roles": [
+        "metadata"
+      ]
+    },
+    "eo:bands": {
+      "href": "/opt/stactools-sentinel5p/tests/data-files/S5P_OFFL_L2__NP_BD3_20200303T013547_20200303T031717_12367_01_010002_20200306T032410.nc",
+      "type": "application/nc",
+      "band_fields": [
+        {
+          "name": "Band 3",
+          "spectrometer": "UVIS",
+          "performance range": "320-490",
+          "spectral range": "305-400",
+          "spectral resoluton": "0.45-0.65",
+          "slit width": 280,
+          "spectral dispersion": 0.195,
+          "spectral magnification": 0.231
+        }
+      ],
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
   "bbox": [
     -179.94377,
     -85.99168,
