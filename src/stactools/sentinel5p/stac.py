@@ -7,6 +7,7 @@ from pystac.extensions.sat import SatExtension
 
 from .product_metadata import ProductMetadata
 from .properties import fill_sat_properties, fill_proj_properties
+from .constants import SENTINEL_CONSTELLATION, SENTINEL_PROVIDER
 
 logger = logging.getLogger(__name__)
 
@@ -45,5 +46,12 @@ def create_item(file_path: str) -> pystac.Item:
 
     # s5p product properties
     item.properties.update({**product_metadata.metadata_dict})
+
+    # --Common metadata--
+    item.common_metadata.providers = [SENTINEL_PROVIDER]
+    item.common_metadata.platform = product_metadata.platform
+    item.common_metadata.constellation = SENTINEL_CONSTELLATION
+
+    # Add assets to item
 
     return item
