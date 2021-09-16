@@ -187,7 +187,6 @@ class ProductMetadata:
                 "ch4:irradiance_accompanied":
                 [
                     self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.1.irrType'),
-                    self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.2.irrType'),
                     self._root['METADATA/ALGORITHM_SETTINGS'].getncattr('input.3.irrType'),
                 ],
             }
@@ -367,6 +366,8 @@ class ProductMetadata:
                 str(self._root['METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing'].getncattr('eop:processingMode')),
                 "s5p:product_type":
                 str(self._root['METADATA/GRANULE_DESCRIPTION'].getncattr('ProductShortName')),
+                "npbd3:analysed_s5p_band":
+                int(self._root['METADATA/ALGORITHM_SETTINGS'].getncattr("S5P_Band_Number")),
                 "npbd3:VIIRS_band":
                 [
                     int(band) 
@@ -387,6 +388,8 @@ class ProductMetadata:
                 str(self._root['METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing'].getncattr('eop:processingMode')),
                 "s5p:product_type":
                 str(self._root['METADATA/GRANULE_DESCRIPTION'].getncattr('ProductShortName')),
+                "npbd3:analysed_s5p_band":
+                int(self._root['METADATA/ALGORITHM_SETTINGS'].getncattr("S5P_Band_Number")),
                 "npbd6:VIIRS_band":
                 [
                     int(band) 
@@ -407,6 +410,8 @@ class ProductMetadata:
                 str(self._root['METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing'].getncattr('eop:processingMode')),
                 "s5p:product_type":
                 str(self._root['METADATA/GRANULE_DESCRIPTION'].getncattr('ProductShortName')),
+                "npbd3:analysed_s5p_band":
+                int(self._root['METADATA/ALGORITHM_SETTINGS'].getncattr("S5P_Band_Number")),
                 "npbd7:VIIRS_band":
                 [
                     int(band) 
