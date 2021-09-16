@@ -5,6 +5,7 @@ from pystac.extensions.eo import EOExtension
 from pystac.extensions.projection import ProjectionExtension
 from pystac.extensions.sat import SatExtension
 
+from .metadata_links import MetadataLinks
 from .product_metadata import ProductMetadata
 from .properties import fill_sat_properties, fill_proj_properties
 from .constants import SENTINEL_CONSTELLATION, SENTINEL_PROVIDER
@@ -20,6 +21,8 @@ def create_item(file_path: str) -> pystac.Item:
     Returns:
         pystac.Item: An item representing the Sentinel-5P scene.
     """
+
+    metalinks = MetadataLinks(file_path)
 
     product_metadata = ProductMetadata(file_path)
 
@@ -53,5 +56,6 @@ def create_item(file_path: str) -> pystac.Item:
     item.common_metadata.constellation = SENTINEL_CONSTELLATION
 
     # Add assets to item
+    item.add_asset(*metalinks.create_manifest_asset())
 
     return item
