@@ -9,21 +9,21 @@
       80,
       360
     ],
-    "proj:shape_ccd": [
+    "o3_tcl:shape_ccd": [
       80,
       360
     ],
-    "proj:shape_csa": [
+    "o3_tcl:shape_csa": [
       8,
       18
     ],
     "s5p:instrument": "TROPOMI",
     "s5p:processing_mode": "OFFL",
     "s5p:product_type": "L2__O3_TCL",
-    "o3_tcl:stratosphere_start_datetime": "2020-03-03T12:06:23",
-    "o3_tcl:stratosphere_start_datetime_end_datetime": "2020-03-09T12:52:48",
-    "o3_tcl:troposphere_start_datetime": "2020-03-04T23:38",
-    "o3_tcl:troposphere_end_datetime": "2020-03-08T00:22",
+    "o3_tcl:stratosphere_start_datetime": "2020-03-03T12:06:23Z",
+    "o3_tcl:stratosphere_start_datetime_end_datetime": "2020-03-09T12:52:48Z",
+    "o3_tcl:troposphere_start_datetime": "2020-03-04T23:38Z",
+    "o3_tcl:troposphere_end_datetime": "2020-03-08T00:22Z",
     "o3_tcl:input_orbits": [
       12373,
       12374,

@@ -10,7 +10,7 @@
       4172,
       450
     ],
-    "start_datetime": "2020-03-03T01:57:22",
+    "start_datetime": "2020-03-03T01:57:22Z",
     "end_datetime": "2020-03-03T02:55:45",
     "s5p:instrument": "TROPOMI",
     "s5p:processing_mode": "OFFL",
