@@ -10,6 +10,34 @@
       4172,
       448
     ],
+    "start_datetime": "2020-03-03T01:57:22Z",
+    "end_datetime": "2020-03-03T02:55:45Z",
+    "s5p:instrument": "TROPOMI",
+    "s5p:processing_mode": "OFFL",
+    "s5p:product_type": "L2__AER_LH",
+    "aer_lh:spatial_resolution": "7x3.5km2",
+    "aer_lh:geolocation_grid_from_band": 6,
+    "aer_lh:input_band": [
+      "L1B_RA_BD6",
+      "L2__FRESCO",
+      "L2__AER_AI",
+      "L2__NP_BD6",
+      "L2__CLOUD_"
+    ],
+    "aer_lh:irradiance_accompanied": "L1B_IR_UVN",
+    "providers": [
+      {
+        "name": "ESA",
+        "roles": [
+          "producer",
+          "processor",
+          "licensor"
+        ],
+        "url": "https://earth.esa.int/web/guest/home"
+      }
+    ],
+    "platform": "Sentinel 5 Precursor",
+    "constellation": "Sentinel-5P",
     "datetime": "2020-03-03T02:26:33.500000Z"
   },
   "geometry": {
@@ -1342,7 +1370,34 @@
       "type": "application/json"
     }
   ],
-  "assets": {},
+  "assets": {
+    "safe-manifest": {
+      "href": "/opt/stactools-sentinel5p/tests/data-files/S5P_OFFL_L2__AER_LH_20200303T013547_20200303T031717_12367_01_010302_20200306T053814.nc",
+      "type": "application/nc",
+      "roles": [
+        "metadata"
+      ]
+    },
+    "eo:bands": {
+      "href": "/opt/stactools-sentinel5p/tests/data-files/S5P_OFFL_L2__AER_LH_20200303T013547_20200303T031717_12367_01_010302_20200306T053814.nc",
+      "type": "application/nc",
+      "band_fields": [
+        {
+          "name": "Band 6",
+          "spectrometer": "NIR",
+          "performance range": "710-775",
+          "spectral range": "725-786",
+          "spectral resoluton": "0.34-0.35",
+          "slit width": 280,
+          "spectral dispersion": 0.126,
+          "spectral magnification": 0.263
+        }
+      ],
+      "roles": [
+        "metadata"
+      ]
+    }
+  },
   "bbox": [
     -179.90239,
     -86.10597,
