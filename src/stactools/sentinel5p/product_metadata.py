@@ -368,7 +368,7 @@ class ProductMetadata:
                     'ProductShortName')),
                 "o3_tcl:stratosphere_start_datetime":
                 str(self._root.time_coverage_start + "Z"),
-                "o3_tcl:stratosphere_start_datetime_end_datetime":
+                "o3_tcl:stratosphere_end_datetime":
                 str(self._root.time_coverage_end + "Z"),
                 "o3_tcl:troposphere_start_datetime":
                 str(self._root.time_coverage_troposphere_start + "Z"),
@@ -451,7 +451,7 @@ class ProductMetadata:
                 "s5p:product_type":
                 str(self._root['METADATA/GRANULE_DESCRIPTION'].getncattr(
                     'ProductShortName')),
-                "npbd3:analysed_s5p_band":
+                "npbd6:analysed_s5p_band":
                 int(self._root['METADATA/ALGORITHM_SETTINGS'].getncattr(
                     "S5P_Band_Number")),
                 "npbd6:VIIRS_band": [
@@ -480,7 +480,7 @@ class ProductMetadata:
                 "s5p:product_type":
                 str(self._root['METADATA/GRANULE_DESCRIPTION'].getncattr(
                     'ProductShortName')),
-                "npbd3:analysed_s5p_band":
+                "npbd7:analysed_s5p_band":
                 int(self._root['METADATA/ALGORITHM_SETTINGS'].getncattr(
                     "S5P_Band_Number")),
                 "npbd7:VIIRS_band": [
