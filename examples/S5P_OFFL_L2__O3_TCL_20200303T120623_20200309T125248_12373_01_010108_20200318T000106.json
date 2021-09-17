@@ -21,7 +21,7 @@
     "s5p:processing_mode": "OFFL",
     "s5p:product_type": "L2__O3_TCL",
     "o3_tcl:stratosphere_start_datetime": "2020-03-03T12:06:23Z",
-    "o3_tcl:stratosphere_start_datetime_end_datetime": "2020-03-09T12:52:48Z",
+    "o3_tcl:stratosphere_end_datetime": "2020-03-09T12:52:48Z",
     "o3_tcl:troposphere_start_datetime": "2020-03-04T23:38Z",
     "o3_tcl:troposphere_end_datetime": "2020-03-08T00:22Z",
     "o3_tcl:input_orbits": [
