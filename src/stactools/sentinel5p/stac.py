@@ -5,12 +5,13 @@ from pystac.extensions.eo import EOExtension
 from pystac.extensions.projection import ProjectionExtension
 from pystac.extensions.sat import SatExtension
 
+from .constants import SENTINEL_CONSTELLATION, SENTINEL_PROVIDER
 from .metadata_links import MetadataLinks
 from .product_metadata import ProductMetadata
-from .properties import fill_sat_properties, fill_proj_properties
-from .constants import SENTINEL_CONSTELLATION, SENTINEL_PROVIDER
+from .properties import fill_proj_properties, fill_sat_properties
 
 logger = logging.getLogger(__name__)
+
 
 def create_item(file_path: str) -> pystac.Item:
     """Create a STC Item from a Sentinel-5P scene.
