@@ -11,7 +11,7 @@
       450
     ],
     "start_datetime": "2020-03-03T01:57:22Z",
-    "end_datetime": "2020-03-03T02:55:45",
+    "end_datetime": "2020-03-03T02:55:45Z",
     "s5p:instrument": "TROPOMI",
     "s5p:processing_mode": "OFFL",
     "s5p:product_type": "L2__CLOUD_",

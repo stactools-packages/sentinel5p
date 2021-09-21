@@ -15,7 +15,7 @@
     "s5p:instrument": "TROPOMI",
     "s5p:processing_mode": "OFFL",
     "s5p:product_type": "L2__NP_BD6",
-    "npbd3:analysed_s5p_band": 6,
+    "npbd6:analysed_s5p_band": 6,
     "npbd6:VIIRS_band": [
       7,
       9,
