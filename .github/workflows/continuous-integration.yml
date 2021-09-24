@@ -79,7 +79,7 @@ jobs:
         with:
           registry: ${{ env.DOCKER_REGISTRY }}
           username: ${{ github.actor }}
-          password: ${{ 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 }}
+          password: ${{ secrets.PAT }}
       - name: Run rename script if in the template repo
         run: |
           if [[ "$GITHUB_REPOSITORY" == */template ]]; then
