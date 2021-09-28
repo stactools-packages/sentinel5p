@@ -2,7 +2,7 @@
 
 - Name: sentinel5p
 - Package: `stactools.sentinel5p`
-- PypI:
+- PypI: https://pypi.org/project/stactools-sentinel5p/0.1.0/
 - Owner: @chorng
 - Dataset homepage: https://registry.opendata.aws/sentinel5p/
 - STAC extensions used:
