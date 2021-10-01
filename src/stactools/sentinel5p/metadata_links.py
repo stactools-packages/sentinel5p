@@ -1,3 +1,5 @@
+import json
+
 import netCDF4 as nc  # type: ignore
 import pystac
 
@@ -11,12 +13,17 @@ class ManifestError(Exception):
 class MetadataLinks:
     def __init__(self, file_path):
         self.file_path = file_path
-        self._root = nc.Dataset(file_path)
+        if file_path.endswith(".nc"):
+            self._root = nc.Dataset(file_path)
+        elif file_path.endswith(".json"):
+            self._root = json.load(open(file_path))
+        else:
+            raise ManifestError("Source file format is not supported.")
 
     def create_manifest_asset(self):
         asset = pystac.Asset(
             href=self.file_path,
-            media_type="application/nc",
+            media_type=f"application/{self.file_path.split('.')[-1]}",
             roles=["metadata"],
         )
         return (SAFE_MANIFEST_ASSET_KEY, asset)
@@ -45,8 +52,9 @@ class MetadataLinks:
             band_dict_list = [SENTINEL_TROPOMI_BANDS["Band 6"]]
         elif "_BD7_" in self.file_path:
             band_dict_list = [SENTINEL_TROPOMI_BANDS["Band 7"]]
-        asset = pystac.Asset(href=self.file_path,
-                             media_type="application/nc",
-                             roles=["metadata"],
-                             extra_fields={"band_fields": band_dict_list})
+        asset = pystac.Asset(
+            href=self.file_path,
+            media_type=f"application/{self.file_path.split('.')[-1]}",
+            roles=["metadata"],
+            extra_fields={"band_fields": band_dict_list})
         return ("eo:bands", asset)
