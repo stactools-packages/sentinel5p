@@ -41,6 +41,7 @@ def fill_proj_properties(proj_ext, href):
         pystac.Asset: An asset with the PROJECTION relevant properties.
     """
 
+    proj_ext.epsg = 4326
     BDx = [f"BD{num}" for num in range(1, 9)]
     if href.endswith('.nc'):
         root = nc.Dataset(href)
@@ -81,4 +82,3 @@ def fill_proj_properties(proj_ext, href):
                 root['PRODUCT']['scanline']['size'],
                 root['PRODUCT']['ground_pixel']['size']
             ]
-    proj_ext.epsg = 4326

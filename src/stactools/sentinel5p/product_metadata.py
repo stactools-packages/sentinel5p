@@ -135,8 +135,9 @@ class ProductMetadata:
                     'METADATA/ISO_METADATA/gmi:acquisitionInformation/gmi:platform']
                                     .getncattr("gmi:description"))
             elif self.file_path.endswith(".json"):
-                platform_name = str(self._root['METADATA']
-                                    ['GRANULE_DESCRIPTION']['MissionName'])
+                platform_name = str(self._root['METADATA']['ISO_METADATA']
+                                    ['gmi:acquisitionInformation']
+                                    ['gmi:platform']['gmi:description'])
         return platform_name
 
     @property
