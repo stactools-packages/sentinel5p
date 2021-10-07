@@ -1373,15 +1373,16 @@
   "assets": {
     "safe-manifest": {
       "href": "/opt/stactools-sentinel5p/tests/data-files/S5P_OFFL_L2__AER_LH_20200303T013547_20200303T031717_12367_01_010302_20200306T053814.nc",
-      "type": "application/nc",
+      "type": "application/x-netcdf",
       "roles": [
         "metadata"
       ]
     },
-    "eo:bands": {
+    "S5P_OFFL_L2__AER_LH_20200303T013547_20200303T031717_12367_01_010302_20200306T053814": {
       "href": "/opt/stactools-sentinel5p/tests/data-files/S5P_OFFL_L2__AER_LH_20200303T013547_20200303T031717_12367_01_010302_20200306T053814.nc",
-      "type": "application/nc",
-      "band_fields": [
+      "type": "application/x-netcdf",
+      "description": "TROPOMI/S5P Aerosol Layer Height 1-Orbit L2 Swath 7x3.5km",
+      "eo:bands": [
         {
           "name": "Band 6",
           "spectrometer": "NIR",
@@ -1394,7 +1395,7 @@
         }
       ],
       "roles": [
-        "metadata"
+        "data"
       ]
     }
   },
