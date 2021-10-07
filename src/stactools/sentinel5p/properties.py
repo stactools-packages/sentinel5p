@@ -68,8 +68,8 @@ def fill_proj_properties(proj_ext, href):
         if any(_str in product for _str in BDx):
             scanline_size = root[f"BAND{product[-1]}_NPPC"]['STANDARD_MODE'][
                 'dimensions']['scanline']
-            ground_pixel_size = root[f"BAND{product[-1]}_NPPC"]['STANDARD_MODE'][
-                'dimensions']['ground_pixel']
+            ground_pixel_size = root[f"BAND{product[-1]}_NPPC"][
+                'STANDARD_MODE']['dimensions']['ground_pixel']
         if "O3_TCL" in href:
             proj_ext.shape = [
                 root['PRODUCT']['dimensions']['latitude_ccd'],

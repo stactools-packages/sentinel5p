@@ -760,12 +760,16 @@ class ProductMetadata:
             elif "O3_TCL" in self.file_path:
                 result = {
                     "o3_tcl:shape_ccd": [
-                        int(self._root['PRODUCT']['dimensions']['latitude_ccd']),
-                        int(self._root['PRODUCT']['dimensions']['longitude_ccd'])
+                        int(self._root['PRODUCT']['dimensions']
+                            ['latitude_ccd']),
+                        int(self._root['PRODUCT']['dimensions']
+                            ['longitude_ccd'])
                     ],
                     "o3_tcl:shape_csa": [
-                        int(self._root['PRODUCT']['dimensions']['latitude_csa']),
-                        int(self._root['PRODUCT']['dimensions']['longitude_csa'])
+                        int(self._root['PRODUCT']['dimensions']
+                            ['latitude_csa']),
+                        int(self._root['PRODUCT']['dimensions']
+                            ['longitude_csa'])
                     ],
                     "s5p:instrument":
                     str(self._root['METADATA']['GRANULE_DESCRIPTION']
