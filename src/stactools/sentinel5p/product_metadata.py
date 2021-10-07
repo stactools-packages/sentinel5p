@@ -71,7 +71,7 @@ class ProductMetadata:
             elif self.file_path.endswith(".json"):
                 footprint_text = self._root['METADATA']['EOP_METADATA'][
                     'om:featureOfInterest']['eop:multiExtentOf'][
-                        'gml:surfaceeMembers']['gml:exterior']['gml:posList']
+                        'gml:surfaceMembers']['gml:exterior']['gml:posList']
             if footprint_text is None:
                 ProductMetadataError(
                     f"Cannot parse footprint from product metadata at {self.file_path}"
@@ -760,12 +760,12 @@ class ProductMetadata:
             elif "O3_TCL" in self.file_path:
                 result = {
                     "o3_tcl:shape_ccd": [
-                        int(self._root['PRODUCT']['latitude_ccd']['size']),
-                        int(self._root['PRODUCT']['longitude_ccd']['size'])
+                        int(self._root['PRODUCT']['dimensions']['latitude_ccd']),
+                        int(self._root['PRODUCT']['dimensions']['longitude_ccd'])
                     ],
                     "o3_tcl:shape_csa": [
-                        int(self._root['PRODUCT']['latitude_csa']['size']),
-                        int(self._root['PRODUCT']['longitude_csa']['size'])
+                        int(self._root['PRODUCT']['dimensions']['latitude_csa']),
+                        int(self._root['PRODUCT']['dimensions']['longitude_csa'])
                     ],
                     "s5p:instrument":
                     str(self._root['METADATA']['GRANULE_DESCRIPTION']

@@ -66,10 +66,11 @@ class MetadataLinks:
         asset_id = self.file_path.split('/')[-1].split(".")[0]
         if file_format == "nc":
             media_type = "application/x-netcdf"
-        elif file_format == ".json":
+            description = self._root.title
+        elif file_format == "json":
             media_type = pystac.MediaType.JSON
+            description = self._root['title']
         roles = ["data"]
-        description = self._root.title
         if not band_dict_list:
             asset = pystac.Asset(href=self.file_path,
                                  media_type=media_type,

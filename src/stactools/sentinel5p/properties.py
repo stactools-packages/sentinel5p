@@ -67,13 +67,13 @@ def fill_proj_properties(proj_ext, href):
         product = root['METADATA']['GRANULE_DESCRIPTION']['ProductShortName']
         if any(_str in product for _str in BDx):
             scanline_size = root[f"BAND{product[-1]}_NPPC"]['STANDARD_MODE'][
-                'scanline']['size']
-            ground_pixel_size = root[f"BAND{product[-1]}_NPPC"][
-                'STANDARD_MODE']['ground_pixel']['size']
+                'dimensions']['scanline']
+            ground_pixel_size = root[f"BAND{product[-1]}_NPPC"]['STANDARD_MODE'][
+                'dimensions']['ground_pixel']
         if "O3_TCL" in href:
             proj_ext.shape = [
-                root['PROCUCT']['latitude_ccd']['size'],
-                root['PRODUCT']['longitude_ccd']['size']
+                root['PRODUCT']['dimensions']['latitude_ccd'],
+                root['PRODUCT']['dimensions']['longitude_ccd']
             ]
         elif "_NP_BD" in href:
             proj_ext.shape = [scanline_size, ground_pixel_size]
