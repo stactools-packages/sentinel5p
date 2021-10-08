@@ -1,0 +1,1495 @@
+{
+  "PRODUCT_TYPE" : "CO____",
+  "Conventions" : "CF-1.7",
+  "institution" : "KNMI/SRON",
+  "source" : "Sentinel 5 precursor, TROPOMI, space-borne remote sensing, L2",
+  "history" : "2021-03-26 03:48:20 f_s5pops tropnll2dp /mnt/data1/storage_nrt/cache_nrt/WORKING-630642304/JobOrder.630641285.xml",
+  "summary" : "TROPOMI/S5P CO Column 1-Orbit L2 Swath 7x7km",
+  "tracking_id" : "77e61c36-19d7-449e-be95-b13eae4fff23",
+  "id" : "S5P_NRTI_L2__CO_____20210326T030109_20210326T030609_17872_01_010400_20210326T033105",
+  "time_reference" : "2021-03-26T00:00:00Z",
+  "time_reference_days_since_1950" : 26017,
+  "time_reference_julian_day" : 2459299.5,
+  "time_reference_seconds_since_1970" : 1616716800,
+  "time_coverage_start" : "2021-03-26T03:01:03Z",
+  "time_coverage_end" : "2021-03-26T03:06:16Z",
+  "time_coverage_duration" : "PT312.473S",
+  "time_coverage_resolution" : "PT0.840S",
+  "orbit" : 17872,
+  "references" : "http://www.tropomi.eu/data-products/carbon-monoxide",
+  "processor_version" : "1.4.0",
+  "keywords_vocabulary" : "AGU index terms, http://publications.agu.org/author-resource-center/index-terms/",
+  "keywords" : "0300 Atmospheric Composition and Structure; 0365 Troposphere, Composition and Chemistry; 1600 Global Change; 1610 Atmosphere",
+  "standard_name_vocabulary" : "NetCDF Climate and Forecast Metadata Conventions Standard Name Table (v29, 08 July 2015), http://cfconventions.org/standard-names.html",
+  "naming_authority" : "nl.knmi",
+  "cdm_data_type" : "Swath",
+  "date_created" : "2021-03-26T03:39:40Z",
+  "creator_name" : "The Sentinel 5 Precursor TROPOMI Level 2 products are developed with funding from the European Space Agency (ESA), the Netherlands Space Office (NSO), the Belgian Science Policy Office, the German Aerospace Center (DLR) and the Bayerisches Staatsministerium für Wirtschaft und Medien, Energie und Technologie (StMWi).",
+  "creator_url" : "http://www.tropomi.eu",
+  "creator_email" : "EOSupport@Copernicus.esa.int",
+  "project" : "Sentinel 5 precursor/TROPOMI",
+  "geospatial_lat_min" : 24.536304,
+  "geospatial_lat_max" : 48.497986,
+  "geospatial_lon_min" : 165.94235,
+  "geospatial_lon_max" : 130.7311,
+  "license" : "No conditions apply",
+  "platform" : "S5P",
+  "sensor" : "TROPOMI",
+  "spatial_resolution" : "7x7km2",
+  "cpp_compiler_version" : "g++ (GCC) 4.8.5 20150623 (Red Hat 4.8.5-11)",
+  "cpp_compiler_flags" : "-g -O2 -fPIC -std=c++11 -W -Wall -Wno-ignored-qualifiers -Wno-write-strings -Wno-unused-variable -DTROPNLL2DP",
+  "f90_compiler_version" : "GNU Fortran (GCC) 4.8.5 20150623 (Red Hat 4.8.5-11)",
+  "f90_compiler_flags" : "-gdwarf-3 -O2 -fPIC -cpp -ffpe-trap=invalid -fno-range-check -frecursive -fimplicit-none -ffree-line-length-none -DTROPNLL2DP -Wuninitialized -Wtabs",
+  "build_date" : "2019-04-05T12:04:00Z",
+  "revision_control_identifier" : "",
+  "geolocation_grid_from_band" : 7,
+  "identifier_product_doi" : "N/A",
+  "identifier_product_doi_authority" : "http://dx.doi.org/",
+  "algorithm_version" : "1.2.0",
+  "title" : "TROPOMI/S5P CO Column 1-Orbit L2 Swath 7x7km",
+  "product_version" : "1.1.0",
+  "processing_status" : "Nominal",
+  "Status_MET_2D" : "Nominal",
+  "Status_CTM_CO" : "Nominal",
+  "Status_CTMCH4" : "Nominal",
+  "METADATA" : {
+    "GRANULE_DESCRIPTION" : {
+      "ProductShortName" : "L2__CO____",
+      "MissionShortName" : "S5P",
+      "ProcessingNode" : "s5p-ops2-nrt-pn07",
+      "ProcessingMode" : "Near-realtime",
+      "MissionName" : "Sentinel-5 precursor",
+      "GranuleStart" : "2021-03-26T03:01:03Z",
+      "LongitudeOfDaysideNadirEquatorCrossing" : 9.96921E36,
+      "InstrumentName" : "TROPOMI",
+      "ProcessingCenter" : "PDGS-OP",
+      "ProcessorVersion" : "1.4.0",
+      "GranuleEnd" : "2021-03-26T03:06:16Z",
+      "ProcessLevel" : "2",
+      "ProductFormatVersion" : 10100
+    },
+    "QA_STATISTICS" : {
+      "number_of_interpolation_warning_occurrences" : 0,
+      "number_of_diff_psurf_fresco_ecmwf_filter_occurrences" : 0,
+      "number_of_wavelength_calibration_error_occurrences" : 0,
+      "number_of_cf_viirs_nir_ofovc_filter_occurrences" : 0,
+      "number_of_saturation_error_occurrences" : 0,
+      "number_of_successfully_processed_pixels" : 29857,
+      "number_of_profile_error_occurrences" : 0,
+      "number_of_boundary_hit_error_occurrences" : 0,
+      "number_of_solar_eclipse_filter_occurrences" : 0,
+      "number_of_cloud_fraction_fresco_filter_occurrences" : 0,
+      "number_of_sza_range_error_occurrences" : 0,
+      "number_of_cf_viirs_swir_ofovc_filter_occurrences" : 0,
+      "number_of_ler_range_error_occurrences" : 7034,
+      "number_of_lut_range_error_occurrences" : 0,
+      "number_of_configuration_error_occurrences" : 0,
+      "number_of_cf_viirs_swir_ifov_filter_occurrences" : 0,
+      "number_of_sun_glint_correction_occurrences" : 0,
+      "number_of_geolocation_error_occurrences" : 0,
+      "number_of_data_range_warning_occurrences" : 789,
+      "number_of_cloud_inhomogeneity_warning_occurrences" : 0,
+      "number_of_altitude_consistency_warning_occurrences" : 0,
+      "number_of_ozone_range_error_occurrences" : 0,
+      "number_of_cloud_filter_convergence_error_occurrences" : 0,
+      "number_of_ch4_noscat_ratio_std_filter_occurrences" : 0,
+      "number_of_ch4_noscat_zero_error_occurrences" : 0,
+      "number_of_ground_pixels_with_warnings" : 62841,
+      "number_of_abort_error_occurrences" : 0,
+      "number_of_wrong_input_type_error_occurrences" : 0,
+      "number_of_max_iteration_convergence_error_occurrences" : 0,
+      "number_of_other_boundary_convergence_error_occurrences" : 0,
+      "number_of_mixed_surface_type_filter_occurrences" : 0,
+      "number_of_snow_ice_warning_occurrences" : 0,
+      "number_of_memory_error_occurrences" : 0,
+      "number_of_ISRF_error_occurrences" : 0,
+      "number_of_cloud_warning_occurrences" : 57073,
+      "number_of_groundpixels" : 80195,
+      "number_of_signal_to_noise_ratio_warning_occurrences" : 0,
+      "time_for_processing" : 499.443726,
+      "number_of_input_spectrum_missing_occurrences" : 0,
+      "number_of_reflectance_range_error_occurrences" : 0,
+      "number_of_convergence_error_occurrences" : 9142,
+      "number_of_refl_cirrus_viirs_swir_filter_occurrences" : 0,
+      "number_of_snr_range_error_occurrences" : 0,
+      "number_of_signal_to_noise_ratio_error_occurrences" : 0,
+      "number_of_assertion_error_occurrences" : 0,
+      "number_of_cloud_pressure_spread_too_low_error_occurrences" : 0,
+      "global_processing_warnings" : "None",
+      "number_of_so2_volcanic_origin_likely_warning_occurrences" : 0,
+      "number_of_coregistration_error_occurrences" : 0,
+      "number_of_aai_warning_occurrences" : 0,
+      "number_of_deconvolution_warning_occurrences" : 0,
+      "number_of_slant_column_density_error_occurrences" : 0,
+      "number_of_h2o_noscat_ratio_filter_occurrences" : 0,
+      "number_of_numerical_error_occurrences" : 0,
+      "time_standard_deviation_per_pixel" : 2.4211230193464588E-4,
+      "number_of_generic_range_error_occurrences" : 0,
+      "number_of_low_cloud_fraction_warning_occurrences" : 0,
+      "number_of_model_error_occurrences" : 0,
+      "number_of_cf_viirs_nir_ifov_filter_occurrences" : 0,
+      "number_of_cf_viirs_swir_ofova_filter_occurrences" : 0,
+      "number_of_cf_viirs_nir_ofova_filter_occurrences" : 0,
+      "number_of_sun_glint_warning_occurrences" : 12199,
+      "number_of_geographic_region_filter_occurrences" : 0,
+      "number_of_wavelength_calibration_warning_occurrences" : 0,
+      "number_of_radiative_transfer_error_occurrences" : 0,
+      "number_of_generic_exception_occurrences" : 0,
+      "number_of_so2_volcanic_origin_certain_warning_occurrences" : 0,
+      "time_for_algorithm_initialization" : 19.706793,
+      "number_of_max_optical_thickness_error_occurrences" : 0,
+      "number_of_psurf_fresco_stdv_filter_occurrences" : 0,
+      "number_of_h2o_noscat_ratio_std_filter_occurrences" : 0,
+      "number_of_radiance_missing_occurrences" : 0,
+      "number_of_vertical_column_density_error_occurrences" : 0,
+      "number_of_cirrus_reflectance_viirs_filter_occurrences" : 0,
+      "number_of_ocean_filter_occurrences" : 0,
+      "number_of_saturation_warning_occurrences" : 0,
+      "number_of_ch4_noscat_ratio_filter_occurrences" : 0,
+      "number_of_altitude_consistency_filter_occurrences" : 0,
+      "number_of_sun_glint_filter_occurrences" : 0,
+      "number_of_high_sza_warning_occurrences" : 0,
+      "number_of_pixel_or_scanline_index_filter_occurrences" : 0,
+      "number_of_io_error_occurrences" : 0,
+      "number_of_initialization_error_occurrences" : 0,
+      "number_of_lut_error_occurrences" : 0,
+      "number_of_dfs_error_occurrences" : 0,
+      "number_of_cloud_filter_occurrences" : 34162,
+      "number_of_snow_ice_filter_occurrences" : 0,
+      "number_of_extrapolation_warning_occurrences" : 0,
+      "number_of_aai_filter_occurrences" : 0,
+      "number_of_airmass_factor_error_occurrences" : 0,
+      "number_of_cf_viirs_swir_ofovb_filter_occurrences" : 0,
+      "number_of_rejected_pixels_not_enough_spectrum" : 0,
+      "number_of_pixel_level_input_data_missing_occurrences" : 0,
+      "time_per_pixel" : 0.17848982031014482,
+      "number_of_input_spectrum_warning_occurrences" : 0,
+      "number_of_cf_viirs_nir_ofovb_filter_occurrences" : 0,
+      "number_of_optimal_estimation_error_occurrences" : 0,
+      "number_of_altitude_roughness_filter_occurrences" : 0,
+      "number_of_failed_retrievals" : 50338,
+      "number_of_cloud_too_low_level_error_occurrences" : 0,
+      "number_of_svd_error_occurrences" : 0,
+      "number_of_chi2_error_occurrences" : 0,
+      "number_of_aai_scene_albedo_filter_occurrences" : 0,
+      "number_of_small_pixel_radiance_std_filter_occurrences" : 0,
+      "number_of_cloud_error_occurrences" : 0,
+      "number_of_aot_lower_boundary_convergence_error_occurrences" : 0,
+      "number_of_aerosol_boundary_error_occurrences" : 0,
+      "number_of_refl_cirrus_viirs_nir_filter_occurrences" : 0,
+      "number_of_vza_range_error_occurrences" : 0,
+      "number_of_number_of_input_data_points_too_low_error_occurrences" : 0,
+      "number_of_processed_pixels" : 80195,
+      "number_of_key_error_occurrences" : 0,
+      "number_of_diff_refl_cirrus_viirs_filter_occurrences" : 0,
+      "number_of_south_atlantic_anomaly_warning_occurrences" : 0,
+      "number_of_cloud_retrieval_warning_occurrences" : 0,
+      "number_of_wavelength_offset_error_occurrences" : 0,
+      "number_of_cloud_fraction_viirs_filter_occurrences" : 0,
+      "number_of_input_spectrum_alignment_error_occurrences" : 0,
+      "number_of_time_range_filter_occurrences" : 0,
+      "number_of_irradiance_missing_occurrences" : 0,
+      "number_of_h2o_noscat_zero_error_occurrences" : 0
+    },
+    "EOP_METADATA" : {
+      "om:phenomenonTime" : {
+        "gml:beginPosition" : "2021-03-26T03:01:03Z",
+        "gml:endPosition" : "2021-03-26T03:06:16Z",
+        "objectType" : "gml:TimePeriod"
+      },
+      "om:procedure" : {
+        "eop:platform" : {
+          "eop:shortName" : "Sentinel-5p",
+          "objectType" : "eop:Platform"
+        },
+        "eop:acquisitionParameters" : {
+          "eop:orbitNumber" : 17872,
+          "objectType" : "eop:Acquisition"
+        },
+        "gml:id" : "S5P_NRTI_L2__CO_____20210326T030109_20210326T030609_17872_01_010400_20210326T033105.EOE",
+        "eop:instrument" : {
+          "eop:shortName" : "TROPOMI",
+          "objectType" : "eop:Instrument"
+        },
+        "eop:sensor" : {
+          "eop:sensorType" : "ATMOSPHERIC",
+          "objectType" : "eop:Sensor"
+        },
+        "objectType" : "eop:EarthObservationEquipment"
+      },
+      "eop:metaDataProperty" : {
+        "eop:productType" : "S5P_NRTI_CO____",
+        "eop:parentIdentifier" : "urn:ogc:def:EOP:ESA:SENTINEL.S5P_TROP_L2__CO____",
+        "eop:processing" : {
+          "eop:processorName" : "TROPNLL2DP",
+          "eop:processingLevel" : "L2",
+          "eop:nativeProductFormat" : "netCDF-4",
+          "eop:processingDate" : "2021-03-26",
+          "eop:processingMode" : "NRTI",
+          "eop:processingCenter" : "PDGS-OP",
+          "objectType" : "eop:ProcessingInformation",
+          "eop:processorVersion" : "1.4.0"
+        },
+        "eop:productQualityDegradationTag" : "NOT APPLICABLE",
+        "eop:status" : "ACQUIRED",
+        "eop:acquisitionType" : "NOMINAL",
+        "eop:productQualityStatus" : "NOMINAL",
+        "eop:identifier" : "S5P_NRTI_L2__CO_____20210326T030109_20210326T030609_17872_01_010400_20210326T033105",
+        "objectType" : "eop:EarthObservationMetaData",
+        "eop:doi" : "N/A"
+      },
+      "om:observedProperty" : {
+        "nilReason" : "inapplicable"
+      },
+      "om:featureOfInterest" : {
+        "eop:multiExtentOf" : {
+          "gml:surfaceMembers" : {
+            "gml:exterior" : {
+              "gml:posList" : "41.79349 130.7311 40.442177 131.61642 39.082706 132.46123 37.715454 133.268 36.34126 134.03975 34.960617 134.77885 33.57392 135.4875 32.181713 136.16766 30.784338 136.82127 29.382225 137.44992 27.975603 138.05508 26.564833 138.63826 25.150331 139.20103 24.536304 139.4386 24.701576 139.76518 25.851913 142.11844 26.84316 144.30397 27.371084 145.56226 27.906979 146.94415 28.224575 147.83415 28.571516 148.8921 28.78976 149.61877 29.039963 150.52983 29.204144 151.18616 29.399097 152.0456 29.53084 152.69106 29.690649 153.57156 29.800028 154.26079 29.932722 155.24257 30.022083 156.04726 30.12572 157.25427 30.189007 158.30313 30.24628 159.99454 30.258318 161.60464 30.196667 164.581 30.139236 165.94235 30.139236 165.94235 31.58934 165.74963 33.03889 165.56372 34.48793 165.38467 35.93642 165.21281 37.384304 165.04851 38.83152 164.89198 40.278114 164.74352 41.724026 164.60396 43.16919 164.47302 44.613625 164.3519 46.057285 164.24135 47.500065 164.1417 48.124977 164.10239 48.16563 163.62885 48.39452 160.1943 48.492947 157.00128 48.491577 155.17815 48.434677 153.2008 48.36481 151.94597 48.24607 150.47751 48.141586 149.48517 47.98422 148.26118 47.852917 147.39388 47.658806 146.2769 47.49687 145.45213 47.254196 144.34674 47.047142 143.49731 46.727104 142.31105 46.4437 141.35898 45.98523 139.9633 45.556904 138.77962 44.814217 136.92096 44.05496 135.20027 42.535427 132.11385 41.79349 130.7311 41.79349 130.7311",
+              "objectType" : "gml:LinearRing"
+            },
+            "objectType" : "gml:Polygon"
+          },
+          "objectType" : "gml:MultiSurface"
+        },
+        "gml:id" : "S5P_NRTI_L2__CO_____20210326T030109_20210326T030609_17872_01_010400_20210326T033105.FP",
+        "objectType" : "eop:FootPrint"
+      },
+      "gml:id" : "S5P_NRTI_L2__CO_____20210326T030109_20210326T030609_17872_01_010400_20210326T033105.ID",
+      "objectType" : "atm:EarthObservation"
+    },
+    "ALGORITHM_SETTINGS" : {
+      "qa_value.civilized_cloudy_modification_percent" : "70.0",
+      "qa_value.so2_volcanic_origin_likely_warning" : "100.0",
+      "output.1.config" : "cfg/product/product.CO____.xml",
+      "qa_value.so2_volcanic_origin_certain_warning" : "100.0",
+      "processing.writelog" : "2",
+      "qa_value.input_spectrum_warning" : "0.0",
+      "qa_value.bad_rows_modification_percent" : "0.0",
+      "qa_value.pixel_level_input_data_missing" : "100.0",
+      "output.histogram.carbonmonoxide_total_column.range" : "0.03, 0.05",
+      "qa_value.AAI_warning" : "100.0",
+      "processing.vzaMin" : "0.0",
+      "qa_value.sza_modification_percent" : "0.0",
+      "qa_value.south_atlantic_anomaly_warning" : "100.0",
+      "input.2.type" : "L1B_RA_BD8",
+      "output.1.band" : "7",
+      "processing.threadStackSize" : "1000000000",
+      "qa_value.snow_ice_warning" : "100.0",
+      "output.1.type" : "L2__CO____",
+      "qa_value.cloud_height_civilized_cloudy_upper_limit" : "5000.0",
+      "processing.correct_surface_pressure_for_altitude" : "false",
+      "qa_value.saturation_warning" : "100.0",
+      "input.1.band" : "7",
+      "qa_value.sza_threshold" : "80.0",
+      "qa_value.low_cloud_fraction_warning" : "100.0",
+      "input.1.type" : "L1B_RA_BD7",
+      "qa_value.extrapolation_warning" : "0.0",
+      "input.2.irrType" : "L1B_IR_SIR",
+      "output.useShuffleFilter" : "true",
+      "processing.groupDem" : "DEM_RADIUS_05000",
+      "processing.algorithm" : "CO____",
+      "input.count" : "2",
+      "output.count" : "1",
+      "qa_value.signal_to_noise_ratio_warning" : "100.0",
+      "qa_value.wavelength_calibration_warning" : "0.0",
+      "qa_value.cloud_height_cloud_free_upper_limit" : "500.0",
+      "qa_value.deconvolution_warning" : "0.0",
+      "qa_value.uncivilized_cloudy_modification_percent" : "40.0",
+      "output.compressionLevel" : "3",
+      "qa_value.cloud_free_modification_percent" : "100.0",
+      "configuration.version.framework" : "1.2.0",
+      "qa_value.sun_glint_warning" : "100.0",
+      "processing.szaMin" : "0.0",
+      "qa_value.altitude_consistency_warning" : "100.0",
+      "output.useCompression" : "true",
+      "qa_value.cloud_warning" : "100.0",
+      "output.useFletcher32" : "true",
+      "processing.vzaMax" : "75.0",
+      "configuration.version.algorithm" : "1.2.0",
+      "input.2.band" : "8",
+      "processing.szaMax" : "85.0",
+      "qa_value.bad_rows" : "0, 1",
+      "input.1.irrType" : "L1B_IR_SIR",
+      "qa_value.sun_glint_correction" : "100.0",
+      "qa_value.interpolation_warning" : "100.0",
+      "qa_value.scattering_optical_thickness_swir_limit" : "0.5",
+      "qa_value.data_range_warning" : "0.0"
+    },
+    "ISO_METADATA" : {
+      "gmd:dataQualityInfo" : {
+        "gmd:report" : {
+          "gmd:result" : {
+            "gmd:specification" : {
+              "gmd:title" : "INSPIRE Data Specification on Orthoimagery - Guidelines, version 3.0rc3",
+              "objectType" : "gmd:CI_Citation",
+              "gmd:date" : {
+                "gmd:dateType" : {
+                  "codeListValue" : "publication",
+                  "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                  "objectType" : "gmd:CI_DateTypeCode"
+                },
+                "objectType" : "gmd:CI_Date",
+                "gmd:date" : "2013-02-04"
+              }
+            },
+            "gmd:pass" : "true",
+            "gmd:explanation" : "INSPIRE Data specification for orthoimagery is not yet officially published so conformity has not yet been evaluated",
+            "objectType" : "gmd:DQ_ConformanceResult"
+          },
+          "objectType" : "gmd:DQ_DomainConsistency"
+        },
+        "gmd:scope" : {
+          "gmd:level" : {
+            "codeListValue" : "dataset",
+            "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode",
+            "objectType" : "gmd:MD_ScopeCode"
+          },
+          "objectType" : "gmd:DQ_Scope"
+        },
+        "gmd:lineage" : {
+          "gmd:statement" : "L2 CO____ dataset produced by PDGS-OP from the S5P/TROPOMI L1B product",
+          "gmd:processStep" : {
+            "gmd:source#1" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "N/A",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "Auxiliary CTM AUX_CTMCH4 model input data",
+              "gmd:sourceCitation" : {
+                "gmd:title" : {
+                  "gco:characterString" : "Auxiliary CTM AUX_CTMCH4 model input data"
+                },
+                "gmd:alternateTitle#1" : {
+                  "gmx:FileName" : "S5P_OPER_AUX_CTMCH4_20210326T000000_20210327T000000_20201106T120000.nc"
+                },
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2021-03-26T03:48:20Z"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            },
+            "gmd:source#3" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "N/A",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "Auxiliary AUX_ISRF__ reference data",
+              "gmd:sourceCitation" : {
+                "gmd:title" : {
+                  "gco:characterString" : "Auxiliary AUX_ISRF__ reference data"
+                },
+                "gmd:alternateTitle#1" : {
+                  "gmx:FileName" : "S5P_OPER_AUX_ISRF___00000000T000000_99999999T999999_20180115T153214.nc"
+                },
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2021-03-26T03:48:20Z"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            },
+            "gmd:source#2" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "N/A",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "Auxiliary CTM AUX_CTM_CO model input data",
+              "gmd:sourceCitation" : {
+                "gmd:title" : {
+                  "gco:characterString" : "Auxiliary CTM AUX_CTM_CO model input data"
+                },
+                "gmd:alternateTitle#1" : {
+                  "gmx:FileName" : "S5P_OPER_AUX_CTM_CO_20210101T000000_20220101T000000_20201105T120000.nc"
+                },
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2021-03-26T03:48:20Z"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            },
+            "gmd:source#5" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "L4",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "Auxiliary ECMWF AUX_MET_QP Meteorological forecast data",
+              "gmd:sourceCitation" : {
+                "gmd:title" : {
+                  "gco:characterString" : "Auxiliary ECMWF AUX_MET_QP Meteorological forecast data"
+                },
+                "gmd:alternateTitle#1" : {
+                  "gmx:FileName" : "S5P_NRTI_AUX_MET_QP_20210326T030000_20210327T120000_20210325T120000.nc"
+                },
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2021-03-26T03:48:20Z"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            },
+            "gmd:source#4" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "L4",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "Auxiliary ECMWF AUX_MET_2D Meteorological forecast data",
+              "gmd:sourceCitation" : {
+                "gmd:title" : {
+                  "gco:characterString" : "Auxiliary ECMWF AUX_MET_2D Meteorological forecast data"
+                },
+                "gmd:alternateTitle#1" : {
+                  "gmx:FileName" : "S5P_NRTI_AUX_MET_2D_20210326T030000_20210327T120000_20210325T120000.nc"
+                },
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2021-03-26T03:48:20Z"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            },
+            "gmd:source#7" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "N/A",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "Processor CFG_CO___F configuration file",
+              "gmd:sourceCitation" : {
+                "gmd:title" : {
+                  "gco:characterString" : "Processor CFG_CO___F configuration file"
+                },
+                "gmd:alternateTitle#1" : {
+                  "gmx:FileName" : "S5P_OPER_CFG_CO___F_00000000T000000_99999999T999999_20190425T000000.cfg"
+                },
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2021-03-26T03:48:20Z"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            },
+            "gmi:report" : {
+              "gmi:name" : "S5P_NRTI_L2__CO_____20210326T030109_20210326T030609_17872_01_010400_20210326T033105.nc",
+              "gmi:description" : "Sentinel 5-precursor TROPOMI L1b processed to L2 data using the KNMI/SRON L2 CO____ processor",
+              "gmi:fileType" : "netCDF-4",
+              "objectType" : "gmi:LE_ProcessStepReport"
+            },
+            "gmd:source#6" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "L4",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "Auxiliary ECMWF AUX_MET_TP Meteorological forecast data",
+              "gmd:sourceCitation" : {
+                "gmd:title" : {
+                  "gco:characterString" : "Auxiliary ECMWF AUX_MET_TP Meteorological forecast data"
+                },
+                "gmd:alternateTitle#1" : {
+                  "gmx:FileName" : "S5P_NRTI_AUX_MET_TP_20210326T030000_20210327T120000_20210325T120000.nc"
+                },
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2021-03-26T03:48:20Z"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            },
+            "gmd:source#9" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "L1B",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "TROPOMI L1B L1B_IR_SIR irradiance product",
+              "gmd:sourceCitation" : {
+                "gmd:title" : {
+                  "gco:characterString" : "TROPOMI L1B L1B_IR_SIR irradiance product"
+                },
+                "gmd:alternateTitle#1" : {
+                  "gmx:FileName" : "S5P_OFFL_L1B_IR_SIR_20210325T104955_20210325T123125_17863_01_010000_20210325T141922.nc"
+                },
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2021-03-26T03:48:20Z"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            },
+            "gmd:source#8" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "N/A",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "Processor CFG_CO____ configuration file",
+              "gmd:sourceCitation" : {
+                "gmd:title" : {
+                  "gco:characterString" : "Processor CFG_CO____ configuration file"
+                },
+                "gmd:alternateTitle#1" : {
+                  "gmx:FileName" : "S5P_OPER_CFG_CO_____00000000T000000_99999999T999999_20181022T113953.cfg"
+                },
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2021-03-26T03:48:20Z"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            },
+            "objectType" : "gmi:LE_ProcessStep",
+            "gmd:source#14" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "N/A",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "Auxiliary REF_XS__CO reference data",
+              "gmd:sourceCitation" : {
+                "gmd:title" : {
+                  "gco:characterString" : "Auxiliary REF_XS__CO reference data"
+                },
+                "gmd:alternateTitle#1" : {
+                  "gmx:FileName" : "S5P_OPER_REF_XS__CO_00000000T000000_99999999T999999_20161110T141306.nc"
+                },
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2021-03-26T03:48:20Z"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            },
+            "gmd:source#13" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "N/A",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "Auxiliary REF_SOLAR_ reference data",
+              "gmd:sourceCitation" : {
+                "gmd:title" : {
+                  "gco:characterString" : "Auxiliary REF_SOLAR_ reference data"
+                },
+                "gmd:alternateTitle#1" : {
+                  "gmx:FileName" : "S5P_OPER_REF_SOLAR__00000000T000000_99999999T999999_20180115T164926.nc"
+                },
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2021-03-26T03:48:20Z"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            },
+            "gmd:description" : "Processing of L1b to L2 CO____ data for orbit 17872 using the KNMI/SRON processor version 1.4.0",
+            "gmd:source#12" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "N/A",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "Auxiliary REF_DEM___ reference data",
+              "gmd:sourceCitation" : {
+                "gmd:title" : {
+                  "gco:characterString" : "Auxiliary REF_DEM___ reference data"
+                },
+                "gmd:alternateTitle#1" : {
+                  "gmx:FileName" : "S5P_OPER_REF_DEM____20190404T150000_99999999T999999_20190405T143622.nc"
+                },
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2021-03-26T03:48:20Z"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            },
+            "gmd:source#11" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "L1B",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "TROPOMI L1B L1B_RA_BD8 radiance product",
+              "gmd:sourceCitation" : {
+                "gmd:title" : {
+                  "gco:characterString" : "TROPOMI L1B L1B_RA_BD8 radiance product"
+                },
+                "gmd:alternateTitle#1" : {
+                  "gmx:FileName" : "S5P_NRTI_L1B_RA_BD8_20210326T030103_20210326T030615_17872_01_010000_20210326T032513.nc"
+                },
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2021-03-26T03:48:20Z"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            },
+            "gmi:processingInformation" : {
+              "gmi:documentation#2" : {
+                "gmd:title" : "Sentinel-5 precursor/TROPOMI Level 2 Product User Manual Carbon Monoxide; SRON-S5P-LEV2-MA-002; release 1.0",
+                "doi" : "N/A",
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "publication",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2015-11-30"
+                }
+              },
+              "gmi:documentation#1" : {
+                "gmd:title" : "Algorithm Theoretical Baseline Document for Sentinel-5 Precursor Carbon Monoxide Total Column Retrieval; SRON-S5P-LEV2-RP-002; release 1.0",
+                "doi" : "N/A",
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "publication",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2015-11-30"
+                }
+              },
+              "gmi:identifier" : {
+                "gmd:code" : "KNMI/SRON L2 CO____ processor, version 1.4.0",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "objectType" : "gmi:LE_Processing",
+              "gmi:softwareReference" : {
+                "gmd:title" : "L2 CO____ processor description",
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_DateTime",
+                  "gmd:date" : "2019-04-05"
+                }
+              }
+            },
+            "gmd:source#10" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "L1B",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "TROPOMI L1B L1B_RA_BD7 radiance product",
+              "gmd:sourceCitation" : {
+                "gmd:title" : {
+                  "gco:characterString" : "TROPOMI L1B L1B_RA_BD7 radiance product"
+                },
+                "gmd:alternateTitle#1" : {
+                  "gmx:FileName" : "S5P_NRTI_L1B_RA_BD7_20210326T030103_20210326T030615_17872_01_010000_20210326T032513.nc"
+                },
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2021-03-26T03:48:20Z"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            },
+            "gmi:output" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "L2",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "TROPOMI/S5P CO Column 1-Orbit L2 Swath 7x7km",
+              "gmd:sourceCitation" : {
+                "gmd:identifier" : {
+                  "gmd:code" : "L2__CO____",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:title" : "S5P_NRTI_L2__CO_____20210326T030109_20210326T030609_17872_01_010400_20210326T033105",
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_DateTime",
+                  "gmd:date" : "2021-03-26"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            }
+          },
+          "objectType" : "gmd:LI_Lineage"
+        },
+        "objectType" : "gmd:DQ_DataQuality"
+      },
+      "gmd:identificationInfo" : {
+        "gmd:credit" : "The Sentinel 5 Precursor TROPOMI Level 2 products are developed with funding from the European Space Agency (ESA), the Netherlands Space Office (NSO), the Belgian Science Policy Office, the German Aerospace Center (DLR) and the Bayerisches Staatsministerium für Wirtschaft und Medien, Energie und Technologie (StMWi).",
+        "gmd:topicCategory" : "climatologyMeteorologyAtmosphere",
+        "gmd:spatialRepresentationType" : {
+          "codeListValue" : "grid",
+          "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_SpatialRepresentationTypeCode",
+          "objectType" : "gmd:MD_SpatialRepresentationTypeCode"
+        },
+        "gmd:pointOfContact" : {
+          "gmd:organisationName" : "Copernicus Space Component Data Access System,  ESA, Services Coordinated Interface",
+          "gmd:role" : {
+            "codeListValue" : "distributor",
+            "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode",
+            "objectType" : "gmd:CI_RoleCode"
+          },
+          "gmd:contactInfo" : {
+            "gmd:address" : {
+              "gmd:electronicMailAddress" : "EOSupport@copernicus.esa.int",
+              "objectType" : "gmd:CI_Address"
+            },
+            "objectType" : "gmd:CI_Contact"
+          },
+          "objectType" : "gmd:CI_ResponsibleParty"
+        },
+        "gmd:language" : "eng",
+        "gmd:abstract" : "Carbon monoxide column with a spatial resolution of 7x7km2 observed at about 13:30 local solar time from spectra measured by TROPOMI",
+        "gmd:citation" : {
+          "gmd:identifier" : {
+            "gmd:code" : "urn:ogc:def:EOP:ESA:SENTINEL.S5P_TROP_L2__CO____",
+            "objectType" : "gmd:MD_Identifier"
+          },
+          "gmd:title" : "TROPOMI/S5P CO Column 1-Orbit L2 Swath 7x7km",
+          "objectType" : "gmd:CI_Citation",
+          "gmd:date" : {
+            "gmd:dateType" : {
+              "codeListValue" : "creation",
+              "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+              "objectType" : "gmd:CI_DateTypeCode"
+            },
+            "objectType" : "gmd:CI_Date",
+            "gmd:date" : "2021-03-26"
+          }
+        },
+        "objectType" : "gmd:MD_DataIdentification",
+        "gmd:resourceConstraints" : {
+          "gmd:useLimitation" : "no conditions apply",
+          "gmd:accessConstraints" : {
+            "codeListValue" : "copyright",
+            "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode",
+            "objectType" : "gmd:MD_RestrictionCode"
+          },
+          "objectType" : "gmd:MD_LegalConstraints"
+        },
+        "gmd:descriptiveKeywords#2" : {
+          "gmd:thesaurusName" : {
+            "gmd:title" : "CF Standard Name Table v29",
+            "xlink:href" : "http://cfconventions.org/standard-names.html",
+            "objectType" : "gmd:CI_Citation",
+            "gmd:date" : {
+              "gmd:dateType" : {
+                "codeListValue" : "publication",
+                "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                "objectType" : "gmd:CI_DateTypeCode"
+              },
+              "objectType" : "gmd:CI_Date",
+              "gmd:date" : "2015-07-08"
+            }
+          },
+          "gmd:keyword#1" : "atmosphere_mole_content_of_carbon_monoxide",
+          "objectType" : "gmd:MD_Keywords"
+        },
+        "gmd:descriptiveKeywords#1" : {
+          "gmd:thesaurusName" : {
+            "gmd:title" : "GEMET - INSPIRE themes, version 1.0",
+            "objectType" : "gmd:CI_Citation",
+            "gmd:date" : {
+              "gmd:dateType" : {
+                "codeListValue" : "publication",
+                "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                "objectType" : "gmd:CI_DateTypeCode"
+              },
+              "objectType" : "gmd:CI_Date",
+              "gmd:date" : "2008-06-01"
+            }
+          },
+          "gmd:keyword#1" : "Atmospheric conditions",
+          "gmd:type" : {
+            "codeListValue" : "theme",
+            "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode",
+            "objectType" : "gmd:MD_KeywordTypeCode"
+          },
+          "objectType" : "gmd:MD_Keywords"
+        },
+        "gmd:spatialResolution" : {
+          "uom" : "km",
+          "gmd:distance" : 10.0,
+          "objectType" : "gmd:MD_Resolution"
+        },
+        "gmd:characterSet" : {
+          "codeListValue" : "utf8",
+          "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode",
+          "objectType" : "gmd:MD_CharacterSetCode"
+        },
+        "gmd:extent" : {
+          "gmd:temporalElement" : {
+            "objectType" : "gmd:EX_TemporalExtent",
+            "gmd:extent" : {
+              "gml:beginPosition" : "2021-03-26T03:01:03Z",
+              "gml:endPosition" : "2021-03-26T03:06:16Z",
+              "objectType" : "gml:TimePeriod"
+            }
+          },
+          "gmd:geographicElement" : {
+            "gmd:westBoundLongitude" : 165.94235,
+            "gmd:extentTypeCode" : "true",
+            "gmd:northBoundLatitude" : 48.497986,
+            "gmd:southBoundLatitude" : 24.536304,
+            "gmd:eastBoundLongitude" : 130.7311,
+            "objectType" : "gmd:EX_GeographicBoundingBox"
+          },
+          "objectType" : "gmd:EX_Extent"
+        }
+      },
+      "gmd:metadataStandardName" : "ISO 19115-2 Geographic Information - Metadata Part 2 Extensions for imagery and gridded data",
+      "gmd:metadataStandardVersion" : "ISO 19115-2:2009(E), S5P profile",
+      "gmd:language" : {
+        "codeListValue" : "eng",
+        "codeList" : "http://www.loc.gov/standards/iso639-2/",
+        "objectType" : "gmd:LanguageCode"
+      },
+      "gmd:hierarchyLevelName" : "EO Product Collection",
+      "gmd:dateStamp" : "2015-10-16",
+      "objectType" : "gmi:MI_Metadata",
+      "gmi:acquisitionInformation" : {
+        "gmi:platform" : {
+          "gmi:identifier" : {
+            "gmd:codeSpace" : "http://www.esa.int/",
+            "gmd:code" : "S5P",
+            "objectType" : "gmd:RS_Identifier"
+          },
+          "gmi:description" : "Sentinel 5 Precursor",
+          "gmi:instrument" : {
+            "gmi:type" : "UV-VIS-NIR-SWIR imaging spectrometer",
+            "gmi:identifier" : {
+              "gmd:codeSpace" : "http://www.esa.int/",
+              "gmd:code" : "TROPOMI",
+              "objectType" : "gmd:RS_Identifier"
+            },
+            "objectType" : "gmi:MI_Instrument"
+          },
+          "objectType" : "gmi:MI_Platform"
+        },
+        "objectType" : "gmi:MI_AcquisitionInformation"
+      },
+      "gmd:hierarchyLevel" : {
+        "codeListValue" : "series",
+        "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode",
+        "objectType" : "gmd:MD_ScopeCode"
+      },
+      "gmd:fileIdentifier" : "urn:ogc:def:EOP:ESA:SENTINEL.S5P_TROP_L2__CO____",
+      "gmd:contact" : {
+        "gmd:organisationName" : "Copernicus Space Component Data Access System,  ESA, Services Coordinated Interface",
+        "gmd:role" : {
+          "codeListValue" : "pointOfContact",
+          "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode",
+          "objectType" : "gmd:CI_RoleCode"
+        },
+        "gmd:contactInfo" : {
+          "gmd:address" : {
+            "gmd:electronicMailAddress" : "EOSupport@copernicus.esa.int",
+            "objectType" : "gmd:CI_Address"
+          },
+          "objectType" : "gmd:CI_Contact"
+        },
+        "objectType" : "gmd:CI_ResponsibleParty"
+      },
+      "gmd:characterSet" : {
+        "codeListValue" : "utf8",
+        "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode",
+        "objectType" : "gmd:MD_CharacterSetCode"
+      }
+    },
+    "ESA_METADATA" : {
+      "earth_explorer_header" : {
+        "variable_header" : {
+          "subsystem_information" : {
+            "subsystem#0" : {
+              "VersionDate" : "2016-03-10",
+              "Email" : "J.M.J.Aan.de.brugh@sron.nl, J.Landgraf@sron.nl",
+              "Version" : "7.4.1",
+              "Reference" : "Landgraf, J., et al., Algorithm Theoretical Baseline Document for Sentinel-5 Precursor: Carbon Monoxide Total Column Retrieval, SRON-S5P-LEV2-RP-002, SRON Netherlands Institute for Space Research, 2015",
+              "Authors" : "J.M.J. Aan de Brugh, J. Landgraf",
+              "Institution" : "SRON Netherlands institute for Space Research",
+              "Name" : "SICOR"
+            },
+            "subsystem#1" : {
+              "VersionDate" : "2015-06-12",
+              "Email" : "J.M.J.Aan.de.brugh@sron.nl, J.Landgraf@sron.nl",
+              "Version" : "1.0",
+              "Reference" : "Landgraf, J., et al., Algorithm Theoretical Baseline Document for Sentinel-5 Precursor: Carbon Monoxide Total Column Retrieval, SRON-S5P-LEV2-RP-002, SRON Netherlands Institute for Space Research, 2015",
+              "Authors" : "J.M.J. Aan de Brugh, J. Landgraf",
+              "Institution" : "SRON Netherlands Institute for Space Research",
+              "Name" : "TS-Lintran"
+            },
+            "objectType" : "subsystem_information"
+          },
+          "gmd:lineage" : {
+            "gmd:statement" : "L2 CO____ dataset produced by PDGS-OP from the S5P/TROPOMI L1B product",
+            "gmd:processStep" : {
+              "gmd:source#1" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "N/A",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "Auxiliary CTM AUX_CTMCH4 model input data",
+                "gmd:sourceCitation" : {
+                  "gmd:title" : {
+                    "gco:characterString" : "Auxiliary CTM AUX_CTMCH4 model input data"
+                  },
+                  "gmd:alternateTitle#1" : {
+                    "gmx:FileName" : "S5P_OPER_AUX_CTMCH4_20210326T000000_20210327T000000_20201106T120000.nc"
+                  },
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2021-03-26T03:48:20Z"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              },
+              "gmd:source#3" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "N/A",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "Auxiliary AUX_ISRF__ reference data",
+                "gmd:sourceCitation" : {
+                  "gmd:title" : {
+                    "gco:characterString" : "Auxiliary AUX_ISRF__ reference data"
+                  },
+                  "gmd:alternateTitle#1" : {
+                    "gmx:FileName" : "S5P_OPER_AUX_ISRF___00000000T000000_99999999T999999_20180115T153214.nc"
+                  },
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2021-03-26T03:48:20Z"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              },
+              "gmd:source#2" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "N/A",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "Auxiliary CTM AUX_CTM_CO model input data",
+                "gmd:sourceCitation" : {
+                  "gmd:title" : {
+                    "gco:characterString" : "Auxiliary CTM AUX_CTM_CO model input data"
+                  },
+                  "gmd:alternateTitle#1" : {
+                    "gmx:FileName" : "S5P_OPER_AUX_CTM_CO_20210101T000000_20220101T000000_20201105T120000.nc"
+                  },
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2021-03-26T03:48:20Z"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              },
+              "gmd:source#5" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "L4",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "Auxiliary ECMWF AUX_MET_QP Meteorological forecast data",
+                "gmd:sourceCitation" : {
+                  "gmd:title" : {
+                    "gco:characterString" : "Auxiliary ECMWF AUX_MET_QP Meteorological forecast data"
+                  },
+                  "gmd:alternateTitle#1" : {
+                    "gmx:FileName" : "S5P_NRTI_AUX_MET_QP_20210326T030000_20210327T120000_20210325T120000.nc"
+                  },
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2021-03-26T03:48:20Z"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              },
+              "gmd:source#4" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "L4",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "Auxiliary ECMWF AUX_MET_2D Meteorological forecast data",
+                "gmd:sourceCitation" : {
+                  "gmd:title" : {
+                    "gco:characterString" : "Auxiliary ECMWF AUX_MET_2D Meteorological forecast data"
+                  },
+                  "gmd:alternateTitle#1" : {
+                    "gmx:FileName" : "S5P_NRTI_AUX_MET_2D_20210326T030000_20210327T120000_20210325T120000.nc"
+                  },
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2021-03-26T03:48:20Z"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              },
+              "gmd:source#7" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "N/A",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "Processor CFG_CO___F configuration file",
+                "gmd:sourceCitation" : {
+                  "gmd:title" : {
+                    "gco:characterString" : "Processor CFG_CO___F configuration file"
+                  },
+                  "gmd:alternateTitle#1" : {
+                    "gmx:FileName" : "S5P_OPER_CFG_CO___F_00000000T000000_99999999T999999_20190425T000000.cfg"
+                  },
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2021-03-26T03:48:20Z"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              },
+              "gmi:report" : {
+                "gmi:name" : "S5P_NRTI_L2__CO_____20210326T030109_20210326T030609_17872_01_010400_20210326T033105.nc",
+                "gmi:description" : "Sentinel 5-precursor TROPOMI L1b processed to L2 data using the KNMI/SRON L2 CO____ processor",
+                "gmi:fileType" : "netCDF-4",
+                "objectType" : "gmi:LE_ProcessStepReport"
+              },
+              "gmd:source#6" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "L4",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "Auxiliary ECMWF AUX_MET_TP Meteorological forecast data",
+                "gmd:sourceCitation" : {
+                  "gmd:title" : {
+                    "gco:characterString" : "Auxiliary ECMWF AUX_MET_TP Meteorological forecast data"
+                  },
+                  "gmd:alternateTitle#1" : {
+                    "gmx:FileName" : "S5P_NRTI_AUX_MET_TP_20210326T030000_20210327T120000_20210325T120000.nc"
+                  },
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2021-03-26T03:48:20Z"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              },
+              "gmd:source#9" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "L1B",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "TROPOMI L1B L1B_IR_SIR irradiance product",
+                "gmd:sourceCitation" : {
+                  "gmd:title" : {
+                    "gco:characterString" : "TROPOMI L1B L1B_IR_SIR irradiance product"
+                  },
+                  "gmd:alternateTitle#1" : {
+                    "gmx:FileName" : "S5P_OFFL_L1B_IR_SIR_20210325T104955_20210325T123125_17863_01_010000_20210325T141922.nc"
+                  },
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2021-03-26T03:48:20Z"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              },
+              "gmd:source#8" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "N/A",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "Processor CFG_CO____ configuration file",
+                "gmd:sourceCitation" : {
+                  "gmd:title" : {
+                    "gco:characterString" : "Processor CFG_CO____ configuration file"
+                  },
+                  "gmd:alternateTitle#1" : {
+                    "gmx:FileName" : "S5P_OPER_CFG_CO_____00000000T000000_99999999T999999_20181022T113953.cfg"
+                  },
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2021-03-26T03:48:20Z"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              },
+              "objectType" : "gmi:LE_ProcessStep",
+              "gmd:source#14" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "N/A",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "Auxiliary REF_XS__CO reference data",
+                "gmd:sourceCitation" : {
+                  "gmd:title" : {
+                    "gco:characterString" : "Auxiliary REF_XS__CO reference data"
+                  },
+                  "gmd:alternateTitle#1" : {
+                    "gmx:FileName" : "S5P_OPER_REF_XS__CO_00000000T000000_99999999T999999_20161110T141306.nc"
+                  },
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2021-03-26T03:48:20Z"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              },
+              "gmd:source#13" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "N/A",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "Auxiliary REF_SOLAR_ reference data",
+                "gmd:sourceCitation" : {
+                  "gmd:title" : {
+                    "gco:characterString" : "Auxiliary REF_SOLAR_ reference data"
+                  },
+                  "gmd:alternateTitle#1" : {
+                    "gmx:FileName" : "S5P_OPER_REF_SOLAR__00000000T000000_99999999T999999_20180115T164926.nc"
+                  },
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2021-03-26T03:48:20Z"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              },
+              "gmd:description" : "Processing of L1b to L2 CO____ data for orbit 17872 using the KNMI/SRON processor version 1.4.0",
+              "gmd:source#12" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "N/A",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "Auxiliary REF_DEM___ reference data",
+                "gmd:sourceCitation" : {
+                  "gmd:title" : {
+                    "gco:characterString" : "Auxiliary REF_DEM___ reference data"
+                  },
+                  "gmd:alternateTitle#1" : {
+                    "gmx:FileName" : "S5P_OPER_REF_DEM____20190404T150000_99999999T999999_20190405T143622.nc"
+                  },
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2021-03-26T03:48:20Z"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              },
+              "gmd:source#11" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "L1B",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "TROPOMI L1B L1B_RA_BD8 radiance product",
+                "gmd:sourceCitation" : {
+                  "gmd:title" : {
+                    "gco:characterString" : "TROPOMI L1B L1B_RA_BD8 radiance product"
+                  },
+                  "gmd:alternateTitle#1" : {
+                    "gmx:FileName" : "S5P_NRTI_L1B_RA_BD8_20210326T030103_20210326T030615_17872_01_010000_20210326T032513.nc"
+                  },
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2021-03-26T03:48:20Z"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              },
+              "gmi:processingInformation" : {
+                "gmi:documentation#2" : {
+                  "gmd:title" : "Sentinel-5 precursor/TROPOMI Level 2 Product User Manual Carbon Monoxide; SRON-S5P-LEV2-MA-002; release 1.0",
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "publication",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2015-11-30"
+                  }
+                },
+                "gmi:documentation#1" : {
+                  "gmd:title" : "Algorithm Theoretical Baseline Document for Sentinel-5 Precursor Carbon Monoxide Total Column Retrieval; SRON-S5P-LEV2-RP-002; release 1.0",
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "publication",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2015-11-30"
+                  }
+                },
+                "gmi:identifier" : {
+                  "gmd:code" : "KNMI/SRON L2 CO____ processor, version 1.4.0",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "objectType" : "gmi:LE_Processing",
+                "gmi:softwareReference" : {
+                  "gmd:title" : "L2 CO____ processor description",
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "gmd:date" : "",
+                    "objectType" : "gmd:CI_DateTime"
+                  }
+                }
+              },
+              "gmd:source#10" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "L1B",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "TROPOMI L1B L1B_RA_BD7 radiance product",
+                "gmd:sourceCitation" : {
+                  "gmd:title" : {
+                    "gco:characterString" : "TROPOMI L1B L1B_RA_BD7 radiance product"
+                  },
+                  "gmd:alternateTitle#1" : {
+                    "gmx:FileName" : "S5P_NRTI_L1B_RA_BD7_20210326T030103_20210326T030615_17872_01_010000_20210326T032513.nc"
+                  },
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2021-03-26T03:48:20Z"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              },
+              "gmi:output" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "L2",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "TROPOMI/S5P CO Column 1-Orbit L2 Swath 7x7km",
+                "gmd:sourceCitation" : {
+                  "gmd:identifier" : {
+                    "gmd:code" : "L2__CO____",
+                    "objectType" : "gmd:MD_Identifier"
+                  },
+                  "gmd:title" : "S5P_NRTI_L2__CO_____20210326T030109_20210326T030609_17872_01_010400_20210326T033105",
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_DateTime",
+                    "gmd:date" : "2021-03-26"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              }
+            },
+            "objectType" : "gmd:LI_Lineage"
+          },
+          "objectType" : "Variable_Header"
+        },
+        "fixed_header" : {
+          "File_Type" : "L2__CO____",
+          "File_Name" : "S5P_NRTI_L2__CO_____20210326T030109_20210326T030609_17872_01_010400_20210326T033105",
+          "File_Description" : "Carbon monoxide column with a spatial resolution of 7x7km2 observed at about 13:30 local solar time from spectra measured by TROPOMI",
+          "validity_period" : {
+            "Validity_Start" : "UTC=2021-03-26T03:01:03",
+            "Validity_Stop" : "UTC=2021-03-26T03:06:16",
+            "objectType" : "Validity_Period"
+          },
+          "Mission" : "S5P",
+          "source" : {
+            "Creator_Version" : "1.4.0",
+            "Creation_Date" : "UTC=2021-03-26T03:39:40",
+            "Creator" : "TROPNLL2DP",
+            "System" : "PDGS-OP",
+            "objectType" : "Source"
+          },
+          "File_Class" : "NRTI",
+          "File_Version" : 1,
+          "Notes" : "",
+          "objectType" : "Fixed_Header"
+        },
+        "objectType" : "Earth_Explorer_Header"
+      }
+    }
+  },
+  "PRODUCT" : {
+    "dimensions" : {
+      "corner" : 4,
+      "ground_pixel" : 215,
+      "scanline" : 373,
+      "time" : 1,
+      "layer" : 50
+    }
+  }
+}
