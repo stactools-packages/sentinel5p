@@ -1,0 +1,305 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "S5P_NRTI_L2__AER_LH_20210828T013709_20210828T014209_20070_02_020200_20210828T031518",
+  "properties": {
+    "sat:platform_international_designator": "2017-064A",
+    "sat:absolute_orbit": 20070,
+    "proj:epsg": 4326,
+    "proj:shape": [
+      39,
+      448
+    ],
+    "start_datetime": "2021-08-28T01:37:03Z",
+    "end_datetime": "2021-08-28T01:37:35Z",
+    "s5p:instrument": "TROPOMI",
+    "s5p:processing_mode": "NRTI",
+    "s5p:product_type": "L2__AER_LH",
+    "aer_lh:spatial_resolution": "5.5x3.5 km2",
+    "aer_lh:geolocation_grid_from_band": 6,
+    "aer_lh:input_band": [
+      "L1B_RA_BD6",
+      "L2__FRESCO",
+      "L2__AER_AI",
+      "L2__NP_BD6",
+      "L2__CLOUD_"
+    ],
+    "aer_lh:irradiance_accompanied": "L1B_IR_UVN",
+    "providers": [
+      {
+        "name": "ESA",
+        "roles": [
+          "producer",
+          "processor",
+          "licensor"
+        ],
+        "url": "https://earth.esa.int/web/guest/home"
+      }
+    ],
+    "platform": "Sentinel 5 Precursor",
+    "constellation": "Sentinel-5P",
+    "datetime": "2021-08-28T01:37:19Z"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          36.157524,
+          56.33268
+        ],
+        [
+          37.930237,
+          57.49173
+        ],
+        [
+          38.48502,
+          57.83404
+        ],
+        [
+          38.351723,
+          57.879784
+        ],
+        [
+          35.323807,
+          58.854237
+        ],
+        [
+          31.46886,
+          59.937313
+        ],
+        [
+          28.528181,
+          60.666805
+        ],
+        [
+          26.129612,
+          61.212704
+        ],
+        [
+          24.079542,
+          61.651203
+        ],
+        [
+          22.261951,
+          62.022175
+        ],
+        [
+          20.600079,
+          62.34882
+        ],
+        [
+          19.038727,
+          62.645863
+        ],
+        [
+          17.534828,
+          62.923443
+        ],
+        [
+          16.051714,
+          63.189194
+        ],
+        [
+          15.916729,
+          63.21299
+        ],
+        [
+          14.555035,
+          63.449398
+        ],
+        [
+          13.00918,
+          63.709743
+        ],
+        [
+          11.373372,
+          63.975826
+        ],
+        [
+          9.596397,
+          64.253525
+        ],
+        [
+          7.6083426,
+          64.54925
+        ],
+        [
+          5.3060136,
+          64.86993
+        ],
+        [
+          2.5243123,
+          65.22238
+        ],
+        [
+          -1.0271686,
+          65.61018
+        ],
+        [
+          -5.9299765,
+          66.020676
+        ],
+        [
+          -10.70441,
+          66.27492
+        ],
+        [
+          -12.093629,
+          66.321526
+        ],
+        [
+          -11.840441,
+          64.894424
+        ],
+        [
+          -11.775076,
+          64.46583
+        ],
+        [
+          -11.582828,
+          64.458336
+        ],
+        [
+          -7.643567,
+          64.24938
+        ],
+        [
+          -2.5687597,
+          63.826893
+        ],
+        [
+          1.0135679,
+          63.429493
+        ],
+        [
+          3.7753189,
+          63.072304
+        ],
+        [
+          6.0360146,
+          62.75106
+        ],
+        [
+          7.9718504,
+          62.458126
+        ],
+        [
+          9.690539,
+          62.185974
+        ],
+        [
+          11.263707,
+          61.927856
+        ],
+        [
+          12.742899,
+          61.67776
+        ],
+        [
+          14.1684,
+          61.43014
+        ],
+        [
+          14.296545,
+          61.407566
+        ],
+        [
+          15.574692,
+          61.17957
+        ],
+        [
+          16.994364,
+          60.920265
+        ],
+        [
+          18.461512,
+          60.645473
+        ],
+        [
+          20.015469,
+          60.34647
+        ],
+        [
+          21.705837,
+          60.010937
+        ],
+        [
+          23.600546,
+          59.619865
+        ],
+        [
+          25.800549,
+          59.141342
+        ],
+        [
+          28.470583,
+          58.51607
+        ],
+        [
+          31.915724,
+          57.617702
+        ],
+        [
+          35.27148,
+          56.619614
+        ],
+        [
+          36.157524,
+          56.33268
+        ],
+        [
+          36.157524,
+          56.33268
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "self",
+      "href": "/opt/stactools-sentinel5p/examples/S5P_NRTI_L2__AER_LH_20210828T013709_20210828T014209_20070_02_020200_20210828T031518.json",
+      "type": "application/json"
+    }
+  ],
+  "assets": {
+    "safe-manifest": {
+      "href": "/opt/stactools-sentinel5p/tests/data-files/S5P_NRTI_L2__AER_LH_20210828T013709_20210828T014209_20070_02_020200_20210828T031518.json",
+      "type": "application/json",
+      "roles": [
+        "metadata"
+      ]
+    },
+    "S5P_NRTI_L2__AER_LH_20210828T013709_20210828T014209_20070_02_020200_20210828T031518": {
+      "href": "/opt/stactools-sentinel5p/tests/data-files/S5P_NRTI_L2__AER_LH_20210828T013709_20210828T014209_20070_02_020200_20210828T031518.nc",
+      "type": "application/x-netcdf",
+      "description": "TROPOMI/S5P Aerosol Layer Height 5-minute L2 Swath 5.5x3.5km",
+      "eo:bands": [
+        {
+          "name": "Band 6",
+          "spectrometer": "NIR",
+          "performance range": "710-775",
+          "spectral range": "725-786",
+          "spectral resoluton": "0.34-0.35",
+          "slit width": 280,
+          "spectral dispersion": 0.126,
+          "spectral magnification": 0.263
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    }
+  },
+  "bbox": [
+    -12.093629,
+    56.33268,
+    38.48502,
+    66.321526
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/sat/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json"
+  ]
+}
