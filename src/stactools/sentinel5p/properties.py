@@ -79,6 +79,6 @@ def fill_proj_properties(proj_ext, href):
             proj_ext.shape = [scanline_size, ground_pixel_size]
         else:
             proj_ext.shape = [
-                root['PRODUCT']['scanline']['size'],
-                root['PRODUCT']['ground_pixel']['size']
+                root['PRODUCT']['dimensions']['scanline'],
+                root['PRODUCT']['dimensions']['ground_pixel']
             ]

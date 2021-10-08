@@ -62,22 +62,22 @@ class MetadataLinks:
         else:
             band_dict_list = []
 
-        file_format = self.file_path.split(".")[-1]
-        asset_id = self.file_path.split('/')[-1].split(".")[0]
-        if file_format == "nc":
-            media_type = "application/x-netcdf"
-            description = self._root.title
-        elif file_format == "json":
-            media_type = pystac.MediaType.JSON
-            description = self._root['title']
+        asset_id = self.file_path.split("/")[-1].split(".")[0]
+        media_type = "application/x-netcdf"
         roles = ["data"]
+        if self.file_path.endswith(".nc"):
+            data_href = self.file_path
+            description = self._root.title
+        elif self.file_path.endswith(".json"):
+            data_href = self.file_path.replace(".json", ".nc")
+            description = self._root["title"]
         if not band_dict_list:
-            asset = pystac.Asset(href=self.file_path,
+            asset = pystac.Asset(href=data_href,
                                  media_type=media_type,
                                  description=description,
                                  roles=roles)
         else:
-            asset = pystac.Asset(href=self.file_path,
+            asset = pystac.Asset(href=data_href,
                                  media_type=media_type,
                                  description=description,
                                  roles=roles,

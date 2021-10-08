@@ -60,10 +60,6 @@ def create_item(file_path: str) -> pystac.Item:
     item.add_asset(*metalinks.create_manifest_asset())
 
     # objects for bands
-    file_to_check = ["_CLOUD_", "_HCHO_", "_O3__", "O3_TCL", "SO2"]
-    if any(_str in file_path.split("/")[-1] for _str in file_to_check):
-        pass
-    else:
-        item.add_asset(*metalinks.create_band_asset())
+    item.add_asset(*metalinks.create_band_asset())
 
     return item
