@@ -21,11 +21,18 @@ class MetadataLinks:
             raise ManifestError("Source file format is not supported.")
 
     def create_manifest_asset(self):
-        asset = pystac.Asset(
-            href=self.file_path,
-            media_type=f"application/{self.file_path.split('.')[-1]}",
-            roles=["metadata"],
-        )
+        if self.file_path.endswith(".nc"):
+            asset = pystac.Asset(
+                href=self.file_path,
+                media_type="application/x-netcdf",
+                roles=["metadata"],
+            )
+        elif self.file_path.endswith(".json"):
+            asset = pystac.Asset(
+                href=self.file_path,
+                media_type=pystac.MediaType.JSON,
+                roles=["metadata"],
+            )
         return (SAFE_MANIFEST_ASSET_KEY, asset)
 
     def create_band_asset(self):
@@ -52,9 +59,27 @@ class MetadataLinks:
             band_dict_list = [SENTINEL_TROPOMI_BANDS["Band 6"]]
         elif "_BD7_" in self.file_path:
             band_dict_list = [SENTINEL_TROPOMI_BANDS["Band 7"]]
-        asset = pystac.Asset(
-            href=self.file_path,
-            media_type=f"application/{self.file_path.split('.')[-1]}",
-            roles=["metadata"],
-            extra_fields={"band_fields": band_dict_list})
-        return ("eo:bands", asset)
+        else:
+            band_dict_list = []
+
+        asset_id = self.file_path.split("/")[-1].split(".")[0]
+        media_type = "application/x-netcdf"
+        roles = ["data"]
+        if self.file_path.endswith(".nc"):
+            data_href = self.file_path
+            description = self._root.title
+        elif self.file_path.endswith(".json"):
+            data_href = self.file_path.replace(".json", ".nc")
+            description = self._root["title"]
+        if not band_dict_list:
+            asset = pystac.Asset(href=data_href,
+                                 media_type=media_type,
+                                 description=description,
+                                 roles=roles)
+        else:
+            asset = pystac.Asset(href=data_href,
+                                 media_type=media_type,
+                                 description=description,
+                                 roles=roles,
+                                 extra_fields={"eo:bands": band_dict_list})
+        return (asset_id, asset)

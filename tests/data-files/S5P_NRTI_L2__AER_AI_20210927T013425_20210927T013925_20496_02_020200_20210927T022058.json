@@ -1,0 +1,1193 @@
+{
+  "PRODUCT_TYPE" : "AER_AI",
+  "Conventions" : "CF-1.7",
+  "institution" : "KNMI",
+  "source" : "Sentinel 5 precursor, TROPOMI, space-borne remote sensing, L2",
+  "history" : "2021-09-27 02:31:49 f_s5pops tropnll2dp /mnt/data1/storage_nrt/cache_nrt/WORKING-636705012/JobOrder.636704273.xml",
+  "summary" : "TROPOMI/S5P Aerosol Index 5-minute L2 Swath 5.5x3.5km",
+  "tracking_id" : "270e8615-8f6d-453b-ab51-ee98334dcb14",
+  "id" : "S5P_NRTI_L2__AER_AI_20210927T013425_20210927T013925_20496_02_020200_20210927T022058",
+  "time_reference" : "2021-09-27T00:00:00Z",
+  "time_reference_days_since_1950" : 26202,
+  "time_reference_julian_day" : 2459484.5,
+  "time_reference_seconds_since_1970" : 1632700800,
+  "time_coverage_start" : "2021-09-27T01:34:20Z",
+  "time_coverage_end" : "2021-09-27T01:39:31Z",
+  "time_coverage_duration" : "PT311.633S",
+  "time_coverage_resolution" : "PT0.840S",
+  "orbit" : 20496,
+  "references" : "http://www.tropomi.eu/data-products/aerosol-index https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-5p/products-algorithms",
+  "processor_version" : "2.2.0",
+  "keywords_vocabulary" : "AGU index terms, http://publications.agu.org/author-resource-center/index-terms/",
+  "keywords" : "0300 Atmospheric Composition and Structure; 0305 Aerosols and Particles; 0360 Radiation, Transmission and Scattering; 3311 Clouds and Aerosols; 3360 Remote Sensing",
+  "standard_name_vocabulary" : "NetCDF Climate and Forecast Metadata Conventions Standard Name Table (v29, 08 July 2015), http://cfconventions.org/standard-names.html",
+  "naming_authority" : "nl.knmi",
+  "cdm_data_type" : "Swath",
+  "date_created" : "2021-09-27T02:31:10Z",
+  "creator_name" : "The Sentinel 5 Precursor TROPOMI Level 2 products are developed with funding from the European Space Agency (ESA), the Netherlands Space Office (NSO), the Belgian Science Policy Office, the German Aerospace Center (DLR) and the Bayerisches Staatsministerium für Wirtschaft und Medien, Energie und Technologie (StMWi).",
+  "creator_url" : "http://www.tropomi.eu https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-5p",
+  "creator_email" : "EOSupport@Copernicus.esa.int",
+  "project" : "Sentinel 5 precursor/TROPOMI",
+  "geospatial_lat_min" : -32.825085,
+  "geospatial_lat_max" : -9.413291,
+  "geospatial_lon_min" : -179.99997,
+  "geospatial_lon_max" : 179.9999,
+  "license" : "No conditions apply",
+  "platform" : "S5P",
+  "sensor" : "TROPOMI",
+  "spatial_resolution" : "5.5x3.5 km2",
+  "cpp_compiler_version" : "g++ (GCC) 4.8.5 20150623 (Red Hat 4.8.5-11)",
+  "cpp_compiler_flags" : "-g -O2 -fPIC -std=c++11 -W -Wall -Wno-ignored-qualifiers -Wno-write-strings -Wno-unused-variable -Wno-unused-parameter -DTROPNLL2DP",
+  "f90_compiler_version" : "GNU Fortran (GCC) 4.8.5 20150623 (Red Hat 4.8.5-11)",
+  "f90_compiler_flags" : "-gdwarf-3 -O2 -fPIC -cpp -ffpe-trap=invalid -fno-range-check -frecursive -fimplicit-none -ffree-line-length-none -DTROPNLL2DP -Wuninitialized -Wtabs",
+  "build_date" : "2021-01-29T13:01:00Z",
+  "revision_control_identifier" : "fd484c0b443a",
+  "geolocation_grid_from_band" : 3,
+  "identifier_product_doi" : "N/A",
+  "identifier_product_doi_authority" : "http://dx.doi.org/",
+  "algorithm_version" : "1.3.0",
+  "title" : "TROPOMI/S5P Aerosol Index 5-minute L2 Swath 5.5x3.5km",
+  "product_version" : "1.2.0",
+  "processing_status" : "Nominal",
+  "Status_MET_2D" : "Nominal",
+  "METADATA" : {
+    "GRANULE_DESCRIPTION" : {
+      "ProductShortName" : "L2__AER_AI",
+      "MissionShortName" : "S5P",
+      "ProcessingNode" : "s5p-ops2-nrt-pn14",
+      "ProcessingMode" : "Near-realtime",
+      "MissionName" : "Sentinel-5 precursor",
+      "GranuleStart" : "2021-09-27T01:34:20Z",
+      "LongitudeOfDaysideNadirEquatorCrossing" : 9.96921E36,
+      "InstrumentName" : "TROPOMI",
+      "ProcessingCenter" : "PDGS-OP",
+      "ProcessorVersion" : "2.2.0",
+      "GranuleEnd" : "2021-09-27T01:39:31Z",
+      "ProcessLevel" : "2",
+      "CollectionIdentifier" : "02",
+      "ProductFormatVersion" : 10200
+    },
+    "QA_STATISTICS" : {
+      "number_of_interpolation_warning_occurrences" : 0,
+      "number_of_diff_psurf_fresco_ecmwf_filter_occurrences" : 0,
+      "number_of_wavelength_calibration_error_occurrences" : 0,
+      "number_of_cf_viirs_nir_ofovc_filter_occurrences" : 0,
+      "number_of_saturation_error_occurrences" : 0,
+      "number_of_successfully_processed_pixels" : 167400,
+      "number_of_profile_error_occurrences" : 0,
+      "number_of_boundary_hit_error_occurrences" : 0,
+      "number_of_solar_eclipse_filter_occurrences" : 0,
+      "number_of_cloud_fraction_fresco_filter_occurrences" : 0,
+      "number_of_sza_range_error_occurrences" : 0,
+      "number_of_cf_viirs_swir_ofovc_filter_occurrences" : 0,
+      "number_of_ler_range_error_occurrences" : 0,
+      "number_of_lut_range_error_occurrences" : 0,
+      "number_of_configuration_error_occurrences" : 0,
+      "number_of_missing_scanlines" : 0,
+      "number_of_cf_viirs_swir_ifov_filter_occurrences" : 0,
+      "number_of_sun_glint_correction_occurrences" : 0,
+      "number_of_geolocation_error_occurrences" : 0,
+      "number_of_data_range_warning_occurrences" : 0,
+      "number_of_cloud_inhomogeneity_warning_occurrences" : 0,
+      "number_of_altitude_consistency_warning_occurrences" : 0,
+      "number_of_ozone_range_error_occurrences" : 0,
+      "number_of_cloud_filter_convergence_error_occurrences" : 0,
+      "number_of_ch4_noscat_ratio_std_filter_occurrences" : 0,
+      "number_of_ch4_noscat_zero_error_occurrences" : 0,
+      "number_of_ground_pixels_with_warnings" : 37503,
+      "number_of_abort_error_occurrences" : 0,
+      "number_of_wrong_input_type_error_occurrences" : 0,
+      "number_of_max_iteration_convergence_error_occurrences" : 0,
+      "number_of_other_boundary_convergence_error_occurrences" : 0,
+      "number_of_mixed_surface_type_filter_occurrences" : 0,
+      "number_of_snow_ice_warning_occurrences" : 0,
+      "number_of_memory_error_occurrences" : 0,
+      "number_of_ISRF_error_occurrences" : 0,
+      "number_of_cloud_warning_occurrences" : 0,
+      "number_of_groundpixels" : 167400,
+      "number_of_signal_to_noise_ratio_warning_occurrences" : 0,
+      "time_for_processing" : 25.64911,
+      "number_of_input_spectrum_missing_occurrences" : 0,
+      "number_of_reflectance_range_error_occurrences" : 0,
+      "number_of_convergence_error_occurrences" : 0,
+      "number_of_refl_cirrus_viirs_swir_filter_occurrences" : 0,
+      "number_of_snr_range_error_occurrences" : 0,
+      "number_of_signal_to_noise_ratio_error_occurrences" : 0,
+      "number_of_assertion_error_occurrences" : 0,
+      "number_of_cloud_pressure_spread_too_low_error_occurrences" : 0,
+      "global_processing_warnings" : "None",
+      "number_of_so2_volcanic_origin_likely_warning_occurrences" : 0,
+      "number_of_coregistration_error_occurrences" : 0,
+      "number_of_deconvolution_warning_occurrences" : 0,
+      "number_of_slant_column_density_error_occurrences" : 0,
+      "number_of_h2o_noscat_ratio_filter_occurrences" : 0,
+      "number_of_numerical_error_occurrences" : 0,
+      "time_standard_deviation_per_pixel" : 1.6240876218171756E-6,
+      "number_of_generic_range_error_occurrences" : 0,
+      "number_of_low_cloud_fraction_warning_occurrences" : 0,
+      "number_of_model_error_occurrences" : 0,
+      "number_of_cf_viirs_nir_ifov_filter_occurrences" : 0,
+      "number_of_cf_viirs_swir_ofova_filter_occurrences" : 0,
+      "number_of_cf_viirs_nir_ofova_filter_occurrences" : 0,
+      "number_of_max_num_outlier_exceeded_error_occurrences" : 0,
+      "number_of_sun_glint_warning_occurrences" : 37503,
+      "number_of_geographic_region_filter_occurrences" : 0,
+      "number_of_wavelength_calibration_warning_occurrences" : 0,
+      "number_of_radiative_transfer_error_occurrences" : 0,
+      "number_of_generic_exception_occurrences" : 0,
+      "number_of_so2_volcanic_origin_certain_warning_occurrences" : 0,
+      "time_for_algorithm_initialization" : 11.377198,
+      "number_of_max_optical_thickness_error_occurrences" : 0,
+      "number_of_psurf_fresco_stdv_filter_occurrences" : 0,
+      "number_of_h2o_noscat_ratio_std_filter_occurrences" : 0,
+      "number_of_radiance_missing_occurrences" : 0,
+      "number_of_vertical_column_density_error_occurrences" : 0,
+      "number_of_cirrus_reflectance_viirs_filter_occurrences" : 0,
+      "number_of_ocean_filter_occurrences" : 0,
+      "number_of_saturation_warning_occurrences" : 0,
+      "number_of_ch4_noscat_ratio_filter_occurrences" : 0,
+      "number_of_AAI_warning_occurrences" : 0,
+      "number_of_altitude_consistency_filter_occurrences" : 0,
+      "number_of_sun_glint_filter_occurrences" : 0,
+      "number_of_high_sza_warning_occurrences" : 0,
+      "number_of_pixel_or_scanline_index_filter_occurrences" : 0,
+      "number_of_io_error_occurrences" : 0,
+      "number_of_initialization_error_occurrences" : 0,
+      "number_of_lut_error_occurrences" : 0,
+      "number_of_dfs_error_occurrences" : 0,
+      "number_of_cloud_filter_occurrences" : 0,
+      "number_of_snow_ice_filter_occurrences" : 0,
+      "number_of_extrapolation_warning_occurrences" : 0,
+      "number_of_aai_filter_occurrences" : 0,
+      "number_of_airmass_factor_error_occurrences" : 0,
+      "number_of_cf_viirs_swir_ofovb_filter_occurrences" : 0,
+      "number_of_rejected_pixels_not_enough_spectrum" : 0,
+      "number_of_pixel_level_input_data_missing_occurrences" : 0,
+      "time_per_pixel" : 0.0023993034169653873,
+      "number_of_input_spectrum_warning_occurrences" : 0,
+      "number_of_cf_viirs_nir_ofovb_filter_occurrences" : 0,
+      "number_of_optimal_estimation_error_occurrences" : 0,
+      "number_of_altitude_roughness_filter_occurrences" : 0,
+      "number_of_failed_retrievals" : 0,
+      "number_of_cloud_too_low_level_error_occurrences" : 0,
+      "number_of_svd_error_occurrences" : 0,
+      "number_of_chi2_error_occurrences" : 0,
+      "number_of_aai_scene_albedo_filter_occurrences" : 0,
+      "number_of_small_pixel_radiance_std_filter_occurrences" : 0,
+      "number_of_cloud_error_occurrences" : 0,
+      "number_of_aot_lower_boundary_convergence_error_occurrences" : 0,
+      "number_of_aerosol_boundary_error_occurrences" : 0,
+      "number_of_refl_cirrus_viirs_nir_filter_occurrences" : 0,
+      "number_of_vza_range_error_occurrences" : 0,
+      "number_of_number_of_input_data_points_too_low_error_occurrences" : 0,
+      "number_of_processed_pixels" : 167400,
+      "number_of_key_error_occurrences" : 0,
+      "number_of_diff_refl_cirrus_viirs_filter_occurrences" : 0,
+      "number_of_south_atlantic_anomaly_warning_occurrences" : 0,
+      "number_of_cloud_retrieval_warning_occurrences" : 0,
+      "number_of_wavelength_offset_error_occurrences" : 0,
+      "number_of_cloud_fraction_viirs_filter_occurrences" : 0,
+      "number_of_input_spectrum_alignment_error_occurrences" : 0,
+      "number_of_time_range_filter_occurrences" : 0,
+      "number_of_irradiance_missing_occurrences" : 0,
+      "number_of_h2o_noscat_zero_error_occurrences" : 0
+    },
+    "EOP_METADATA" : {
+      "om:phenomenonTime" : {
+        "gml:beginPosition" : "2021-09-27T01:34:20Z",
+        "gml:endPosition" : "2021-09-27T01:39:31Z",
+        "objectType" : "gml:TimePeriod"
+      },
+      "om:procedure" : {
+        "eop:platform" : {
+          "eop:shortName" : "Sentinel-5p",
+          "objectType" : "eop:Platform"
+        },
+        "eop:acquisitionParameters" : {
+          "eop:orbitNumber" : 20496,
+          "objectType" : "eop:Acquisition"
+        },
+        "gml:id" : "S5P_NRTI_L2__AER_AI_20210927T013425_20210927T013925_20496_02_020200_20210927T022058.EOE",
+        "eop:instrument" : {
+          "eop:shortName" : "TROPOMI",
+          "objectType" : "eop:Instrument"
+        },
+        "eop:sensor" : {
+          "eop:sensorType" : "ATMOSPHERIC",
+          "objectType" : "eop:Sensor"
+        },
+        "objectType" : "eop:EarthObservationEquipment"
+      },
+      "eop:metaDataProperty" : {
+        "eop:productType" : "S5P_NRTI_AER_AI",
+        "eop:parentIdentifier" : "urn:ogc:def:EOP:ESA:SENTINEL.S5P_TROP_L2__AER_AI",
+        "eop:processing" : {
+          "eop:processorName" : "TROPNLL2DP",
+          "eop:processingLevel" : "L2",
+          "eop:nativeProductFormat" : "netCDF-4",
+          "eop:processingDate" : "2021-09-27",
+          "eop:processingMode" : "NRTI",
+          "eop:processingCenter" : "PDGS-OP",
+          "objectType" : "eop:ProcessingInformation",
+          "eop:processorVersion" : "2.2.0"
+        },
+        "eop:productQualityDegradationTag" : "NOT APPLICABLE",
+        "eop:status" : "ACQUIRED",
+        "eop:acquisitionType" : "NOMINAL",
+        "eop:productQualityStatus" : "NOMINAL",
+        "eop:identifier" : "S5P_NRTI_L2__AER_AI_20210927T013425_20210927T013925_20496_02_020200_20210927T022058",
+        "objectType" : "eop:EarthObservationMetaData",
+        "eop:doi" : "N/A"
+      },
+      "om:observedProperty" : {
+        "nilReason" : "inapplicable"
+      },
+      "om:featureOfInterest" : {
+        "eop:multiExtentOf" : {
+          "gml:surfaceMembers" : {
+            "gml:exterior" : {
+              "gml:posList" : "-14.829298 167.33463 -16.282639 167.58453 -17.735718 167.82797 -19.188702 168.06458 -20.641342 168.29456 -22.093636 168.51779 -23.545662 168.73427 -24.997103 168.94414 -26.448038 169.14723 -27.898497 169.34326 -29.348288 169.53223 -30.797405 169.71408 -32.2459 169.88838 -32.825085 169.9561 -32.803394 170.05551 -32.394123 171.86412 -31.689419 174.75963 -31.234385 176.54759 -30.826422 178.13976 -30.53513 179.29149 -30.253708 -179.56778 -30.039528 -178.67189 -29.820536 -177.72346 -29.644821 -176.93413 -29.471455 -176.12672 -29.456089 -176.05368 -29.297411 -175.28378 -29.119198 -174.38245 -28.962574 -173.55464 -28.778248 -172.53403 -28.60734 -171.54242 -28.391981 -170.2385 -28.172853 -168.87108 -27.855873 -166.8852 -27.45827 -164.49202 -27.091227 -162.43773 -25.68256 -163.01218 -24.270155 -163.56691 -22.854244 -164.10292 -21.4351 -164.6213 -20.012947 -165.12347 -18.587946 -165.60983 -17.1604 -166.0812 -15.730307 -166.53868 -14.298026 -166.9826 -12.86354 -167.41385 -11.427256 -167.83316 -9.989031 -168.24088 -9.413291 -168.40083 -9.422977 -168.48354 -9.613141 -170.13084 -9.893791 -172.57808 -10.079598 -174.12393 -10.261563 -175.51686 -10.407537 -176.53107 -10.567334 -177.53883 -10.70504 -178.33144 -10.86348 -179.1708 -11.005616 -179.86922 -11.160773 179.41681 -11.175301 179.35223 -11.333316 178.67198 -11.529666 177.87637 -11.720626 177.14638 -11.969523 176.24713 -12.224529 175.37373 -12.576983 174.2242 -12.963248 173.01468 -13.544816 171.24382 -14.262844 169.07317 -14.829298 167.33463 -14.829298 167.33463",
+              "objectType" : "gml:LinearRing"
+            },
+            "objectType" : "gml:Polygon"
+          },
+          "objectType" : "gml:MultiSurface"
+        },
+        "gml:id" : "S5P_NRTI_L2__AER_AI_20210927T013425_20210927T013925_20496_02_020200_20210927T022058.FP",
+        "objectType" : "eop:FootPrint"
+      },
+      "gml:id" : "S5P_NRTI_L2__AER_AI_20210927T013425_20210927T013925_20496_02_020200_20210927T022058.ID",
+      "objectType" : "atm:EarthObservation"
+    },
+    "ALGORITHM_SETTINGS" : {
+      "qa_value.so2_volcanic_origin_likely_warning" : "100.0",
+      "output.1.config" : "cfg/product/product.AER_AI.xml",
+      "qa_value.so2_volcanic_origin_certain_warning" : "100.0",
+      "wavelength_calibration.initial_guess.a1" : "0.1",
+      "wavelength_calibration.initial_guess.a2" : "0.01",
+      "wavelength_calibration.irr.include_ring" : "no",
+      "wavelength_calibration.initial_guess.a0" : "1.0",
+      "wavelength_calibration.initial_guess.ring" : "0.06",
+      "algo.pair_1.min_wavelength" : "1",
+      "wavelength_calibration.sigma.shift" : "3.0",
+      "joborder.processing.threads" : "16",
+      "algo.pair_1.wavelength_2" : "380",
+      "qa_value.input_spectrum_warning" : "70.0",
+      "algo.pair_1.wavelength_1" : "340",
+      "qa_value.pixel_level_input_data_missing" : "80.0",
+      "qa_value.AAI_warning" : "100.0",
+      "processing.vzaMin" : "0.0",
+      "qa_value.south_atlantic_anomaly_warning" : "100.0",
+      "output.1.band" : "3",
+      "processing.signal_to_noise.threshold" : "12",
+      "algo.pair_1.aai_add_offset" : "-1.8",
+      "algo.pair_1.radiance_correction_factor_1" : "1.0",
+      "wavelength_calibration.rad.include_ring" : "yes",
+      "qa_value.snow_ice_warning" : "100.0",
+      "algo.pair_1.radiance_correction_factor_2" : "1.0",
+      "wavelength_calibration.convergence_threshold" : "1.0",
+      "output.1.type" : "L2__AER_AI",
+      "processing.correct_surface_pressure_for_altitude" : "true",
+      "wavelength_calibration.max_iterations" : "12",
+      "wavelength_calibration.sigma.stretch" : "0.07",
+      "input.1.band" : "3",
+      "qa_value.low_cloud_fraction_warning" : "100.0",
+      "input.1.type" : "L1B_RA_BD3",
+      "qa_value.extrapolation_warning" : "100.0",
+      "wavelength_calibration.initial_guess.stretch" : "0.0",
+      "wavelength_calibration.perform_wavelength_fit" : "yes",
+      "output.useShuffleFilter" : "true",
+      "processing.groupDem" : "DEM_RADIUS_05000",
+      "algo.pair_2.wavelength_1" : "354",
+      "processing.algorithm" : "AER_AI",
+      "input.count" : "1",
+      "output.count" : "1",
+      "processing.signal_to_noise.test" : "yes",
+      "qa_value.signal_to_noise_ratio_warning" : "100.0",
+      "wavelength_calibration.irr.max_iterations" : "20",
+      "qa_value.wavelength_calibration_warning" : "90.0",
+      "algo.pair_2.delta_wavelength" : "2.0",
+      "processing.ignore_pixel_flags" : "False",
+      "algo.pair_2.wavelength_2" : "388",
+      "qa_value.deconvolution_warning" : "100.0",
+      "algo.pair_2.aai_add_offset" : "-1.5",
+      "algo.pair_1.id" : "TOMS_pair",
+      "wavelength_calibration.initial_guess.shift" : "0.0",
+      "output.compressionLevel" : "3",
+      "processing.radiancePixelsMinError" : "2",
+      "algo.n_pair" : "2",
+      "configuration.version.framework" : "1.2.0",
+      "qa_value.sun_glint_warning" : "70.0",
+      "wavelength_calibration.rad.polynomial_order" : "3",
+      "processing.szaMin" : "0.0",
+      "wavelength_calibration.window" : "330.0, 390.0",
+      "qa_value.altitude_consistency_warning" : "100.0",
+      "output.histogram.aerosol_index_340_380.end" : "14",
+      "algo.pair_1.delta_wavelength" : "2.0",
+      "algo.pair_2.min_wavelength" : "1",
+      "wavelength_calibration.irr.polynomial_order" : "2",
+      "output.useCompression" : "true",
+      "qa_value.cloud_warning" : "100.0",
+      "algo.pair_1.number_spectral_pixels" : "7",
+      "algo.algorithm_variant" : "1",
+      "output.useFletcher32" : "true",
+      "output.histogram.aerosol_index_354_388.end" : "14",
+      "output.histogram.aerosol_index_354_388.start" : "-6",
+      "processing.vzaMax" : "78.0",
+      "configuration.version.algorithm" : "1.3.0",
+      "processing.szaMax" : "88.0",
+      "output.histogram.aerosol_index_340_380.start" : "-6",
+      "algo.pair_2.id" : "OMI_pair",
+      "processing.radiancePixelsMinWarning" : "7",
+      "algo.pair_2.radiance_correction_factor_2" : "1.0",
+      "input.1.irrType" : "L1B_IR_UVN",
+      "algo.pair_2.radiance_correction_factor_1" : "1.0",
+      "qa_value.sun_glint_correction" : "100.0",
+      "processing.exclude_flags" : "4294967295",
+      "algo.pair_2.number_spectral_pixels" : "7",
+      "processing.signal_to_noise.window.range" : "350.0, 355.0",
+      "qa_value.interpolation_warning" : "100.0",
+      "wavelength_calibration.sigma.a1" : "0.1",
+      "wavelength_calibration.sigma.a0" : "1.0",
+      "wavelength_calibration.sigma.ring" : "0.06",
+      "qa_value.data_range_warning" : "100.0",
+      "wavelength_calibration.include_stretch" : "no"
+    },
+    "ISO_METADATA" : {
+      "gmd:dataQualityInfo" : {
+        "gmd:report" : {
+          "gmd:result" : {
+            "gmd:specification" : {
+              "gmd:title" : "INSPIRE Data Specification on Orthoimagery - Guidelines, version 3.0rc3",
+              "objectType" : "gmd:CI_Citation",
+              "gmd:date" : {
+                "gmd:dateType" : {
+                  "codeListValue" : "publication",
+                  "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                  "objectType" : "gmd:CI_DateTypeCode"
+                },
+                "objectType" : "gmd:CI_Date",
+                "gmd:date" : "2013-02-04"
+              }
+            },
+            "gmd:pass" : "true",
+            "gmd:explanation" : "INSPIRE Data specification for orthoimagery is not yet officially published so conformity has not yet been evaluated",
+            "objectType" : "gmd:DQ_ConformanceResult"
+          },
+          "objectType" : "gmd:DQ_DomainConsistency"
+        },
+        "gmd:scope" : {
+          "gmd:level" : {
+            "codeListValue" : "dataset",
+            "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode",
+            "objectType" : "gmd:MD_ScopeCode"
+          },
+          "objectType" : "gmd:DQ_Scope"
+        },
+        "gmd:lineage" : {
+          "gmd:statement" : "L2 AER_AI dataset produced by PDGS-OP from the S5P/TROPOMI L1B product",
+          "gmd:processStep" : {
+            "gmd:source#1" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "L4",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "Auxiliary ECMWF AUX_MET_2D Meteorological forecast data",
+              "gmd:sourceCitation" : {
+                "gmd:title" : {
+                  "gco:characterString" : "Auxiliary ECMWF AUX_MET_2D Meteorological forecast data"
+                },
+                "gmd:alternateTitle#1" : {
+                  "gmx:FileName" : "S5P_NRTI_AUX_MET_2D_20210926T150000_20210928T000000_20210926T000000.nc"
+                },
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2021-09-27T02:31:49Z"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            },
+            "gmd:source#3" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "N/A",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "Processor CFG_AER_AI configuration file",
+              "gmd:sourceCitation" : {
+                "gmd:title" : {
+                  "gco:characterString" : "Processor CFG_AER_AI configuration file"
+                },
+                "gmd:alternateTitle#1" : {
+                  "gmx:FileName" : "S5P_OPER_CFG_AER_AI_00000000T000000_99999999T999999_20210604T210000.cfg"
+                },
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2021-09-27T02:31:49Z"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            },
+            "gmd:source#2" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "N/A",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "Auxiliary AUX_O3___M reference data",
+              "gmd:sourceCitation" : {
+                "gmd:title" : {
+                  "gco:characterString" : "Auxiliary AUX_O3___M reference data"
+                },
+                "gmd:alternateTitle#1" : {
+                  "gmx:FileName" : "S5P_OPER_AUX_O3___M_00000000T000000_99999999T999999_20210119T232003.nc"
+                },
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2021-09-27T02:31:49Z"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            },
+            "gmd:source#5" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "L1B",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "TROPOMI L1B L1B_RA_BD3 radiance product",
+              "gmd:sourceCitation" : {
+                "gmd:title" : {
+                  "gco:characterString" : "TROPOMI L1B L1B_RA_BD3 radiance product"
+                },
+                "gmd:alternateTitle#1" : {
+                  "gmx:FileName" : "S5P_NRTI_L1B_RA_BD3_20210927T013419_20210927T013931_20496_02_020000_20210927T021435.nc"
+                },
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2021-09-27T02:31:49Z"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            },
+            "gmd:source#4" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "L1B",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "TROPOMI L1B L1B_IR_UVN irradiance product",
+              "gmd:sourceCitation" : {
+                "gmd:title" : {
+                  "gco:characterString" : "TROPOMI L1B L1B_IR_UVN irradiance product"
+                },
+                "gmd:alternateTitle#1" : {
+                  "gmx:FileName" : "S5P_OFFL_L1B_IR_UVN_20210926T112037_20210926T130206_20488_02_020000_20210926T145217.nc"
+                },
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2021-09-27T02:31:49Z"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            },
+            "gmd:source#7" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "N/A",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "Auxiliary REF_DEM___ reference data",
+              "gmd:sourceCitation" : {
+                "gmd:title" : {
+                  "gco:characterString" : "Auxiliary REF_DEM___ reference data"
+                },
+                "gmd:alternateTitle#1" : {
+                  "gmx:FileName" : "S5P_OPER_REF_DEM____20190404T150000_99999999T999999_20190405T143622.nc"
+                },
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2021-09-27T02:31:49Z"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            },
+            "gmi:report" : {
+              "gmi:name" : "S5P_NRTI_L2__AER_AI_20210927T013425_20210927T013925_20496_02_020200_20210927T022058.nc",
+              "gmi:description" : "Sentinel 5-precursor TROPOMI L1b processed to L2 data using the KNMI L2 AER_AI processor",
+              "gmi:fileType" : "netCDF-4",
+              "objectType" : "gmi:LE_ProcessStepReport"
+            },
+            "gmd:source#6" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "N/A",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "Auxiliary LUT_AAI___ algorithm lookup table",
+              "gmd:sourceCitation" : {
+                "gmd:title" : {
+                  "gco:characterString" : "Auxiliary LUT_AAI___ algorithm lookup table"
+                },
+                "gmd:alternateTitle#1" : {
+                  "gmx:FileName" : "S5P_OPER_LUT_AAI____00000000T000000_99999999T999999_20171122T121045.nc"
+                },
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2021-09-27T02:31:49Z"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            },
+            "gmd:source#8" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "N/A",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "Auxiliary REF_SOLAR_ reference data",
+              "gmd:sourceCitation" : {
+                "gmd:title" : {
+                  "gco:characterString" : "Auxiliary REF_SOLAR_ reference data"
+                },
+                "gmd:alternateTitle#1" : {
+                  "gmx:FileName" : "S5P_OPER_REF_SOLAR__00000000T000000_99999999T999999_20210107T132455.nc"
+                },
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2021-09-27T02:31:49Z"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            },
+            "objectType" : "gmi:LE_ProcessStep",
+            "gmd:description" : "Processing of L1b to L2 AER_AI data for orbit 20496 using the KNMI processor version 2.2.0",
+            "gmi:processingInformation" : {
+              "gmi:documentation#2" : {
+                "gmd:title" : "Sentinel-5 precursor/TROPOMI Level 2 Product User Manual UV Aerosol Index; S5P-KNMI-L2-0026-MA; release 1.0",
+                "doi" : "N/A",
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "revision",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2015-11-30"
+                }
+              },
+              "gmi:documentation#1" : {
+                "gmd:title" : "TROPOMI ATBD of the UV aerosol index; S5P-KNMI-L2-0008-RP; release 1.0",
+                "doi" : "N/A",
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "revision",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_Date",
+                  "gmd:date" : "2015-11-30"
+                }
+              },
+              "gmi:identifier" : {
+                "gmd:code" : "KNMI L2 AER_AI processor, version 2.2.0",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "objectType" : "gmi:LE_Processing",
+              "gmi:softwareReference" : {
+                "gmd:title" : "TROPNLL2DP processor",
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_DateTime",
+                  "gmd:date" : "2021-01-29T13:01:00Z"
+                }
+              }
+            },
+            "gmi:output" : {
+              "gmi:processedLevel" : {
+                "gmd:code" : "L2",
+                "objectType" : "gmd:MD_Identifier"
+              },
+              "gmd:description" : "TROPOMI/S5P Aerosol Index 5-minute L2 Swath 5.5x3.5km",
+              "gmd:sourceCitation" : {
+                "gmd:identifier" : {
+                  "gmd:code" : "L2__AER_AI",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:title" : "S5P_NRTI_L2__AER_AI_20210927T013425_20210927T013925_20496_02_020200_20210927T022058",
+                "objectType" : "gmd:CI_Citation",
+                "gmd:date" : {
+                  "gmd:dateType" : {
+                    "codeListValue" : "creation",
+                    "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                    "objectType" : "gmd:CI_DateTypeCode"
+                  },
+                  "objectType" : "gmd:CI_DateTime",
+                  "gmd:date" : "2021-09-27"
+                }
+              },
+              "objectType" : "gmi:LE_Source"
+            }
+          },
+          "objectType" : "gmd:LI_Lineage"
+        },
+        "objectType" : "gmd:DQ_DataQuality"
+      },
+      "gmd:identificationInfo" : {
+        "gmd:credit" : "The Sentinel 5 Precursor TROPOMI Level 2 products are developed with funding from the European Space Agency (ESA), the Netherlands Space Office (NSO), the Belgian Science Policy Office, the German Aerospace Center (DLR) and the Bayerisches Staatsministerium für Wirtschaft und Medien, Energie und Technologie (StMWi).",
+        "gmd:topicCategory" : "climatologyMeteorologyAtmosphere",
+        "gmd:spatialRepresentationType" : {
+          "codeListValue" : "grid",
+          "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_SpatialRepresentationTypeCode",
+          "objectType" : "gmd:MD_SpatialRepresentationTypeCode"
+        },
+        "gmd:pointOfContact" : {
+          "gmd:organisationName" : "Copernicus Space Component Data Access System,  ESA, Services Coordinated Interface",
+          "gmd:role" : {
+            "codeListValue" : "distributor",
+            "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode",
+            "objectType" : "gmd:CI_RoleCode"
+          },
+          "gmd:contactInfo" : {
+            "gmd:address" : {
+              "gmd:electronicMailAddress" : "EOSupport@copernicus.esa.int",
+              "objectType" : "gmd:CI_Address"
+            },
+            "objectType" : "gmd:CI_Contact"
+          },
+          "objectType" : "gmd:CI_ResponsibleParty"
+        },
+        "gmd:language" : "eng",
+        "gmd:abstract" : "Aerosol index with a spatial resolution of 5.5x3.5 km2 observed at about 13:30 local solar time from spectra measured by TROPOMI",
+        "gmd:citation" : {
+          "gmd:identifier" : {
+            "gmd:code" : "urn:ogc:def:EOP:ESA:SENTINEL.S5P_TROP_L2__AER_AI",
+            "objectType" : "gmd:MD_Identifier"
+          },
+          "gmd:title" : "TROPOMI/S5P Aerosol Index 5-minute L2 Swath 5.5x3.5km",
+          "objectType" : "gmd:CI_Citation",
+          "gmd:date" : {
+            "gmd:dateType" : {
+              "codeListValue" : "creation",
+              "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+              "objectType" : "gmd:CI_DateTypeCode"
+            },
+            "objectType" : "gmd:CI_Date",
+            "gmd:date" : "2021-09-27"
+          }
+        },
+        "objectType" : "gmd:MD_DataIdentification",
+        "gmd:resourceConstraints" : {
+          "gmd:useLimitation" : "no conditions apply",
+          "gmd:accessConstraints" : {
+            "codeListValue" : "copyright",
+            "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode",
+            "objectType" : "gmd:MD_RestrictionCode"
+          },
+          "objectType" : "gmd:MD_LegalConstraints"
+        },
+        "gmd:descriptiveKeywords#2" : {
+          "gmd:thesaurusName" : {
+            "gmd:title" : "CF Standard Name Table v65",
+            "xlink:href" : "http://cfconventions.org/standard-names.html",
+            "objectType" : "gmd:CI_Citation",
+            "gmd:date" : {
+              "gmd:dateType" : {
+                "codeListValue" : "publication",
+                "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                "objectType" : "gmd:CI_DateTypeCode"
+              },
+              "objectType" : "gmd:CI_Date",
+              "gmd:date" : "2019-04-09"
+            }
+          },
+          "gmd:keyword#1" : "ultraviolet_aerosol_index",
+          "objectType" : "gmd:MD_Keywords"
+        },
+        "gmd:descriptiveKeywords#1" : {
+          "gmd:thesaurusName" : {
+            "gmd:title" : "GEMET - INSPIRE themes, version 1.0",
+            "objectType" : "gmd:CI_Citation",
+            "gmd:date" : {
+              "gmd:dateType" : {
+                "codeListValue" : "publication",
+                "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                "objectType" : "gmd:CI_DateTypeCode"
+              },
+              "objectType" : "gmd:CI_Date",
+              "gmd:date" : "2008-06-01"
+            }
+          },
+          "gmd:keyword#1" : "Atmospheric conditions",
+          "gmd:type" : {
+            "codeListValue" : "theme",
+            "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode",
+            "objectType" : "gmd:MD_KeywordTypeCode"
+          },
+          "objectType" : "gmd:MD_Keywords"
+        },
+        "gmd:characterSet" : {
+          "codeListValue" : "utf8",
+          "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode",
+          "objectType" : "gmd:MD_CharacterSetCode"
+        },
+        "gmd:extent" : {
+          "gmd:temporalElement" : {
+            "objectType" : "gmd:EX_TemporalExtent",
+            "gmd:extent" : {
+              "gml:beginPosition" : "2021-09-27T01:34:20Z",
+              "gml:endPosition" : "2021-09-27T01:39:31Z",
+              "objectType" : "gml:TimePeriod"
+            }
+          },
+          "gmd:geographicElement" : {
+            "gmd:westBoundLongitude" : -179.99997,
+            "gmd:extentTypeCode" : "true",
+            "gmd:northBoundLatitude" : -9.413291,
+            "gmd:southBoundLatitude" : -32.825085,
+            "gmd:eastBoundLongitude" : 179.9999,
+            "objectType" : "gmd:EX_GeographicBoundingBox"
+          },
+          "objectType" : "gmd:EX_Extent"
+        }
+      },
+      "gmd:metadataStandardName" : "ISO 19115-2 Geographic Information - Metadata Part 2 Extensions for imagery and gridded data",
+      "gmd:metadataStandardVersion" : "ISO 19115-2:2009(E), S5P profile",
+      "gmd:language" : {
+        "codeListValue" : "eng",
+        "codeList" : "http://www.loc.gov/standards/iso639-2/",
+        "objectType" : "gmd:LanguageCode"
+      },
+      "gmd:hierarchyLevelName" : "EO Product Collection",
+      "gmd:dateStamp" : "2015-10-16",
+      "objectType" : "gmi:MI_Metadata",
+      "gmi:acquisitionInformation" : {
+        "gmi:platform" : {
+          "gmi:identifier" : {
+            "gmd:codeSpace" : "http://www.esa.int/",
+            "gmd:code" : "S5P",
+            "objectType" : "gmd:RS_Identifier"
+          },
+          "gmi:description" : "Sentinel 5 Precursor",
+          "gmi:instrument" : {
+            "gmi:type" : "UV-VIS-NIR-SWIR imaging spectrometer",
+            "gmi:identifier" : {
+              "gmd:codeSpace" : "http://www.esa.int/",
+              "gmd:code" : "TROPOMI",
+              "objectType" : "gmd:RS_Identifier"
+            },
+            "objectType" : "gmi:MI_Instrument"
+          },
+          "objectType" : "gmi:MI_Platform"
+        },
+        "objectType" : "gmi:MI_AcquisitionInformation"
+      },
+      "gmd:hierarchyLevel" : {
+        "codeListValue" : "series",
+        "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode",
+        "objectType" : "gmd:MD_ScopeCode"
+      },
+      "gmd:fileIdentifier" : "urn:ogc:def:EOP:ESA:SENTINEL.S5P_TROP_L2__AER_AI",
+      "gmd:contact" : {
+        "gmd:organisationName" : "Copernicus Space Component Data Access System,  ESA, Services Coordinated Interface",
+        "gmd:role" : {
+          "codeListValue" : "pointOfContact",
+          "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode",
+          "objectType" : "gmd:CI_RoleCode"
+        },
+        "gmd:contactInfo" : {
+          "gmd:address" : {
+            "gmd:electronicMailAddress" : "EOSupport@copernicus.esa.int",
+            "objectType" : "gmd:CI_Address"
+          },
+          "objectType" : "gmd:CI_Contact"
+        },
+        "objectType" : "gmd:CI_ResponsibleParty"
+      },
+      "gmd:characterSet" : {
+        "codeListValue" : "utf8",
+        "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode",
+        "objectType" : "gmd:MD_CharacterSetCode"
+      }
+    },
+    "ESA_METADATA" : {
+      "earth_explorer_header" : {
+        "variable_header" : {
+          "gmd:lineage" : {
+            "gmd:statement" : "L2 AER_AI dataset produced by PDGS-OP from the S5P/TROPOMI L1B product",
+            "gmd:processStep" : {
+              "gmd:source#1" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "L4",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "Auxiliary ECMWF AUX_MET_2D Meteorological forecast data",
+                "gmd:sourceCitation" : {
+                  "gmd:title" : {
+                    "gco:characterString" : "Auxiliary ECMWF AUX_MET_2D Meteorological forecast data"
+                  },
+                  "gmd:alternateTitle#1" : {
+                    "gmx:FileName" : "S5P_NRTI_AUX_MET_2D_20210926T150000_20210928T000000_20210926T000000.nc"
+                  },
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2021-09-27T02:31:49Z"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              },
+              "gmd:source#3" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "N/A",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "Processor CFG_AER_AI configuration file",
+                "gmd:sourceCitation" : {
+                  "gmd:title" : {
+                    "gco:characterString" : "Processor CFG_AER_AI configuration file"
+                  },
+                  "gmd:alternateTitle#1" : {
+                    "gmx:FileName" : "S5P_OPER_CFG_AER_AI_00000000T000000_99999999T999999_20210604T210000.cfg"
+                  },
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2021-09-27T02:31:49Z"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              },
+              "gmd:source#2" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "N/A",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "Auxiliary AUX_O3___M reference data",
+                "gmd:sourceCitation" : {
+                  "gmd:title" : {
+                    "gco:characterString" : "Auxiliary AUX_O3___M reference data"
+                  },
+                  "gmd:alternateTitle#1" : {
+                    "gmx:FileName" : "S5P_OPER_AUX_O3___M_00000000T000000_99999999T999999_20210119T232003.nc"
+                  },
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2021-09-27T02:31:49Z"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              },
+              "gmd:source#5" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "L1B",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "TROPOMI L1B L1B_RA_BD3 radiance product",
+                "gmd:sourceCitation" : {
+                  "gmd:title" : {
+                    "gco:characterString" : "TROPOMI L1B L1B_RA_BD3 radiance product"
+                  },
+                  "gmd:alternateTitle#1" : {
+                    "gmx:FileName" : "S5P_NRTI_L1B_RA_BD3_20210927T013419_20210927T013931_20496_02_020000_20210927T021435.nc"
+                  },
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2021-09-27T02:31:49Z"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              },
+              "gmd:source#4" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "L1B",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "TROPOMI L1B L1B_IR_UVN irradiance product",
+                "gmd:sourceCitation" : {
+                  "gmd:title" : {
+                    "gco:characterString" : "TROPOMI L1B L1B_IR_UVN irradiance product"
+                  },
+                  "gmd:alternateTitle#1" : {
+                    "gmx:FileName" : "S5P_OFFL_L1B_IR_UVN_20210926T112037_20210926T130206_20488_02_020000_20210926T145217.nc"
+                  },
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2021-09-27T02:31:49Z"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              },
+              "gmd:source#7" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "N/A",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "Auxiliary REF_DEM___ reference data",
+                "gmd:sourceCitation" : {
+                  "gmd:title" : {
+                    "gco:characterString" : "Auxiliary REF_DEM___ reference data"
+                  },
+                  "gmd:alternateTitle#1" : {
+                    "gmx:FileName" : "S5P_OPER_REF_DEM____20190404T150000_99999999T999999_20190405T143622.nc"
+                  },
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2021-09-27T02:31:49Z"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              },
+              "gmi:report" : {
+                "gmi:name" : "S5P_NRTI_L2__AER_AI_20210927T013425_20210927T013925_20496_02_020200_20210927T022058.nc",
+                "gmi:description" : "Sentinel 5-precursor TROPOMI L1b processed to L2 data using the KNMI L2 AER_AI processor",
+                "gmi:fileType" : "netCDF-4",
+                "objectType" : "gmi:LE_ProcessStepReport"
+              },
+              "gmd:source#6" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "N/A",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "Auxiliary LUT_AAI___ algorithm lookup table",
+                "gmd:sourceCitation" : {
+                  "gmd:title" : {
+                    "gco:characterString" : "Auxiliary LUT_AAI___ algorithm lookup table"
+                  },
+                  "gmd:alternateTitle#1" : {
+                    "gmx:FileName" : "S5P_OPER_LUT_AAI____00000000T000000_99999999T999999_20171122T121045.nc"
+                  },
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2021-09-27T02:31:49Z"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              },
+              "gmd:source#8" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "N/A",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "Auxiliary REF_SOLAR_ reference data",
+                "gmd:sourceCitation" : {
+                  "gmd:title" : {
+                    "gco:characterString" : "Auxiliary REF_SOLAR_ reference data"
+                  },
+                  "gmd:alternateTitle#1" : {
+                    "gmx:FileName" : "S5P_OPER_REF_SOLAR__00000000T000000_99999999T999999_20210107T132455.nc"
+                  },
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2021-09-27T02:31:49Z"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              },
+              "objectType" : "gmi:LE_ProcessStep",
+              "gmd:description" : "Processing of L1b to L2 AER_AI data for orbit 20496 using the KNMI processor version 2.2.0",
+              "gmi:processingInformation" : {
+                "gmi:documentation#2" : {
+                  "gmd:title" : "Sentinel-5 precursor/TROPOMI Level 2 Product User Manual UV Aerosol Index; S5P-KNMI-L2-0026-MA; release 1.0",
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "revision",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2015-11-30"
+                  }
+                },
+                "gmi:documentation#1" : {
+                  "gmd:title" : "TROPOMI ATBD of the UV aerosol index; S5P-KNMI-L2-0008-RP; release 1.0",
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "revision",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_Date",
+                    "gmd:date" : "2015-11-30"
+                  }
+                },
+                "gmi:identifier" : {
+                  "gmd:code" : "KNMI L2 AER_AI processor, version 2.2.0",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "objectType" : "gmi:LE_Processing",
+                "gmi:softwareReference" : {
+                  "gmd:title" : "TROPNLL2DP processor",
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_DateTime",
+                    "gmd:date" : "2021-01-29T13:01:00Z"
+                  }
+                }
+              },
+              "gmi:output" : {
+                "gmi:processedLevel" : {
+                  "gmd:code" : "L2",
+                  "objectType" : "gmd:MD_Identifier"
+                },
+                "gmd:description" : "TROPOMI/S5P Aerosol Index 5-minute L2 Swath 5.5x3.5km",
+                "gmd:sourceCitation" : {
+                  "gmd:identifier" : {
+                    "gmd:code" : "L2__AER_AI",
+                    "objectType" : "gmd:MD_Identifier"
+                  },
+                  "gmd:title" : "S5P_NRTI_L2__AER_AI_20210927T013425_20210927T013925_20496_02_020200_20210927T022058",
+                  "objectType" : "gmd:CI_Citation",
+                  "gmd:date" : {
+                    "gmd:dateType" : {
+                      "codeListValue" : "creation",
+                      "codeList" : "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+                      "objectType" : "gmd:CI_DateTypeCode"
+                    },
+                    "objectType" : "gmd:CI_DateTime",
+                    "gmd:date" : "2021-09-27"
+                  }
+                },
+                "objectType" : "gmi:LE_Source"
+              }
+            },
+            "objectType" : "gmd:LI_Lineage"
+          },
+          "objectType" : "Variable_Header"
+        },
+        "fixed_header" : {
+          "File_Type" : "L2__AER_AI",
+          "File_Name" : "S5P_NRTI_L2__AER_AI_20210927T013425_20210927T013925_20496_02_020200_20210927T022058",
+          "File_Description" : "Aerosol index with a spatial resolution of 5.5x3.5 km2 observed at about 13:30 local solar time from spectra measured by TROPOMI",
+          "validity_period" : {
+            "Validity_Start" : "UTC=2021-09-27T01:34:20",
+            "Validity_Stop" : "UTC=2021-09-27T01:39:31",
+            "objectType" : "Validity_Period"
+          },
+          "Mission" : "S5P",
+          "source" : {
+            "Creator_Version" : "2.2.0",
+            "Creation_Date" : "UTC=2021-09-27T02:31:10",
+            "Creator" : "TROPNLL2DP",
+            "System" : "PDGS-OP",
+            "objectType" : "Source"
+          },
+          "File_Class" : "NRTI",
+          "File_Version" : 1,
+          "Notes" : "",
+          "objectType" : "Fixed_Header"
+        },
+        "objectType" : "Earth_Explorer_Header"
+      }
+    }
+  },
+  "PRODUCT" : {
+    "dimensions" : {
+      "corner" : 4,
+      "ground_pixel" : 450,
+      "scanline" : 372,
+      "time" : 1
+    }
+  }
+}
