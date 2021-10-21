@@ -11,14 +11,16 @@ class ManifestError(Exception):
 
 
 class MetadataLinks:
-    def __init__(self, file_path):
+    def __init__(self, file_path: str):
         self.file_path = file_path
         if file_path.endswith(".nc"):
             self._root = nc.Dataset(file_path)
         elif file_path.endswith(".json"):
             self._root = json.load(open(file_path))
         else:
-            raise ManifestError("Source file format is not supported.")
+            raise ManifestError(
+                f"Source file format is not supported: .{file_path.split('.')[-1]}"
+            )
 
     def create_manifest_asset(self):
         if self.file_path.endswith(".nc"):
