@@ -1356,10 +1356,12 @@
     }
   ],
   "assets": {
-    "safe-manifest": {
+    "S5P_OFFL_L2__CLOUD__20200303T013547_20200303T031717_12367_01_010107_20200306T032410": {
       "href": "/opt/stactools-sentinel5p/tests/data-files/S5P_OFFL_L2__CLOUD__20200303T013547_20200303T031717_12367_01_010107_20200306T032410.nc",
       "type": "application/x-netcdf",
+      "description": "TROPOMI/S5P Cloud",
       "roles": [
+        "data",
         "metadata"
       ]
     }

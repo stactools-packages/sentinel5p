@@ -56,9 +56,6 @@ def create_item(file_path: str) -> pystac.Item:
     item.common_metadata.platform = product_metadata.platform
     item.common_metadata.constellation = SENTINEL_CONSTELLATION
 
-    # Add assets to item
-    item.add_asset(*metalinks.create_manifest_asset())
-
     # objects for bands
     item.add_asset(*metalinks.create_band_asset())
 

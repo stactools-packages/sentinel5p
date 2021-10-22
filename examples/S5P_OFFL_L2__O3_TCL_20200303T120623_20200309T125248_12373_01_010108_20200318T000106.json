@@ -3750,10 +3750,12 @@
     }
   ],
   "assets": {
-    "safe-manifest": {
+    "S5P_OFFL_L2__O3_TCL_20200303T120623_20200309T125248_12373_01_010108_20200318T000106": {
       "href": "/opt/stactools-sentinel5p/tests/data-files/S5P_OFFL_L2__O3_TCL_20200303T120623_20200309T125248_12373_01_010108_20200318T000106.nc",
       "type": "application/x-netcdf",
+      "description": "TROPOMI/S5P Ozone Tropospheric Column",
       "roles": [
+        "data",
         "metadata"
       ]
     }

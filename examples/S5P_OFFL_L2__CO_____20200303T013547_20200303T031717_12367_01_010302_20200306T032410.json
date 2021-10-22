@@ -1360,13 +1360,6 @@
     }
   ],
   "assets": {
-    "safe-manifest": {
-      "href": "/opt/stactools-sentinel5p/tests/data-files/S5P_OFFL_L2__CO_____20200303T013547_20200303T031717_12367_01_010302_20200306T032410.nc",
-      "type": "application/x-netcdf",
-      "roles": [
-        "metadata"
-      ]
-    },
     "S5P_OFFL_L2__CO_____20200303T013547_20200303T031717_12367_01_010302_20200306T032410": {
       "href": "/opt/stactools-sentinel5p/tests/data-files/S5P_OFFL_L2__CO_____20200303T013547_20200303T031717_12367_01_010302_20200306T032410.nc",
       "type": "application/x-netcdf",
@@ -1394,7 +1387,8 @@
         }
       ],
       "roles": [
-        "data"
+        "data",
+        "metadata"
       ]
     }
   },
