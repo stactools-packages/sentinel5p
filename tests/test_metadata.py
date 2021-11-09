@@ -60,8 +60,8 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             item.properties["sat:absolute_orbit"],
             "shape":
             item.properties["proj:shape"],
-            "instrument":
-            item.properties["s5p:instrument"],
+            "instruments":
+            item.properties["instruments"],
             "processing_mode":
             item.properties["s5p:processing_mode"],
             "product_type":
@@ -82,7 +82,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 450],
-            "instrument": "TROPOMI",
+            "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__AER_AI",
             "spatial_resolution": "7x3.5km2",
@@ -143,8 +143,8 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             item.properties["sat:absolute_orbit"],
             "shape":
             item.properties["proj:shape"],
-            "instrument":
-            item.properties["s5p:instrument"],
+            "instruments":
+            item.properties["instruments"],
             "processing_mode":
             item.properties["s5p:processing_mode"],
             "product_type":
@@ -168,8 +168,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "absolute_orbit":
             12367,
             "shape": [4172, 448],
-            "instrument":
-            "TROPOMI",
+            "instruments": ["TROPOMI"],
             "processing_mode":
             "OFFL",
             "product_type":
@@ -238,8 +237,8 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             item.properties["sat:absolute_orbit"],
             "shape":
             item.properties["proj:shape"],
-            "instrument":
-            item.properties["s5p:instrument"],
+            "instruments":
+            item.properties["instruments"],
             "processing_mode":
             item.properties["s5p:processing_mode"],
             "product_type":
@@ -263,8 +262,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "absolute_orbit":
             12367,
             "shape": [4172, 215],
-            "instrument":
-            "TROPOMI",
+            "instruments": ["TROPOMI"],
             "processing_mode":
             "OFFL",
             "product_type":
@@ -332,8 +330,8 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             item.properties["sat:absolute_orbit"],
             "shape":
             item.properties["proj:shape"],
-            "instrument":
-            item.properties["s5p:instrument"],
+            "instruments":
+            item.properties["instruments"],
             "processing_mode":
             item.properties["s5p:processing_mode"],
             "product_type":
@@ -352,7 +350,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 450],
-            "instrument": "TROPOMI",
+            "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__CLOUD_",
             "spatial_resolution": "7x3.5km2",
@@ -412,8 +410,8 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             item.properties["sat:absolute_orbit"],
             "shape":
             item.properties["proj:shape"],
-            "instrument":
-            item.properties["s5p:instrument"],
+            "instruments":
+            item.properties["instruments"],
             "processing_mode":
             item.properties["s5p:processing_mode"],
             "product_type":
@@ -434,7 +432,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 215],
-            "instrument": "TROPOMI",
+            "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__CO____",
             "spatial_resolution": "7x7km2",
@@ -495,8 +493,8 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             item.properties["sat:absolute_orbit"],
             "shape":
             item.properties["proj:shape"],
-            "instrument":
-            item.properties["s5p:instrument"],
+            "instruments":
+            item.properties["instruments"],
             "processing_mode":
             item.properties["s5p:processing_mode"],
             "product_type":
@@ -515,7 +513,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 450],
-            "instrument": "TROPOMI",
+            "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__HCHO__",
             "spatial_resolution": "7x3.5km2",
@@ -575,8 +573,8 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             item.properties["sat:absolute_orbit"],
             "shape":
             item.properties["proj:shape"],
-            "instrument":
-            item.properties["s5p:instrument"],
+            "instruments":
+            item.properties["instruments"],
             "processing_mode":
             item.properties["s5p:processing_mode"],
             "product_type":
@@ -600,8 +598,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "absolute_orbit":
             12367,
             "shape": [4172, 450],
-            "instrument":
-            "TROPOMI",
+            "instruments": ["TROPOMI"],
             "processing_mode":
             "OFFL",
             "product_type":
@@ -670,8 +667,8 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             item.properties["sat:absolute_orbit"],
             "shape":
             item.properties["proj:shape"],
-            "instrument":
-            item.properties["s5p:instrument"],
+            "instruments":
+            item.properties["instruments"],
             "processing_mode":
             item.properties["s5p:processing_mode"],
             "product_type":
@@ -690,7 +687,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 450],
-            "instrument": "TROPOMI",
+            "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__O3____",
             "spatial_resolution": "7x3.5km2",
@@ -752,8 +749,8 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             item.properties["o3_tcl:shape_ccd"],
             "shape_csa":
             item.properties["o3_tcl:shape_csa"],
-            "instrument":
-            item.properties["s5p:instrument"],
+            "instruments":
+            item.properties["instruments"],
             "processing_mode":
             item.properties["s5p:processing_mode"],
             "product_type":
@@ -781,8 +778,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "shape": [80, 360],
             "shape_ccd": [80, 360],
             "shape_csa": [8, 18],
-            "instrument":
-            "TROPOMI",
+            "instruments": ["TROPOMI"],
             "processing_mode":
             "OFFL",
             "product_type":
@@ -1035,8 +1031,8 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             item.properties["sat:absolute_orbit"],
             "shape":
             item.properties["proj:shape"],
-            "instrument":
-            item.properties["s5p:instrument"],
+            "instruments":
+            item.properties["instruments"],
             "processing_mode":
             item.properties["s5p:processing_mode"],
             "product_type":
@@ -1055,7 +1051,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 450],
-            "instrument": "TROPOMI",
+            "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__SO2___",
             "spatial_resolution": "7x3.5km2",
@@ -1110,7 +1106,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "datetime": item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
             "absolute_orbit": item.properties["sat:absolute_orbit"],
             "shape": item.properties["proj:shape"],
-            "instrument": item.properties["s5p:instrument"],
+            "instruments": item.properties["instruments"],
             "processing_mode": item.properties["s5p:processing_mode"],
             "product_type": item.properties["s5p:product_type"],
             "analysed_s5p_band": item.properties["npbd3:analysed_s5p_band"],
@@ -1125,7 +1121,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 450],
-            "instrument": "TROPOMI",
+            "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__NP_BD3",
             "analysed_s5p_band": 3,
@@ -1180,7 +1176,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "datetime": item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
             "absolute_orbit": item.properties["sat:absolute_orbit"],
             "shape": item.properties["proj:shape"],
-            "instrument": item.properties["s5p:instrument"],
+            "instruments": item.properties["instruments"],
             "processing_mode": item.properties["s5p:processing_mode"],
             "product_type": item.properties["s5p:product_type"],
             "analysed_s5p_band": item.properties["npbd6:analysed_s5p_band"],
@@ -1195,7 +1191,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 448],
-            "instrument": "TROPOMI",
+            "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__NP_BD6",
             "analysed_s5p_band": 6,
@@ -1250,7 +1246,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "datetime": item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
             "absolute_orbit": item.properties["sat:absolute_orbit"],
             "shape": item.properties["proj:shape"],
-            "instrument": item.properties["s5p:instrument"],
+            "instruments": item.properties["instruments"],
             "processing_mode": item.properties["s5p:processing_mode"],
             "product_type": item.properties["s5p:product_type"],
             "analysed_s5p_band": item.properties["npbd7:analysed_s5p_band"],
@@ -1265,7 +1261,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 215],
-            "instrument": "TROPOMI",
+            "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__NP_BD7",
             "analysed_s5p_band": 7,

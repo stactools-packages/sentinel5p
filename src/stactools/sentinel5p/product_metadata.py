@@ -149,8 +149,7 @@ class ProductMetadata:
                     str(self._root.time_coverage_start),
                     "end_datetime":
                     str(self._root.time_coverage_end),
-                    "s5p:instrument":
-                    str(self._root.sensor),
+                    "instruments": [str(self._root.sensor)],
                     "s5p:processing_mode":
                     str(self._root[
                         'METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing']
@@ -175,8 +174,7 @@ class ProductMetadata:
                     str(self._root.time_coverage_start),
                     "end_datetime":
                     str(self._root.time_coverage_end),
-                    "s5p:instrument":
-                    str(self._root.sensor),
+                    "instruments": [str(self._root.sensor)],
                     "s5p:processing_mode":
                     str(self._root[
                         'METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing']
@@ -210,8 +208,7 @@ class ProductMetadata:
                     str(self._root.time_coverage_start),
                     "end_datetime":
                     str(self._root.time_coverage_end),
-                    "s5p:instrument":
-                    str(self._root.sensor),
+                    "instruments": [str(self._root.sensor)],
                     "s5p:processing_mode":
                     str(self._root[
                         'METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing']
@@ -252,8 +249,7 @@ class ProductMetadata:
                     str(self._root.time_coverage_start + "Z"),
                     "end_datetime":
                     str(self._root.time_coverage_end + "Z"),
-                    "s5p:instrument":
-                    str(self._root.sensor),
+                    "instruments": [str(self._root.sensor)],
                     "s5p:processing_mode":
                     str(self._root[
                         'METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing']
@@ -274,8 +270,7 @@ class ProductMetadata:
                     str(self._root.time_coverage_start),
                     "end_datetime":
                     str(self._root.time_coverage_end),
-                    "s5p:instrument":
-                    str(self._root.sensor),
+                    "instruments": [str(self._root.sensor)],
                     "s5p:processing_mode":
                     str(self._root[
                         'METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing']
@@ -303,8 +298,7 @@ class ProductMetadata:
                     str(self._root.time_coverage_start + "Z"),
                     "end_datetime":
                     str(self._root.time_coverage_end + "Z"),
-                    "s5p:instrument":
-                    str(self._root.sensor),
+                    "instruments": [str(self._root.sensor)],
                     "s5p:processing_mode":
                     str(self._root[
                         'METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing']
@@ -325,8 +319,7 @@ class ProductMetadata:
                     str(self._root.time_coverage_start),
                     "end_datetime":
                     str(self._root.time_coverage_end),
-                    "s5p:instrument":
-                    str(self._root.sensor),
+                    "instruments": [str(self._root.sensor)],
                     "s5p:processing_mode":
                     str(self._root[
                         'METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing']
@@ -360,8 +353,7 @@ class ProductMetadata:
                     str(self._root.time_coverage_start + "Z"),
                     "end_datetime":
                     str(self._root.time_coverage_end + "Z"),
-                    "s5p:instrument":
-                    str(self._root.sensor),
+                    "instruments": [str(self._root.sensor)],
                     "s5p:processing_mode":
                     str(self._root[
                         'METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing']
@@ -390,9 +382,10 @@ class ProductMetadata:
                         int(self._root['PRODUCT'].dimensions['longitude_csa'].
                             size)
                     ],
-                    "s5p:instrument":
-                    str(self._root['METADATA/GRANULE_DESCRIPTION'].
-                        InstrumentName.upper()),
+                    "instruments": [
+                        str(self._root['METADATA/GRANULE_DESCRIPTION'].
+                            InstrumentName.upper())
+                    ],
                     "s5p:processing_mode":
                     str(self._root['METADATA'].processingMode),
                     "s5p:product_type":
@@ -421,8 +414,7 @@ class ProductMetadata:
                     str(self._root.time_coverage_start + "Z"),
                     "end_datetime":
                     str(self._root.time_coverage_end + "Z"),
-                    "s5p:instrument":
-                    str(self._root.sensor),
+                    "instruments": [str(self._root.sensor)],
                     "s5p:processing_mode":
                     str(self._root[
                         'METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing']
@@ -443,10 +435,11 @@ class ProductMetadata:
                     str(self._root.time_coverage_start),
                     "end_datetime":
                     str(self._root.time_coverage_end),
-                    "s5p:instrument":
-                    str(self._root[
-                        'METADATA/EOP_METADATA/om:procedure/eop:instrument'].
-                        getncattr("eop:shortName")),
+                    "instruments": [
+                        str(self._root[
+                            'METADATA/EOP_METADATA/om:procedure/eop:instrument']
+                            .getncattr("eop:shortName"))
+                    ],
                     "s5p:processing_mode":
                     str(self._root[
                         'METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing']
@@ -472,10 +465,11 @@ class ProductMetadata:
                     str(self._root.time_coverage_start),
                     "end_datetime":
                     str(self._root.time_coverage_end),
-                    "s5p:instrument":
-                    str(self._root[
-                        'METADATA/EOP_METADATA/om:procedure/eop:instrument'].
-                        getncattr("eop:shortName")),
+                    "instruments": [
+                        str(self._root[
+                            'METADATA/EOP_METADATA/om:procedure/eop:instrument']
+                            .getncattr("eop:shortName"))
+                    ],
                     "s5p:processing_mode":
                     str(self._root[
                         'METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing']
@@ -501,10 +495,11 @@ class ProductMetadata:
                     str(self._root.time_coverage_start),
                     "end_datetime":
                     str(self._root.time_coverage_end),
-                    "s5p:instrument":
-                    str(self._root[
-                        'METADATA/EOP_METADATA/om:procedure/eop:instrument'].
-                        getncattr("eop:shortName")),
+                    "instruments": [
+                        str(self._root[
+                            'METADATA/EOP_METADATA/om:procedure/eop:instrument']
+                            .getncattr("eop:shortName"))
+                    ],
                     "s5p:processing_mode":
                     str(self._root[
                         'METADATA/EOP_METADATA/eop:metaDataProperty/eop:processing']
@@ -531,8 +526,7 @@ class ProductMetadata:
                     str(self._root['time_coverage_start']),
                     "end_datetime":
                     str(self._root['time_coverage_end']),
-                    "s5p:instrument":
-                    str(self._root['sensor']),
+                    "instruments": [str(self._root['sensor'])],
                     "s5p:processing_mode":
                     str(self._root['METADATA']['EOP_METADATA']
                         ['eop:metaDataProperty']['eop:processing']
@@ -557,8 +551,7 @@ class ProductMetadata:
                     str(self._root['time_coverage_start']),
                     "end_datetime":
                     str(self._root['time_coverage_end']),
-                    "s5p:instrument":
-                    str(self._root['sensor']),
+                    "instruments": [str(self._root['sensor'])],
                     "s5p:processing_mode":
                     str(self._root['METADATA']['EOP_METADATA']
                         ['eop:metaDataProperty']['eop:processing']
@@ -592,8 +585,7 @@ class ProductMetadata:
                     str(self._root['time_coverage_start']),
                     "end_datetime":
                     str(self._root['time_coverage_end']),
-                    "s5p:instrument":
-                    str(self._root['sensor']),
+                    "instruments": [str(self._root['sensor'])],
                     "s5p:processing_mode":
                     str(self._root['METADATA']['EOP_METADATA']
                         ['eop:metaDataProperty']['eop:processing']
@@ -634,8 +626,7 @@ class ProductMetadata:
                     str(self._root['time_coverage_start'] + "Z"),
                     "end_datetime":
                     str(self._root['time_coverage_end'] + "Z"),
-                    "s5p:instrument":
-                    str(self._root['sensor']),
+                    "instruments": [str(self._root['sensor'])],
                     "s5p:processing_mode":
                     str(self._root['METADATA']['EOP_METADATA']
                         ['eop:metaDataProperty']['eop:processing']
@@ -656,8 +647,7 @@ class ProductMetadata:
                     str(self._root['time_coverage_start']),
                     "end_datetime":
                     str(self._root['time_coverage_end']),
-                    "s5p:instrument":
-                    str(self._root['sensor']),
+                    "instruments": [str(self._root['sensor'])],
                     "s5p:processing_mode":
                     str(self._root['METADATA']['EOP_METADATA']
                         ['eop:metaDataProperty']['eop:processing']
@@ -684,8 +674,7 @@ class ProductMetadata:
                     str(self._root['time_coverage_start'] + "Z"),
                     "end_datetime":
                     str(self._root['time_coverage_end'] + "Z"),
-                    "s5p:instrument":
-                    str(self._root['sensor']),
+                    "instruments": [str(self._root['sensor'])],
                     "s5p:processing_mode":
                     str(self._root['METADATA']['EOP_METADATA']
                         ['eop:metaDataProperty']['eop:processing']
@@ -706,8 +695,7 @@ class ProductMetadata:
                     str(self._root['time_coverage_start']),
                     "end_datetime":
                     str(self._root['time_coverage_end']),
-                    "s5p:instrument":
-                    str(self._root['sensor']),
+                    "instruments": [str(self._root['sensor'])],
                     "s5p:processing_mode":
                     str(self._root['METADATA']['EOP_METADATA']
                         ['eop:metaDataProperty']['eop:processing']
@@ -741,8 +729,7 @@ class ProductMetadata:
                     str(self._root['time_coverage_start'] + "Z"),
                     "end_datetime":
                     str(self._root['time_coverage_end'] + "Z"),
-                    "s5p:instrument":
-                    str(self._root['sensor']),
+                    "instruments": [str(self._root['sensor'])],
                     "s5p:processing_mode":
                     str(self._root['METADATA']['EOP_METADATA']
                         ['eop:metaDataProperty']['eop:processing']
@@ -771,9 +758,10 @@ class ProductMetadata:
                         int(self._root['PRODUCT']['dimensions']
                             ['longitude_csa'])
                     ],
-                    "s5p:instrument":
-                    str(self._root['METADATA']['GRANULE_DESCRIPTION']
-                        ['InstrumentName'].upper()),
+                    "instruments": [
+                        str(self._root['METADATA']['GRANULE_DESCRIPTION']
+                            ['InstrumentName'].upper())
+                    ],
                     "s5p:processing_mode":
                     str(self._root['METADATA']['processingMode']),
                     "s5p:product_type":
@@ -802,8 +790,7 @@ class ProductMetadata:
                     str(self._root['time_coverage_start'] + "Z"),
                     "end_datetime":
                     str(self._root['time_coverage_end'] + "Z"),
-                    "s5p:instrument":
-                    str(self._root['sensor']),
+                    "instruments": [str(self._root['sensor'])],
                     "s5p:processing_mode":
                     str(self._root['METADATA']['EOP_METADATA']
                         ['eop:metaDataProperty']['eop:processing']
@@ -824,9 +811,10 @@ class ProductMetadata:
                     str(self._root['time_coverage_start']),
                     "end_datetime":
                     str(self._root['time_coverage_end']),
-                    "s5p:instrument":
-                    str(self._root['METADATA']['EOP_METADATA']['om:procedure']
-                        ['eop:instrument']['eop:shortName']),
+                    "instruments": [
+                        str(self._root['METADATA']['EOP_METADATA'][
+                            'om:procedure']['eop:instrument']['eop:shortName'])
+                    ],
                     "s5p:processing_mode":
                     str(self._root['METADATA']['EOP_METADATA']
                         ['eop:metaDataProperty']['eop:processing']
@@ -851,9 +839,10 @@ class ProductMetadata:
                     str(self._root['time_coverage_start']),
                     "end_datetime":
                     str(self._root['time_coverage_end']),
-                    "s5p:instrument":
-                    str(self._root['METADATA']['EOP_METADATA']['om:procedure']
-                        ['eop:instrument']['eop:shortName']),
+                    "instruments": [
+                        str(self._root['METADATA']['EOP_METADATA'][
+                            'om:procedure']['eop:instrument']['eop:shortName'])
+                    ],
                     "s5p:processing_mode":
                     str(self._root['METADATA']['EOP_METADATA']
                         ['eop:metaDataProperty']['eop:processing']
@@ -878,9 +867,10 @@ class ProductMetadata:
                     str(self._root['time_coverage_start']),
                     "end_datetime":
                     str(self._root['time_coverage_end']),
-                    "s5p:instrument":
-                    str(self._root['METADATA']['EOP_METADATA']['om:procedure']
-                        ['eop:instrument']['eop:shortName']),
+                    "instruments": [
+                        str(self._root['METADATA']['EOP_METADATA'][
+                            'om:procedure']['eop:instrument']['eop:shortName'])
+                    ],
                     "s5p:processing_mode":
                     str(self._root['METADATA']['EOP_METADATA']
                         ['eop:metaDataProperty']['eop:processing']
