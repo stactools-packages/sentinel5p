@@ -5,7 +5,8 @@ from pystac.extensions.eo import EOExtension
 from pystac.extensions.projection import ProjectionExtension
 from pystac.extensions.sat import SatExtension
 
-from .constants import SENTINEL_CONSTELLATION, SENTINEL_PROVIDER
+from .constants import (SENTINEL_CONSTELLATION, SENTINEL_LICENSE,
+                        SENTINEL_PROVIDER)
 from .metadata_links import MetadataLinks
 from .product_metadata import ProductMetadata
 from .properties import fill_proj_properties, fill_sat_properties
@@ -58,5 +59,8 @@ def create_item(file_path: str) -> pystac.Item:
 
     # objects for bands
     item.add_asset(*metalinks.create_band_asset())
+
+    # license link
+    item.links.append(SENTINEL_LICENSE)
 
     return item

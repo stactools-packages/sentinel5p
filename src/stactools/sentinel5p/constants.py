@@ -26,8 +26,6 @@ SENTINEL_PROVIDER = pystac.Provider(
     url="https://earth.esa.int/web/guest/home",
 )
 
-SAFE_MANIFEST_ASSET_KEY = "safe-manifest"
-
 INTERNATIONAL_DESIGNATOR = "2017-064A"
 
 SENTINEL_TROPOMI_BANDS = {
