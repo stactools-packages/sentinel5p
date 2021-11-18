@@ -142,11 +142,47 @@ class ProductMetadata:
 
     @property
     def metadata_dict(self) -> Dict[str, Any]:
+        def _get_start_datetime(product_path, product_format, product_root):
+            if "O3_TCL" in product_path:
+                stratosphere_start_datetime = product_root.time_coverage_start
+                troposphere_start_datetime = product_root.time_coverage_troposphere_start
+                start_datetime = [stratosphere_start_datetime, troposphere_start_datetime]
+            else:
+                start_datetime = [product_root.time_coverage_start]
+            return start_datetime
+        def _observed_after_res_upgraded(observed_time):
+            format_1 = "%Y-%m-%dT%H:%M:%SZ"
+            format_2 = "%Y-%m-%dT%H:%M:%S"
+            if len(observed_time) == 20:
+                datetime_format = format_1
+            elif len(observed_time) == 19:
+                datetime_format = format_2
+            observed_time = datetime.strptime(observed_time, datetime_format)
+            res_upgrade_time = datetime(year=2019, month=8, day=6, hour=13, minute=30)
+            return observed_time > res_upgrade_time
+        def _correct_resolution(resolution):
+            return resolution.replace("7x", "5.5x")
+        def _get_resolution(product_path, product_root, observed_after_res_upgraded):
+            excludes = ["O3_TCL", "_BD3_", "_BD6_", "_BD7_"]
+            if any([product in product_path for product in excludes]):
+                if observed_after_res_upgraded:
+                    spatial_resolution = "5.5x3.5km2"
+                else:
+                    spatial_resolution = "7x3.5km2"
+            else:
+                if observed_after_res_upgraded:
+                    spatial_resolution = _correct_resolution(product_root.spatial_resolution)
+                else:
+                    spatial_resolution = product_root.spatial_resolution
+            return spatial_resolution
         if self.file_path.endswith(".nc"):
+            start_datetime = self._root.time_coverage_start
+            observed_after_res_upgraded = _observed_after_res_upgraded(start_datetime[0])
+            spatial_resolution = _get_resolution(self.file_path, self._root, observed_after_res_upgraded)
             if "_AER_AI_" in self.file_path:
                 result = {
                     "start_datetime":
-                    str(self._root.time_coverage_start),
+                    str(start_datetime[0]),
                     "end_datetime":
                     str(self._root.time_coverage_end),
                     "instruments": [str(self._root.sensor)],
@@ -163,7 +199,7 @@ class ProductMetadata:
                             size)
                     ],
                     "s5p:spatial_resolution":
-                    str(self._root.spatial_resolution),
+                    str(spatial_resolution),
                     "s5p:geolocation_grid_from_band":
                     int(self._root.geolocation_grid_from_band),
                     "aer_ai:input_band":
@@ -176,7 +212,7 @@ class ProductMetadata:
             elif "_AER_LH_" in self.file_path:
                 result = {
                     "start_datetime":
-                    str(self._root.time_coverage_start),
+                    str(start_datetime[0]),
                     "end_datetime":
                     str(self._root.time_coverage_end),
                     "instruments": [str(self._root.sensor)],
@@ -193,7 +229,7 @@ class ProductMetadata:
                             size)
                     ],
                     "s5p:spatial_resolution":
-                    str(self._root.spatial_resolution),
+                    str(spatial_resolution),
                     "s5p:geolocation_grid_from_band":
                     int(self._root.geolocation_grid_from_band),
                     "aer_lh:input_band": [
@@ -215,7 +251,7 @@ class ProductMetadata:
             elif "_CH4_" in self.file_path:
                 result = {
                     "start_datetime":
-                    str(self._root.time_coverage_start),
+                    str(start_datetime[0]),
                     "end_datetime":
                     str(self._root.time_coverage_end),
                     "instruments": [str(self._root.sensor)],
@@ -232,7 +268,7 @@ class ProductMetadata:
                             size)
                     ],
                     "s5p:spatial_resolution":
-                    str(self._root.spatial_resolution),
+                    str(spatial_resolution),
                     "s5p:geolocation_grid_from_band":
                     int(self._root.geolocation_grid_from_band),
                     "ch4:input_band": [
@@ -261,7 +297,7 @@ class ProductMetadata:
             elif "_CLOUD_" in self.file_path:
                 result = {
                     "start_datetime":
-                    str(self._root.time_coverage_start + "Z"),
+                    str(start_datetime[0] + "Z"),
                     "end_datetime":
                     str(self._root.time_coverage_end + "Z"),
                     "instruments": [str(self._root.sensor)],
@@ -278,7 +314,7 @@ class ProductMetadata:
                             size)
                     ],
                     "s5p:spatial_resolution":
-                    str(self._root.spatial_resolution),
+                    str(spatial_resolution),
                     "s5p:geolocation_grid_from_band":
                     int(self._root.geolocation_grid_from_band),
                     "cloud:cloud_mode":
@@ -287,7 +323,7 @@ class ProductMetadata:
             elif "_CO_" in self.file_path:
                 result = {
                     "start_datetime":
-                    str(self._root.time_coverage_start),
+                    str(start_datetime[0]),
                     "end_datetime":
                     str(self._root.time_coverage_end),
                     "instruments": [str(self._root.sensor)],
@@ -304,7 +340,7 @@ class ProductMetadata:
                             size)
                     ],
                     "s5p:spatial_resolution":
-                    str(self._root.spatial_resolution),
+                    str(spatial_resolution),
                     "s5p:geolocation_grid_from_band":
                     int(self._root.geolocation_grid_from_band),
                     "co:input_band": [
@@ -320,7 +356,7 @@ class ProductMetadata:
             elif "_HCHO_" in self.file_path:
                 result = {
                     "start_datetime":
-                    str(self._root.time_coverage_start + "Z"),
+                    str(start_datetime[0] + "Z"),
                     "end_datetime":
                     str(self._root.time_coverage_end + "Z"),
                     "instruments": [str(self._root.sensor)],
@@ -337,7 +373,7 @@ class ProductMetadata:
                             size)
                     ],
                     "s5p:spatial_resolution":
-                    str(self._root.spatial_resolution),
+                    str(spatial_resolution),
                     "s5p:geolocation_grid_from_band":
                     int(self._root.geolocation_grid_from_band),
                     "hcho:cloud_mode":
@@ -346,7 +382,7 @@ class ProductMetadata:
             elif "_NO2_" in self.file_path:
                 result = {
                     "start_datetime":
-                    str(self._root.time_coverage_start),
+                    str(start_datetime[0]),
                     "end_datetime":
                     str(self._root.time_coverage_end),
                     "instruments": [str(self._root.sensor)],
@@ -363,7 +399,7 @@ class ProductMetadata:
                             size)
                     ],
                     "s5p:spatial_resolution":
-                    str(self._root.spatial_resolution),
+                    str(spatial_resolution),
                     "s5p:geolocation_grid_from_band":
                     int(self._root.geolocation_grid_from_band),
                     "no2:input_band": [
@@ -385,7 +421,7 @@ class ProductMetadata:
             elif "_O3__" in self.file_path:
                 result = {
                     "start_datetime":
-                    str(self._root.time_coverage_start + "Z"),
+                    str(start_datetime[0] + "Z"),
                     "end_datetime":
                     str(self._root.time_coverage_end + "Z"),
                     "instruments": [str(self._root.sensor)],
@@ -402,7 +438,7 @@ class ProductMetadata:
                             size)
                     ],
                     "s5p:spatial_resolution":
-                    str(self._root.spatial_resolution),
+                    str(spatial_resolution),
                     "s5p:geolocation_grid_from_band":
                     int(self._root.geolocation_grid_from_band),
                     "o3:cloud_mode":
@@ -410,6 +446,13 @@ class ProductMetadata:
                 }
             elif "O3_TCL" in self.file_path:
                 result = {
+                    "s5p:processing_mode":
+                    str(self._root['METADATA'].processingMode),
+                    "s5p:product_type":
+                    str(self._root['METADATA/GRANULE_DESCRIPTION'].getncattr(
+                        'ProductShortName')),
+                    "s5p:spatial_resolution":
+                    str(spatial_resolution),
                     "o3_tcl:shape_ccd": [
                         int(self._root['PRODUCT'].dimensions['latitude_ccd'].
                             size),
@@ -426,17 +469,12 @@ class ProductMetadata:
                         str(self._root['METADATA/GRANULE_DESCRIPTION'].
                             InstrumentName.upper())
                     ],
-                    "s5p:processing_mode":
-                    str(self._root['METADATA'].processingMode),
-                    "s5p:product_type":
-                    str(self._root['METADATA/GRANULE_DESCRIPTION'].getncattr(
-                        'ProductShortName')),
                     "o3_tcl:stratosphere_start_datetime":
-                    str(self._root.time_coverage_start + "Z"),
+                    str(start_datetime[0] + "Z"),
                     "o3_tcl:stratosphere_end_datetime":
                     str(self._root.time_coverage_end + "Z"),
                     "o3_tcl:troposphere_start_datetime":
-                    str(self._root.time_coverage_troposphere_start + "Z"),
+                    str(start_datetime[1] + "Z"),
                     "o3_tcl:troposphere_end_datetime":
                     str(self._root.time_coverage_troposphere_end + "Z"),
                     "o3_tcl:input_orbits": [
@@ -451,7 +489,7 @@ class ProductMetadata:
             elif "_SO2_" in self.file_path:
                 result = {
                     "start_datetime":
-                    str(self._root.time_coverage_start + "Z"),
+                    str(start_datetime[0] + "Z"),
                     "end_datetime":
                     str(self._root.time_coverage_end + "Z"),
                     "instruments": [str(self._root.sensor)],
@@ -468,7 +506,7 @@ class ProductMetadata:
                             size)
                     ],
                     "s5p:spatial_resolution":
-                    str(self._root.spatial_resolution),
+                    str(spatial_resolution),
                     "s5p:geolocation_grid_from_band":
                     int(self._root.geolocation_grid_from_band),
                     "so2:cloud_mode":
@@ -477,7 +515,7 @@ class ProductMetadata:
             elif "_BD3_" in self.file_path:
                 result = {
                     "start_datetime":
-                    str(self._root.time_coverage_start),
+                    str(start_datetime[0]),
                     "end_datetime":
                     str(self._root.time_coverage_end),
                     "instruments": [
@@ -498,6 +536,8 @@ class ProductMetadata:
                         int(self._root['BAND3_NPPC/STANDARD_MODE'].
                             dimensions['ground_pixel'].size)
                     ],
+                    "s5p:spatial_resolution":
+                    str(spatial_resolution),
                     "npbd3:analysed_s5p_band":
                     int(self._root['METADATA/ALGORITHM_SETTINGS'].getncattr(
                         "S5P_Band_Number")),
@@ -513,7 +553,7 @@ class ProductMetadata:
             elif "_BD6_" in self.file_path:
                 result = {
                     "start_datetime":
-                    str(self._root.time_coverage_start),
+                    str(start_datetime[0]),
                     "end_datetime":
                     str(self._root.time_coverage_end),
                     "instruments": [
@@ -534,6 +574,8 @@ class ProductMetadata:
                         int(self._root['BAND6_NPPC/STANDARD_MODE'].
                             dimensions['ground_pixel'].size)
                     ],
+                    "s5p:spatial_resolution":
+                    spatial_resolution,
                     "npbd6:analysed_s5p_band":
                     int(self._root['METADATA/ALGORITHM_SETTINGS'].getncattr(
                         "S5P_Band_Number")),
@@ -549,7 +591,7 @@ class ProductMetadata:
             elif "_BD7_" in self.file_path:
                 result = {
                     "start_datetime":
-                    str(self._root.time_coverage_start),
+                    str(start_datetime[0]),
                     "end_datetime":
                     str(self._root.time_coverage_end),
                     "instruments": [
@@ -570,6 +612,8 @@ class ProductMetadata:
                         int(self._root['BAND7_NPPC/STANDARD_MODE'].
                             dimensions['ground_pixel'].size)
                     ],
+                    "s5p:spatial_resolution":
+                    spatial_resolution,
                     "npbd7:analysed_s5p_band":
                     int(self._root['METADATA/ALGORITHM_SETTINGS'].getncattr(
                         "S5P_Band_Number")),
