@@ -4,11 +4,6 @@
   "id": "S5P_OFFL_L2__O3_TCL_20200303T120623_20200309T125248_12373_01_010108_20200318T000106",
   "properties": {
     "sat:platform_international_designator": "2017-064A",
-    "proj:epsg": 4326,
-    "proj:shape": [
-      80,
-      360
-    ],
     "o3_tcl:shape_ccd": [
       80,
       360
@@ -17,7 +12,9 @@
       8,
       18
     ],
-    "s5p:instrument": "TROPOMI",
+    "instruments": [
+      "TROPOMI"
+    ],
     "s5p:processing_mode": "OFFL",
     "s5p:product_type": "L2__O3_TCL",
     "o3_tcl:stratosphere_start_datetime": "2020-03-03T12:06:23Z",
@@ -3744,6 +3741,10 @@
   },
   "links": [
     {
+      "rel": "license",
+      "href": "https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice"
+    },
+    {
       "rel": "self",
       "href": "/opt/stactools-sentinel5p/examples/S5P_OFFL_L2__O3_TCL_20200303T120623_20200309T125248_12373_01_010108_20200318T000106.json",
       "type": "application/json"
@@ -3768,7 +3769,6 @@
   ],
   "stac_extensions": [
     "https://stac-extensions.github.io/sat/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/projection/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
   ]
 }

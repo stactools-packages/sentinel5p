@@ -5,16 +5,17 @@
   "properties": {
     "sat:platform_international_designator": "2017-064A",
     "sat:absolute_orbit": 20496,
-    "proj:epsg": 4326,
-    "proj:shape": [
+    "start_datetime": "2021-09-27T01:34:20Z",
+    "end_datetime": "2021-09-27T01:39:31Z",
+    "instruments": [
+      "TROPOMI"
+    ],
+    "s5p:processing_mode": "NRTI",
+    "s5p:product_type": "L2__AER_AI",
+    "s5p:shape": [
       372,
       450
     ],
-    "start_datetime": "2021-09-27T01:34:20Z",
-    "end_datetime": "2021-09-27T01:39:31Z",
-    "s5p:instrument": "TROPOMI",
-    "s5p:processing_mode": "NRTI",
-    "s5p:product_type": "L2__AER_AI",
     "aer_ai:spatial_resolution": "5.5x3.5 km2",
     "aer_ai:geolocation_grid_from_band": 3,
     "aer_ai:input_band": "L1B_RA_BD3",
@@ -331,19 +332,16 @@
   },
   "links": [
     {
+      "rel": "license",
+      "href": "https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice"
+    },
+    {
       "rel": "self",
       "href": "/opt/stactools-sentinel5p/examples/S5P_NRTI_L2__AER_AI_20210927T013425_20210927T013925_20496_02_020200_20210927T022058.json",
       "type": "application/json"
     }
   ],
   "assets": {
-    "safe-manifest": {
-      "href": "/opt/stactools-sentinel5p/tests/data-files/S5P_NRTI_L2__AER_AI_20210927T013425_20210927T013925_20496_02_020200_20210927T022058.json",
-      "type": "application/json",
-      "roles": [
-        "metadata"
-      ]
-    },
     "S5P_NRTI_L2__AER_AI_20210927T013425_20210927T013925_20496_02_020200_20210927T022058": {
       "href": "/opt/stactools-sentinel5p/tests/data-files/S5P_NRTI_L2__AER_AI_20210927T013425_20210927T013925_20496_02_020200_20210927T022058.nc",
       "type": "application/x-netcdf",
@@ -361,7 +359,8 @@
         }
       ],
       "roles": [
-        "data"
+        "data",
+        "metadata"
       ]
     }
   },
@@ -373,7 +372,6 @@
   ],
   "stac_extensions": [
     "https://stac-extensions.github.io/sat/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/projection/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
   ]
 }
