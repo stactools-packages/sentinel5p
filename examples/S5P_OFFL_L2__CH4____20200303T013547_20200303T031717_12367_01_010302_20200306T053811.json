@@ -5,16 +5,17 @@
   "properties": {
     "sat:platform_international_designator": "2017-064A",
     "sat:absolute_orbit": 12367,
-    "proj:epsg": 4326,
-    "proj:shape": [
+    "start_datetime": "2020-03-03T01:57:22Z",
+    "end_datetime": "2020-03-03T02:55:45Z",
+    "instruments": [
+      "TROPOMI"
+    ],
+    "s5p:processing_mode": "OFFL",
+    "s5p:product_type": "L2__CH4___",
+    "s5p:shape": [
       4172,
       215
     ],
-    "start_datetime": "2020-03-03T01:57:22Z",
-    "end_datetime": "2020-03-03T02:55:45Z",
-    "s5p:instrument": "TROPOMI",
-    "s5p:processing_mode": "OFFL",
-    "s5p:product_type": "L2__CH4___",
     "ch4:spatial_resolution": "7x7km2",
     "ch4:geolocation_grid_from_band": 7,
     "ch4:input_band": [
@@ -1362,6 +1363,10 @@
   },
   "links": [
     {
+      "rel": "license",
+      "href": "https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice"
+    },
+    {
       "rel": "self",
       "href": "/opt/stactools-sentinel5p/examples/S5P_OFFL_L2__CH4____20200303T013547_20200303T031717_12367_01_010302_20200306T053811.json",
       "type": "application/json"
@@ -1418,7 +1423,6 @@
   ],
   "stac_extensions": [
     "https://stac-extensions.github.io/sat/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/projection/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
   ]
 }

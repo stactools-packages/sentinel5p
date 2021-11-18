@@ -5,16 +5,17 @@
   "properties": {
     "sat:platform_international_designator": "2017-064A",
     "sat:absolute_orbit": 19479,
-    "proj:epsg": 4326,
-    "proj:shape": [
+    "start_datetime": "2021-07-17T09:42:31Z",
+    "end_datetime": "2021-07-17T09:47:44Z",
+    "instruments": [
+      "TROPOMI"
+    ],
+    "s5p:processing_mode": "NRTI",
+    "s5p:product_type": "L2__SO2___",
+    "s5p:shape": [
       357,
       450
     ],
-    "start_datetime": "2021-07-17T09:42:31Z",
-    "end_datetime": "2021-07-17T09:47:44Z",
-    "s5p:instrument": "TROPOMI",
-    "s5p:processing_mode": "NRTI",
-    "s5p:product_type": "L2__SO2___",
     "so2:spatial_resolution": "5.5x3.5km2",
     "so2:geolocation_grid_from_band": 3,
     "so2:cloud_mode": "crb",
@@ -330,25 +331,23 @@
   },
   "links": [
     {
+      "rel": "license",
+      "href": "https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice"
+    },
+    {
       "rel": "self",
       "href": "/opt/stactools-sentinel5p/examples/S5P_NRTI_L2__SO2____20210717T094237_20210717T094737_19479_02_020201_20210717T114202.json",
       "type": "application/json"
     }
   ],
   "assets": {
-    "safe-manifest": {
-      "href": "/opt/stactools-sentinel5p/tests/data-files/S5P_NRTI_L2__SO2____20210717T094237_20210717T094737_19479_02_020201_20210717T114202.json",
-      "type": "application/json",
-      "roles": [
-        "metadata"
-      ]
-    },
     "S5P_NRTI_L2__SO2____20210717T094237_20210717T094737_19479_02_020201_20210717T114202": {
       "href": "/opt/stactools-sentinel5p/tests/data-files/S5P_NRTI_L2__SO2____20210717T094237_20210717T094737_19479_02_020201_20210717T114202.nc",
       "type": "application/x-netcdf",
       "description": "TROPOMI/S5P Sulphur Dioxide SO2",
       "roles": [
-        "data"
+        "data",
+        "metadata"
       ]
     }
   },
@@ -360,7 +359,6 @@
   ],
   "stac_extensions": [
     "https://stac-extensions.github.io/sat/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/projection/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
   ]
 }
