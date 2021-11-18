@@ -2,14 +2,13 @@ import logging
 
 import pystac
 from pystac.extensions.eo import EOExtension
-from pystac.extensions.projection import ProjectionExtension
 from pystac.extensions.sat import SatExtension
 
 from .constants import (SENTINEL_CONSTELLATION, SENTINEL_LICENSE,
                         SENTINEL_PROVIDER)
 from .metadata_links import MetadataLinks
 from .product_metadata import ProductMetadata
-from .properties import fill_proj_properties, fill_sat_properties
+from .properties import fill_sat_properties
 
 logger = logging.getLogger(__name__)
 
@@ -44,10 +43,6 @@ def create_item(file_path: str) -> pystac.Item:
 
     # eo
     EOExtension.ext(item, add_if_missing=True)
-
-    # proj
-    proj = ProjectionExtension.ext(item, add_if_missing=True)
-    fill_proj_properties(proj, file_path)
 
     # s5p product properties
     item.properties.update({**product_metadata.metadata_dict})
