@@ -16,7 +16,7 @@
       357,
       450
     ],
-    "so2:spatial_resolution": "5.5x3.5km2",
+    "s5p:spatial_resolution": "5.5x3.5km2",
     "so2:geolocation_grid_from_band": 3,
     "so2:cloud_mode": "crb",
     "providers": [

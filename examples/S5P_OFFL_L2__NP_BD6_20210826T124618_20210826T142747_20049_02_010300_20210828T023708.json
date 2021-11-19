@@ -12,6 +12,7 @@
     ],
     "s5p:processing_mode": "OFFL",
     "s5p:product_type": "L2__NP_BD6",
+    "s5p:spatial_resolution": "5.5x3.5km2",
     "s5p:shape": [
       4173,
       448

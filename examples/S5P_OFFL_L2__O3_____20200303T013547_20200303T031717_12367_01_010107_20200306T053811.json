@@ -16,7 +16,7 @@
       4172,
       450
     ],
-    "o3:spatial_resolution": "7x3.5km2",
+    "s5p:spatial_resolution": "5.5x3.5km2",
     "o3:geolocation_grid_from_band": 3,
     "o3:cloud_mode": "crb",
     "providers": [

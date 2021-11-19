@@ -16,7 +16,7 @@
       4172,
       448
     ],
-    "aer_lh:spatial_resolution": "7x3.5km2",
+    "s5p:spatial_resolution": "5.5x3.5km2",
     "aer_lh:geolocation_grid_from_band": 6,
     "aer_lh:input_band": [
       "L1B_RA_BD6",

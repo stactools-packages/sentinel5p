@@ -4,6 +4,12 @@
   "id": "S5P_OFFL_L2__O3_TCL_20200303T120623_20200309T125248_12373_01_010108_20200318T000106",
   "properties": {
     "sat:platform_international_designator": "2017-064A",
+    "instruments": [
+      "TROPOMI"
+    ],
+    "s5p:processing_mode": "OFFL",
+    "s5p:product_type": "L2__O3_TCL",
+    "s5p:spatial_resolution": "5.5x3.5km2",
     "o3_tcl:shape_ccd": [
       80,
       360
@@ -12,11 +18,6 @@
       8,
       18
     ],
-    "instruments": [
-      "TROPOMI"
-    ],
-    "s5p:processing_mode": "OFFL",
-    "s5p:product_type": "L2__O3_TCL",
     "o3_tcl:stratosphere_start_datetime": "2020-03-03T12:06:23Z",
     "o3_tcl:stratosphere_end_datetime": "2020-03-09T12:52:48Z",
     "o3_tcl:troposphere_start_datetime": "2020-03-04T23:38Z",

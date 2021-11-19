@@ -16,7 +16,7 @@
       4172,
       215
     ],
-    "ch4:spatial_resolution": "7x7km2",
+    "s5p:spatial_resolution": "5.5x7km2",
     "ch4:geolocation_grid_from_band": 7,
     "ch4:input_band": [
       "L1B_RA_BD7",

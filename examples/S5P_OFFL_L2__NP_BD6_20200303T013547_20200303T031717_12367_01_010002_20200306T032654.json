@@ -16,6 +16,7 @@
       4172,
       448
     ],
+    "s5p:spatial_resolution": "5.5x3.5km2",
     "npbd6:analysed_s5p_band": 6,
     "npbd6:VIIRS_band": [
       7,
