@@ -16,7 +16,7 @@
       4172,
       450
     ],
-    "hcho:spatial_resolution": "7x3.5km2",
+    "s5p:spatial_resolution": "5.5x3.5km2",
     "hcho:geolocation_grid_from_band": 3,
     "hcho:cloud_mode": "crb",
     "providers": [

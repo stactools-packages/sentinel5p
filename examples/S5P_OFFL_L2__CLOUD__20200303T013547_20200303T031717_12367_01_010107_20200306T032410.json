@@ -16,7 +16,7 @@
       4172,
       450
     ],
-    "cloud:spatial_resolution": "7x3.5km2",
+    "s5p:spatial_resolution": "5.5x3.5km2",
     "cloud:geolocation_grid_from_band": 3,
     "cloud:cloud_mode": "cal",
     "providers": [
