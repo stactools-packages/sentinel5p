@@ -212,6 +212,8 @@ class ProductMetadata:
                 if observed_after_res_upgraded:
                     spatial_resolution = _correct_resolution(
                         product_root['spatial_resolution'])
+                else:
+                    spatial_resolution = product_root['spatial_resolution']
             return spatial_resolution
 
         if self.file_path.endswith(".nc"):
