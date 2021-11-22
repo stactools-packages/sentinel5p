@@ -17,7 +17,7 @@ def fill_sat_properties(sat_ext, href):
 
     if href.endswith('.nc'):
         root = nc.Dataset(href)
-    elif href.endswith('.json'):
+    else:
         root = json.load(open(href))
 
     sat_ext.platform_international_designator = INTERNATIONAL_DESIGNATOR

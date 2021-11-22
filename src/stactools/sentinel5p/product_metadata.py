@@ -52,7 +52,7 @@ class ProductMetadata:
             if self.file_path.endswith(".nc"):
                 latitude_ccd = self._root['/PRODUCT/latitude_ccd'][:]
                 longitude_ccd = self._root['/PRODUCT/longitude_ccd'][:]
-            elif self.file_path.endswith(".json"):
+            else:
                 latitude_ccd = self._root['PRODUCT']['latitude_ccd'][:]
                 longitude_ccd = self._root['PRODUCT']['longitude_ccd'][:]
             footprint_polygon = Polygon(
@@ -68,7 +68,7 @@ class ProductMetadata:
                     '/METADATA/EOP_METADATA/'
                     'om:featureOfInterest/eop:multiExtentOf/'
                     'gml:surfaceMembers/gml:exterior'].getncattr('gml:posList')
-            elif self.file_path.endswith(".json"):
+            else:
                 footprint_text = self._root['METADATA']['EOP_METADATA'][
                     'om:featureOfInterest']['eop:multiExtentOf'][
                         'gml:surfaceMembers']['gml:exterior']['gml:posList']
@@ -99,7 +99,7 @@ class ProductMetadata:
         if self.file_path.endswith(".nc"):
             start_time = self._root.time_coverage_start
             end_time = self._root.time_coverage_end
-        elif self.file_path.endswith(".json"):
+        else:
             start_time = self._root['time_coverage_start']
             end_time = self._root['time_coverage_end']
         format_1 = "%Y-%m-%dT%H:%M:%SZ"
@@ -108,6 +108,8 @@ class ProductMetadata:
             datetime_format = format_1
         elif len(start_time) == 19:
             datetime_format = format_2
+        else:
+            raise ValueError("Source datetime format is not supported.")
         central_time = (datetime.strptime(start_time, datetime_format) +
                         (datetime.strptime(end_time, datetime_format) -
                          datetime.strptime(start_time, datetime_format)) / 2)
@@ -126,7 +128,7 @@ class ProductMetadata:
             if self.file_path.endswith(".nc"):
                 platform_name = str(
                     self._root['METADATA/GRANULE_DESCRIPTION'].MissionName)
-            elif self.file_path.endswith(".json"):
+            else:
                 platform_name = str(self._root['METADATA']
                                     ['GRANULE_DESCRIPTION']['MissionName'])
         else:
@@ -134,7 +136,7 @@ class ProductMetadata:
                 platform_name = str(self._root[
                     'METADATA/ISO_METADATA/gmi:acquisitionInformation/gmi:platform']
                                     .getncattr("gmi:description"))
-            elif self.file_path.endswith(".json"):
+            else:
                 platform_name = str(self._root['METADATA']['ISO_METADATA']
                                     ['gmi:acquisitionInformation']
                                     ['gmi:platform']['gmi:description'])
@@ -160,6 +162,8 @@ class ProductMetadata:
                 datetime_format = format_1
             elif len(observed_time) == 19:
                 datetime_format = format_2
+            else:
+                raise ValueError("Source datetime format is not supported.")
             observed_time = datetime.strptime(observed_time, datetime_format)
             res_upgrade_time = datetime(year=2019,
                                         month=8,
@@ -669,7 +673,7 @@ class ProductMetadata:
                     int(self._root['METADATA/ALGORITHM_SETTINGS'].getncattr(
                         "Number_of_scaled_FOV"))
                 }
-        elif self.file_path.endswith(".json"):
+        else:
             start_datetime = _get_start_datetime_from_json(
                 self.file_path, self._root)
             observed_after_res_upgraded = _observed_after_res_upgraded(

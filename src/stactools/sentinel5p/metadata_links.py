@@ -29,13 +29,13 @@ class MetadataLinks:
                 media_type="application/x-netcdf",
                 roles=["metadata"],
             )
-        elif self.file_path.endswith(".json"):
+        else:
             asset = pystac.Asset(
                 href=self.file_path,
                 media_type=pystac.MediaType.JSON,
                 roles=["metadata"],
             )
-        return (SAFE_MANIFEST_ASSET_KEY, asset)
+        return SAFE_MANIFEST_ASSET_KEY, asset
 
     def create_band_asset(self):
         if "AER_AI" in self.file_path:
@@ -70,7 +70,7 @@ class MetadataLinks:
         if self.file_path.endswith(".nc"):
             data_href = self.file_path
             description = self._root.title
-        elif self.file_path.endswith(".json"):
+        else:
             data_href = self.file_path.replace(".json", ".nc")
             description = self._root["title"]
         if not band_dict_list:
@@ -84,4 +84,4 @@ class MetadataLinks:
                                  description=description,
                                  roles=roles,
                                  extra_fields={"eo:bands": band_dict_list})
-        return (asset_id, asset)
+        return asset_id, asset
