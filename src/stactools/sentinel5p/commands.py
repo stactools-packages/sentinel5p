@@ -12,7 +12,7 @@ def create_sentinel5p_command(cli):
     """Creates the stactools-sentinel5p command line utility."""
     @cli.group(
         "sentinel5p",
-        short_help=("Commands for working with stactools-sentinel5p"),
+        short_help="Commands for working with stactools-sentinel5p",
     )
     def sentinel5p():
         pass
