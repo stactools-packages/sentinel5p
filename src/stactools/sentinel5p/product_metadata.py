@@ -146,10 +146,13 @@ class ProductMetadata:
             if "O3_TCL" in product_path:
                 stratosphere_start_datetime = product_root.time_coverage_start
                 troposphere_start_datetime = product_root.time_coverage_troposphere_start
-                start_datetime = [stratosphere_start_datetime, troposphere_start_datetime]
+                start_datetime = [
+                    stratosphere_start_datetime, troposphere_start_datetime
+                ]
             else:
                 start_datetime = [product_root.time_coverage_start]
             return start_datetime
+
         def _observed_after_res_upgraded(observed_time):
             format_1 = "%Y-%m-%dT%H:%M:%SZ"
             format_2 = "%Y-%m-%dT%H:%M:%S"
@@ -158,11 +161,18 @@ class ProductMetadata:
             elif len(observed_time) == 19:
                 datetime_format = format_2
             observed_time = datetime.strptime(observed_time, datetime_format)
-            res_upgrade_time = datetime(year=2019, month=8, day=6, hour=13, minute=30)
+            res_upgrade_time = datetime(year=2019,
+                                        month=8,
+                                        day=6,
+                                        hour=13,
+                                        minute=30)
             return observed_time > res_upgrade_time
+
         def _correct_resolution(resolution):
             return resolution.replace("7x", "5.5x")
-        def _get_resolution(product_path, product_root, observed_after_res_upgraded):
+
+        def _get_resolution(product_path, product_root,
+                            observed_after_res_upgraded):
             excludes = ["O3_TCL", "_BD3_", "_BD6_", "_BD7_"]
             if any([product in product_path for product in excludes]):
                 if observed_after_res_upgraded:
@@ -171,19 +181,27 @@ class ProductMetadata:
                     spatial_resolution = "7x3.5km2"
             else:
                 if observed_after_res_upgraded:
-                    spatial_resolution = _correct_resolution(product_root.spatial_resolution)
+                    spatial_resolution = _correct_resolution(
+                        product_root.spatial_resolution)
                 else:
                     spatial_resolution = product_root.spatial_resolution
             return spatial_resolution
+
         def _get_start_datetime_from_json(product_path, product_root):
             if "O3_TCL" in product_path:
-                stratosphere_start_datetime = product_root['time_coverage_start'] + "Z"
-                troposphere_start_datetime = product_root['time_coverage_troposphere_start'] + "Z"
-                start_datetime = [stratosphere_start_datetime, troposphere_start_datetime]
+                stratosphere_start_datetime = product_root[
+                    'time_coverage_start'] + "Z"
+                troposphere_start_datetime = product_root[
+                    'time_coverage_troposphere_start'] + "Z"
+                start_datetime = [
+                    stratosphere_start_datetime, troposphere_start_datetime
+                ]
             else:
                 start_datetime = [product_root['time_coverage_start']]
             return start_datetime
-        def _get_resolution_from_json(product_path, product_root, observed_after_res_upgraded):
+
+        def _get_resolution_from_json(product_path, product_root,
+                                      observed_after_res_upgraded):
             excludes = ["O3_TCL", "_BD3_", "_BD6_", "_BD7_"]
             if any([product in product_path for product in excludes]):
                 if observed_after_res_upgraded:
@@ -192,12 +210,16 @@ class ProductMetadata:
                     spatial_resolution = "7x3.5km2"
             else:
                 if observed_after_res_upgraded:
-                    spatial_resolution = _correct_resolution(product_root['spatial_resolution'])
+                    spatial_resolution = _correct_resolution(
+                        product_root['spatial_resolution'])
             return spatial_resolution
+
         if self.file_path.endswith(".nc"):
             start_datetime = _get_start_datetime(self.file_path, self._root)
-            observed_after_res_upgraded = _observed_after_res_upgraded(start_datetime[0])
-            spatial_resolution = _get_resolution(self.file_path, self._root, observed_after_res_upgraded)
+            observed_after_res_upgraded = _observed_after_res_upgraded(
+                start_datetime[0])
+            spatial_resolution = _get_resolution(self.file_path, self._root,
+                                                 observed_after_res_upgraded)
             if "_AER_AI_" in self.file_path:
                 result = {
                     "start_datetime":
@@ -646,9 +668,12 @@ class ProductMetadata:
                         "Number_of_scaled_FOV"))
                 }
         elif self.file_path.endswith(".json"):
-            start_datetime = _get_start_datetime_from_json(self.file_path, self._root)
-            observed_after_res_upgraded = _observed_after_res_upgraded(start_datetime[0])
-            spatial_resolution = _get_resolution_from_json(self.file_path, self._root, observed_after_res_upgraded)
+            start_datetime = _get_start_datetime_from_json(
+                self.file_path, self._root)
+            observed_after_res_upgraded = _observed_after_res_upgraded(
+                start_datetime[0])
+            spatial_resolution = _get_resolution_from_json(
+                self.file_path, self._root, observed_after_res_upgraded)
             if "_AER_AI_" in self.file_path:
                 result = {
                     "start_datetime":
