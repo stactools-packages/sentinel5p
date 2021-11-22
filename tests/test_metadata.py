@@ -2,12 +2,10 @@ import unittest
 
 import pystac
 from pystac.extensions.eo import EOExtension
-from pystac.extensions.projection import ProjectionExtension
 from pystac.extensions.sat import SatExtension
 
 from stactools.sentinel5p.product_metadata import ProductMetadata
-from stactools.sentinel5p.properties import (fill_proj_properties,
-                                             fill_sat_properties)
+from stactools.sentinel5p.properties import fill_sat_properties
 from tests import test_data
 
 
@@ -41,10 +39,6 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         # eo
         EOExtension.ext(item, add_if_missing=True)
 
-        # proj
-        proj = ProjectionExtension.ext(item, add_if_missing=True)
-        fill_proj_properties(proj, manifest_path)
-
         # s5p product properties
         item.properties.update({**product_metadata.metadata_dict})
 
@@ -52,14 +46,12 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         s5p_props = {
             "bbox":
             item.bbox,
-            "epsg":
-            item.properties["proj:epsg"],
             "datetime":
             item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
             "absolute_orbit":
             item.properties["sat:absolute_orbit"],
             "shape":
-            item.properties["proj:shape"],
+            item.properties["s5p:shape"],
             "instruments":
             item.properties["instruments"],
             "processing_mode":
@@ -67,7 +59,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "product_type":
             item.properties["s5p:product_type"],
             "spatial_resolution":
-            item.properties["aer_ai:spatial_resolution"],
+            item.properties["s5p:spatial_resolution"],
             "geolocation_grid_from_band":
             item.properties["aer_ai:geolocation_grid_from_band"],
             "input_band":
@@ -78,14 +70,13 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         expected = {
             "bbox": [-179.94377, -85.99168, 179.66743, 86.48782],
-            "epsg": 4326,
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 450],
             "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__AER_AI",
-            "spatial_resolution": "7x3.5km2",
+            "spatial_resolution": "5.5x3.5km2",
             "geolocation_grid_from_band": 3,
             "input_band": "L1B_RA_BD3",
             "irradiance_accompanied": "L1B_IR_UVN"
@@ -124,10 +115,6 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         # eo
         EOExtension.ext(item, add_if_missing=True)
 
-        # proj
-        proj = ProjectionExtension.ext(item, add_if_missing=True)
-        fill_proj_properties(proj, manifest_path)
-
         # s5p product properties
         item.properties.update({**product_metadata.metadata_dict})
 
@@ -135,14 +122,12 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         s5p_props = {
             "bbox":
             item.bbox,
-            "epsg":
-            item.properties["proj:epsg"],
             "datetime":
             item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
             "absolute_orbit":
             item.properties["sat:absolute_orbit"],
             "shape":
-            item.properties["proj:shape"],
+            item.properties["s5p:shape"],
             "instruments":
             item.properties["instruments"],
             "processing_mode":
@@ -150,7 +135,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "product_type":
             item.properties["s5p:product_type"],
             "spatial_resolution":
-            item.properties["aer_lh:spatial_resolution"],
+            item.properties["s5p:spatial_resolution"],
             "geolocation_grid_from_band":
             item.properties["aer_lh:geolocation_grid_from_band"],
             "input_band":
@@ -161,8 +146,6 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         expected = {
             "bbox": [-179.90239, -86.10597, 179.70866, 86.44622],
-            "epsg":
-            4326,
             "datetime":
             "2020-03-03T02:26:33.500000Z",
             "absolute_orbit":
@@ -174,7 +157,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "product_type":
             "L2__AER_LH",
             "spatial_resolution":
-            "7x3.5km2",
+            "5.5x3.5km2",
             "geolocation_grid_from_band":
             6,
             "input_band": [
@@ -218,10 +201,6 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         # eo
         EOExtension.ext(item, add_if_missing=True)
 
-        # proj
-        proj = ProjectionExtension.ext(item, add_if_missing=True)
-        fill_proj_properties(proj, manifest_path)
-
         # s5p product properties
         item.properties.update({**product_metadata.metadata_dict})
 
@@ -229,14 +208,12 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         s5p_props = {
             "bbox":
             item.bbox,
-            "epsg":
-            item.properties["proj:epsg"],
             "datetime":
             item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
             "absolute_orbit":
             item.properties["sat:absolute_orbit"],
             "shape":
-            item.properties["proj:shape"],
+            item.properties["s5p:shape"],
             "instruments":
             item.properties["instruments"],
             "processing_mode":
@@ -244,7 +221,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "product_type":
             item.properties["s5p:product_type"],
             "spatial_resolution":
-            item.properties["ch4:spatial_resolution"],
+            item.properties["s5p:spatial_resolution"],
             "geolocation_grid_from_band":
             item.properties["ch4:geolocation_grid_from_band"],
             "input_band":
@@ -255,8 +232,6 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         expected = {
             "bbox": [-179.9934, -85.990204, 179.84909, 86.633255],
-            "epsg":
-            4326,
             "datetime":
             "2020-03-03T02:26:33.500000Z",
             "absolute_orbit":
@@ -268,7 +243,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "product_type":
             "L2__CH4___",
             "spatial_resolution":
-            "7x7km2",
+            "5.5x7km2",
             "geolocation_grid_from_band":
             7,
             "input_band": [
@@ -311,10 +286,6 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         # eo
         EOExtension.ext(item, add_if_missing=True)
 
-        # proj
-        proj = ProjectionExtension.ext(item, add_if_missing=True)
-        fill_proj_properties(proj, manifest_path)
-
         # s5p product properties
         item.properties.update({**product_metadata.metadata_dict})
 
@@ -322,14 +293,12 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         s5p_props = {
             "bbox":
             item.bbox,
-            "epsg":
-            item.properties["proj:epsg"],
             "datetime":
             item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
             "absolute_orbit":
             item.properties["sat:absolute_orbit"],
             "shape":
-            item.properties["proj:shape"],
+            item.properties["s5p:shape"],
             "instruments":
             item.properties["instruments"],
             "processing_mode":
@@ -337,7 +306,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "product_type":
             item.properties["s5p:product_type"],
             "spatial_resolution":
-            item.properties["cloud:spatial_resolution"],
+            item.properties["s5p:spatial_resolution"],
             "geolocation_grid_from_band":
             item.properties["cloud:geolocation_grid_from_band"],
             "cloud_mode":
@@ -346,14 +315,13 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         expected = {
             "bbox": [-179.94377, -85.99168, 179.66743, 86.48782],
-            "epsg": 4326,
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 450],
             "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__CLOUD_",
-            "spatial_resolution": "7x3.5km2",
+            "spatial_resolution": "5.5x3.5km2",
             "geolocation_grid_from_band": 3,
             "cloud_mode": "cal",
         }
@@ -391,10 +359,6 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         # eo
         EOExtension.ext(item, add_if_missing=True)
 
-        # proj
-        proj = ProjectionExtension.ext(item, add_if_missing=True)
-        fill_proj_properties(proj, manifest_path)
-
         # s5p product properties
         item.properties.update({**product_metadata.metadata_dict})
 
@@ -402,14 +366,12 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         s5p_props = {
             "bbox":
             item.bbox,
-            "epsg":
-            item.properties["proj:epsg"],
             "datetime":
             item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
             "absolute_orbit":
             item.properties["sat:absolute_orbit"],
             "shape":
-            item.properties["proj:shape"],
+            item.properties["s5p:shape"],
             "instruments":
             item.properties["instruments"],
             "processing_mode":
@@ -417,7 +379,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "product_type":
             item.properties["s5p:product_type"],
             "spatial_resolution":
-            item.properties["co:spatial_resolution"],
+            item.properties["s5p:spatial_resolution"],
             "geolocation_grid_from_band":
             item.properties["co:geolocation_grid_from_band"],
             "input_band":
@@ -428,14 +390,13 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         expected = {
             "bbox": [-179.9934, -85.990204, 179.84909, 86.633255],
-            "epsg": 4326,
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 215],
             "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__CO____",
-            "spatial_resolution": "7x7km2",
+            "spatial_resolution": "5.5x7km2",
             "geolocation_grid_from_band": 7,
             "input_band": ["L1B_RA_BD7", "L1B_RA_BD8"],
             "irradiance_accompanied": "L1B_IR_SIR"
@@ -474,10 +435,6 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         # eo
         EOExtension.ext(item, add_if_missing=True)
 
-        # proj
-        proj = ProjectionExtension.ext(item, add_if_missing=True)
-        fill_proj_properties(proj, manifest_path)
-
         # s5p product properties
         item.properties.update({**product_metadata.metadata_dict})
 
@@ -485,14 +442,12 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         s5p_props = {
             "bbox":
             item.bbox,
-            "epsg":
-            item.properties["proj:epsg"],
             "datetime":
             item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
             "absolute_orbit":
             item.properties["sat:absolute_orbit"],
             "shape":
-            item.properties["proj:shape"],
+            item.properties["s5p:shape"],
             "instruments":
             item.properties["instruments"],
             "processing_mode":
@@ -500,7 +455,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "product_type":
             item.properties["s5p:product_type"],
             "spatial_resolution":
-            item.properties["hcho:spatial_resolution"],
+            item.properties["s5p:spatial_resolution"],
             "geolocation_grid_from_band":
             item.properties["hcho:geolocation_grid_from_band"],
             "cloud_mode":
@@ -509,14 +464,13 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         expected = {
             "bbox": [-179.94377, -85.99168, 179.66743, 86.48782],
-            "epsg": 4326,
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 450],
             "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__HCHO__",
-            "spatial_resolution": "7x3.5km2",
+            "spatial_resolution": "5.5x3.5km2",
             "geolocation_grid_from_band": 3,
             "cloud_mode": "crb"
         }
@@ -554,10 +508,6 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         # eo
         EOExtension.ext(item, add_if_missing=True)
 
-        # proj
-        proj = ProjectionExtension.ext(item, add_if_missing=True)
-        fill_proj_properties(proj, manifest_path)
-
         # s5p product properties
         item.properties.update({**product_metadata.metadata_dict})
 
@@ -565,14 +515,12 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         s5p_props = {
             "bbox":
             item.bbox,
-            "epsg":
-            item.properties["proj:epsg"],
             "datetime":
             item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
             "absolute_orbit":
             item.properties["sat:absolute_orbit"],
             "shape":
-            item.properties["proj:shape"],
+            item.properties["s5p:shape"],
             "instruments":
             item.properties["instruments"],
             "processing_mode":
@@ -580,7 +528,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "product_type":
             item.properties["s5p:product_type"],
             "spatial_resolution":
-            item.properties["no2:spatial_resolution"],
+            item.properties["s5p:spatial_resolution"],
             "geolocation_grid_from_band":
             item.properties["no2:geolocation_grid_from_band"],
             "input_band":
@@ -591,8 +539,6 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         expected = {
             "bbox": [-179.94377, -85.99168, 179.66743, 86.48782],
-            "epsg":
-            4326,
             "datetime":
             "2020-03-03T02:26:33.500000Z",
             "absolute_orbit":
@@ -604,7 +550,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "product_type":
             "L2__NO2___",
             "spatial_resolution":
-            "7x3.5km2",
+            "5.5x3.5km2",
             "geolocation_grid_from_band":
             4,
             "input_band": [
@@ -648,10 +594,6 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         # eo
         EOExtension.ext(item, add_if_missing=True)
 
-        # proj
-        proj = ProjectionExtension.ext(item, add_if_missing=True)
-        fill_proj_properties(proj, manifest_path)
-
         # s5p product properties
         item.properties.update({**product_metadata.metadata_dict})
 
@@ -659,14 +601,12 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         s5p_props = {
             "bbox":
             item.bbox,
-            "epsg":
-            item.properties["proj:epsg"],
             "datetime":
             item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
             "absolute_orbit":
             item.properties["sat:absolute_orbit"],
             "shape":
-            item.properties["proj:shape"],
+            item.properties["s5p:shape"],
             "instruments":
             item.properties["instruments"],
             "processing_mode":
@@ -674,7 +614,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "product_type":
             item.properties["s5p:product_type"],
             "spatial_resolution":
-            item.properties["o3:spatial_resolution"],
+            item.properties["s5p:spatial_resolution"],
             "geolocation_grid_from_band":
             item.properties["o3:geolocation_grid_from_band"],
             "cloud_mode":
@@ -683,14 +623,13 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         expected = {
             "bbox": [-179.94377, -85.99168, 179.66743, 86.48782],
-            "epsg": 4326,
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 450],
             "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__O3____",
-            "spatial_resolution": "7x3.5km2",
+            "spatial_resolution": "5.5x3.5km2",
             "geolocation_grid_from_band": 3,
             "cloud_mode": "crb",
         }
@@ -728,10 +667,6 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         # eo
         EOExtension.ext(item, add_if_missing=True)
 
-        # proj
-        proj = ProjectionExtension.ext(item, add_if_missing=True)
-        fill_proj_properties(proj, manifest_path)
-
         # s5p product properties
         item.properties.update({**product_metadata.metadata_dict})
 
@@ -739,12 +674,8 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         s5p_props = {
             "bbox":
             item.bbox,
-            "epsg":
-            item.properties["proj:epsg"],
             "datetime":
             item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
-            "shape":
-            item.properties["proj:shape"],
             "shape_ccd":
             item.properties["o3_tcl:shape_ccd"],
             "shape_csa":
@@ -755,6 +686,8 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             item.properties["s5p:processing_mode"],
             "product_type":
             item.properties["s5p:product_type"],
+            "resolution":
+            item.properties["s5p:spatial_resolution"],
             "stratosphere_start_datetime":
             item.properties["o3_tcl:stratosphere_start_datetime"],
             "stratosphere_end_datetime":
@@ -771,11 +704,8 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         expected = {
             "bbox": [-179.5, -19.75, 179.5, 19.75],
-            "epsg":
-            4326,
             "datetime":
             "2020-03-06T12:29:35.500000Z",
-            "shape": [80, 360],
             "shape_ccd": [80, 360],
             "shape_csa": [8, 18],
             "instruments": ["TROPOMI"],
@@ -783,6 +713,8 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "OFFL",
             "product_type":
             "L2__O3_TCL",
+            "resolution":
+            "5.5x3.5km2",
             "stratosphere_start_datetime":
             "2020-03-03T12:06:23Z",
             "stratosphere_end_datetime":
@@ -1012,10 +944,6 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         # eo
         EOExtension.ext(item, add_if_missing=True)
 
-        # proj
-        proj = ProjectionExtension.ext(item, add_if_missing=True)
-        fill_proj_properties(proj, manifest_path)
-
         # s5p product properties
         item.properties.update({**product_metadata.metadata_dict})
 
@@ -1023,14 +951,12 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         s5p_props = {
             "bbox":
             item.bbox,
-            "epsg":
-            item.properties["proj:epsg"],
             "datetime":
             item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
             "absolute_orbit":
             item.properties["sat:absolute_orbit"],
             "shape":
-            item.properties["proj:shape"],
+            item.properties["s5p:shape"],
             "instruments":
             item.properties["instruments"],
             "processing_mode":
@@ -1038,7 +964,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "product_type":
             item.properties["s5p:product_type"],
             "spatial_resolution":
-            item.properties["so2:spatial_resolution"],
+            item.properties["s5p:spatial_resolution"],
             "geolocation_grid_from_band":
             item.properties["so2:geolocation_grid_from_band"],
             "cloud_mode":
@@ -1047,14 +973,13 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         expected = {
             "bbox": [-179.94377, -85.99168, 179.66743, 86.48782],
-            "epsg": 4326,
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 450],
             "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__SO2___",
-            "spatial_resolution": "7x3.5km2",
+            "spatial_resolution": "5.5x3.5km2",
             "geolocation_grid_from_band": 3,
             "cloud_mode": "crb",
         }
@@ -1092,23 +1017,19 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         # eo
         EOExtension.ext(item, add_if_missing=True)
 
-        # proj
-        proj = ProjectionExtension.ext(item, add_if_missing=True)
-        fill_proj_properties(proj, manifest_path)
-
         # s5p product properties
         item.properties.update({**product_metadata.metadata_dict})
 
         # Make a dictionary of the properties
         s5p_props = {
             "bbox": item.bbox,
-            "epsg": item.properties["proj:epsg"],
             "datetime": item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
             "absolute_orbit": item.properties["sat:absolute_orbit"],
-            "shape": item.properties["proj:shape"],
+            "shape": item.properties["s5p:shape"],
             "instruments": item.properties["instruments"],
             "processing_mode": item.properties["s5p:processing_mode"],
             "product_type": item.properties["s5p:product_type"],
+            "resolution": item.properties["s5p:spatial_resolution"],
             "analysed_s5p_band": item.properties["npbd3:analysed_s5p_band"],
             "VIIRS_band": item.properties["npbd3:VIIRS_band"],
             "number_of_scaled_fov":
@@ -1117,13 +1038,13 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         expected = {
             "bbox": [-179.94377, -85.99168, 179.66743, 86.48782],
-            "epsg": 4326,
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 450],
             "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__NP_BD3",
+            "resolution": "5.5x3.5km2",
             "analysed_s5p_band": 3,
             "VIIRS_band": [7, 9, 11],
             "number_of_scaled_fov": 4
@@ -1162,23 +1083,19 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         # eo
         EOExtension.ext(item, add_if_missing=True)
 
-        # proj
-        proj = ProjectionExtension.ext(item, add_if_missing=True)
-        fill_proj_properties(proj, manifest_path)
-
         # s5p product properties
         item.properties.update({**product_metadata.metadata_dict})
 
         # Make a dictionary of the properties
         s5p_props = {
             "bbox": item.bbox,
-            "epsg": item.properties["proj:epsg"],
             "datetime": item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
             "absolute_orbit": item.properties["sat:absolute_orbit"],
-            "shape": item.properties["proj:shape"],
+            "shape": item.properties["s5p:shape"],
             "instruments": item.properties["instruments"],
             "processing_mode": item.properties["s5p:processing_mode"],
             "product_type": item.properties["s5p:product_type"],
+            "resolution": item.properties["s5p:spatial_resolution"],
             "analysed_s5p_band": item.properties["npbd6:analysed_s5p_band"],
             "VIIRS_band": item.properties["npbd6:VIIRS_band"],
             "number_of_scaled_fov":
@@ -1187,13 +1104,13 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         expected = {
             "bbox": [-179.90239, -86.10597, 179.70866, 86.44622],
-            "epsg": 4326,
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 448],
             "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__NP_BD6",
+            "resolution": "5.5x3.5km2",
             "analysed_s5p_band": 6,
             "VIIRS_band": [7, 9, 11],
             "number_of_scaled_fov": 4
@@ -1232,23 +1149,19 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         # eo
         EOExtension.ext(item, add_if_missing=True)
 
-        # proj
-        proj = ProjectionExtension.ext(item, add_if_missing=True)
-        fill_proj_properties(proj, manifest_path)
-
         # s5p product properties
         item.properties.update({**product_metadata.metadata_dict})
 
         # Make a dictionary of the properties
         s5p_props = {
             "bbox": item.bbox,
-            "epsg": item.properties["proj:epsg"],
             "datetime": item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
             "absolute_orbit": item.properties["sat:absolute_orbit"],
-            "shape": item.properties["proj:shape"],
+            "shape": item.properties["s5p:shape"],
             "instruments": item.properties["instruments"],
             "processing_mode": item.properties["s5p:processing_mode"],
             "product_type": item.properties["s5p:product_type"],
+            "resolution": item.properties["s5p:spatial_resolution"],
             "analysed_s5p_band": item.properties["npbd7:analysed_s5p_band"],
             "VIIRS_band": item.properties["npbd7:VIIRS_band"],
             "number_of_scaled_fov":
@@ -1257,13 +1170,13 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         expected = {
             "bbox": [-179.9934, -85.990204, 179.84909, 86.633255],
-            "epsg": 4326,
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 215],
             "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__NP_BD7",
+            "resolution": "5.5x3.5km2",
             "analysed_s5p_band": 7,
             "VIIRS_band": [7, 9, 11],
             "number_of_scaled_fov": 4
