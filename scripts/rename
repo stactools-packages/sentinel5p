@@ -21,17 +21,17 @@ for file in $(find . -not \( -name .git -prune \) -not \( -name __pycache__ -pru
             continue;;
     esac
     set +e
-    sed "${sedflags[@]}" -e "s/stactools-ephemeral/stactools-${name}/g" $file
-    sed "${sedflags[@]}" -e "s/stactools\.ephemeral/stactools.${underscore_name}/g" $file
-    sed "${sedflags[@]}" -e "s/stactools_ephemeral/stactools_${underscore_name}/g" $file
-    sed "${sedflags[@]}" -e "s;stactools/ephemeral;stactools/${underscore_name};g" $file
-    sed "${sedflags[@]}" -e "s/ephemeralcmd/${spaceless_name}/g" $file
-    sed "${sedflags[@]}" -e "s/ephemeral/${name}/g" $file
+    sed "${sedflags[@]}" -e "s/stactools-sentinel5p/stactools-${name}/g" $file
+    sed "${sedflags[@]}" -e "s/stactools\.sentinel5p/stactools.${underscore_name}/g" $file
+    sed "${sedflags[@]}" -e "s/stactools_sentinel5p/stactools_${underscore_name}/g" $file
+    sed "${sedflags[@]}" -e "s;stactools/sentinel5p;stactools/${underscore_name};g" $file
+    sed "${sedflags[@]}" -e "s/sentinel5pcmd/${spaceless_name}/g" $file
+    sed "${sedflags[@]}" -e "s/sentinel5p/${name}/g" $file
     set -e
 done
 
-if [ -d src/stactools/ephemeral ]; then
-    git mv src/stactools/ephemeral src/stactools/$underscore_name
+if [ -d src/stactools/sentinel5p ]; then
+    git mv src/stactools/sentinel5p src/stactools/$underscore_name
 fi
 
 echo "Rename complete"

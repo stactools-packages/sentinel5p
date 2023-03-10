@@ -11,13 +11,14 @@ from tests import test_data
 
 class Sentinel3OLCIMetadataTest(unittest.TestCase):
     def test_parses_aerai_metadata_properties(self):
-
         # Get the path of the test xml
-        manifest_path = test_data.get_path("data-files/"
-                                           "S5P_OFFL_L2__AER_AI_"
-                                           "20200303T013547_20200303T031717_"
-                                           "12367_01_010302_"
-                                           "20200306T032414.nc")
+        manifest_path = test_data.get_path(
+            "data-files/"
+            "S5P_OFFL_L2__AER_AI_"
+            "20200303T013547_20200303T031717_"
+            "12367_01_010302_"
+            "20200306T032414.nc"
+        )
 
         product_metadata = ProductMetadata(manifest_path)
 
@@ -44,28 +45,19 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         # Make a dictionary of the properties
         s5p_props = {
-            "bbox":
-            item.bbox,
-            "datetime":
-            item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
-            "absolute_orbit":
-            item.properties["sat:absolute_orbit"],
-            "shape":
-            item.properties["s5p:shape"],
-            "instruments":
-            item.properties["instruments"],
-            "processing_mode":
-            item.properties["s5p:processing_mode"],
-            "product_type":
-            item.properties["s5p:product_type"],
-            "spatial_resolution":
-            item.properties["s5p:spatial_resolution"],
-            "geolocation_grid_from_band":
-            item.properties["aer_ai:geolocation_grid_from_band"],
-            "input_band":
-            item.properties["aer_ai:input_band"],
-            "irradiance_accompanied":
-            item.properties["aer_ai:irradiance_accompanied"],
+            "bbox": item.bbox,
+            "datetime": item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
+            "absolute_orbit": item.properties["sat:absolute_orbit"],
+            "shape": item.properties["s5p:shape"],
+            "instruments": item.properties["instruments"],
+            "processing_mode": item.properties["s5p:processing_mode"],
+            "product_type": item.properties["s5p:product_type"],
+            "spatial_resolution": item.properties["s5p:spatial_resolution"],
+            "geolocation_grid_from_band": item.properties[
+                "aer_ai:geolocation_grid_from_band"
+            ],
+            "input_band": item.properties["aer_ai:input_band"],
+            "irradiance_accompanied": item.properties["aer_ai:irradiance_accompanied"],
         }
 
         expected = {
@@ -79,7 +71,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "spatial_resolution": "5.5x3.5km2",
             "geolocation_grid_from_band": 3,
             "input_band": "L1B_RA_BD3",
-            "irradiance_accompanied": "L1B_IR_UVN"
+            "irradiance_accompanied": "L1B_IR_UVN",
         }
 
         for k, v in expected.items():
@@ -87,13 +79,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             self.assertEqual(s5p_props[k], v)
 
     def test_parses_aerlh_metadata_properties(self):
-
         # Get the path of the test xml
-        manifest_path = test_data.get_path("data-files/"
-                                           "S5P_OFFL_L2__AER_LH_"
-                                           "20200303T013547_20200303T031717_"
-                                           "12367_01_010302_"
-                                           "20200306T053814.nc")
+        manifest_path = test_data.get_path(
+            "data-files/"
+            "S5P_OFFL_L2__AER_LH_"
+            "20200303T013547_20200303T031717_"
+            "12367_01_010302_"
+            "20200306T053814.nc"
+        )
 
         product_metadata = ProductMetadata(manifest_path)
 
@@ -120,52 +113,39 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         # Make a dictionary of the properties
         s5p_props = {
-            "bbox":
-            item.bbox,
-            "datetime":
-            item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
-            "absolute_orbit":
-            item.properties["sat:absolute_orbit"],
-            "shape":
-            item.properties["s5p:shape"],
-            "instruments":
-            item.properties["instruments"],
-            "processing_mode":
-            item.properties["s5p:processing_mode"],
-            "product_type":
-            item.properties["s5p:product_type"],
-            "spatial_resolution":
-            item.properties["s5p:spatial_resolution"],
-            "geolocation_grid_from_band":
-            item.properties["aer_lh:geolocation_grid_from_band"],
-            "input_band":
-            item.properties["aer_lh:input_band"],
-            "irradiance_accompanied":
-            item.properties["aer_lh:irradiance_accompanied"],
+            "bbox": item.bbox,
+            "datetime": item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
+            "absolute_orbit": item.properties["sat:absolute_orbit"],
+            "shape": item.properties["s5p:shape"],
+            "instruments": item.properties["instruments"],
+            "processing_mode": item.properties["s5p:processing_mode"],
+            "product_type": item.properties["s5p:product_type"],
+            "spatial_resolution": item.properties["s5p:spatial_resolution"],
+            "geolocation_grid_from_band": item.properties[
+                "aer_lh:geolocation_grid_from_band"
+            ],
+            "input_band": item.properties["aer_lh:input_band"],
+            "irradiance_accompanied": item.properties["aer_lh:irradiance_accompanied"],
         }
 
         expected = {
             "bbox": [-179.90239, -86.10597, 179.70866, 86.44622],
-            "datetime":
-            "2020-03-03T02:26:33.500000Z",
-            "absolute_orbit":
-            12367,
+            "datetime": "2020-03-03T02:26:33.500000Z",
+            "absolute_orbit": 12367,
             "shape": [4172, 448],
             "instruments": ["TROPOMI"],
-            "processing_mode":
-            "OFFL",
-            "product_type":
-            "L2__AER_LH",
-            "spatial_resolution":
-            "5.5x3.5km2",
-            "geolocation_grid_from_band":
-            6,
+            "processing_mode": "OFFL",
+            "product_type": "L2__AER_LH",
+            "spatial_resolution": "5.5x3.5km2",
+            "geolocation_grid_from_band": 6,
             "input_band": [
-                "L1B_RA_BD6", "L2__FRESCO", "L2__AER_AI", "L2__NP_BD6",
-                "L2__CLOUD_"
+                "L1B_RA_BD6",
+                "L2__FRESCO",
+                "L2__AER_AI",
+                "L2__NP_BD6",
+                "L2__CLOUD_",
             ],
-            "irradiance_accompanied":
-            "L1B_IR_UVN"
+            "irradiance_accompanied": "L1B_IR_UVN",
         }
 
         for k, v in expected.items():
@@ -173,13 +153,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             self.assertEqual(s5p_props[k], v)
 
     def test_parses_ch4_metadata_properties(self):
-
         # Get the path of the test xml
-        manifest_path = test_data.get_path("data-files/"
-                                           "S5P_OFFL_L2__CH4____"
-                                           "20200303T013547_20200303T031717_"
-                                           "12367_01_010302_"
-                                           "20200306T053811.nc")
+        manifest_path = test_data.get_path(
+            "data-files/"
+            "S5P_OFFL_L2__CH4____"
+            "20200303T013547_20200303T031717_"
+            "12367_01_010302_"
+            "20200306T053811.nc"
+        )
 
         product_metadata = ProductMetadata(manifest_path)
 
@@ -206,51 +187,41 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         # Make a dictionary of the properties
         s5p_props = {
-            "bbox":
-            item.bbox,
-            "datetime":
-            item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
-            "absolute_orbit":
-            item.properties["sat:absolute_orbit"],
-            "shape":
-            item.properties["s5p:shape"],
-            "instruments":
-            item.properties["instruments"],
-            "processing_mode":
-            item.properties["s5p:processing_mode"],
-            "product_type":
-            item.properties["s5p:product_type"],
-            "spatial_resolution":
-            item.properties["s5p:spatial_resolution"],
-            "geolocation_grid_from_band":
-            item.properties["ch4:geolocation_grid_from_band"],
-            "input_band":
-            item.properties["ch4:input_band"],
-            "irradiance_accompanied":
-            item.properties["ch4:irradiance_accompanied"],
+            "bbox": item.bbox,
+            "datetime": item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
+            "absolute_orbit": item.properties["sat:absolute_orbit"],
+            "shape": item.properties["s5p:shape"],
+            "instruments": item.properties["instruments"],
+            "processing_mode": item.properties["s5p:processing_mode"],
+            "product_type": item.properties["s5p:product_type"],
+            "spatial_resolution": item.properties["s5p:spatial_resolution"],
+            "geolocation_grid_from_band": item.properties[
+                "ch4:geolocation_grid_from_band"
+            ],
+            "input_band": item.properties["ch4:input_band"],
+            "irradiance_accompanied": item.properties["ch4:irradiance_accompanied"],
         }
 
         expected = {
             "bbox": [-179.9934, -85.990204, 179.84909, 86.633255],
-            "datetime":
-            "2020-03-03T02:26:33.500000Z",
-            "absolute_orbit":
-            12367,
+            "datetime": "2020-03-03T02:26:33.500000Z",
+            "absolute_orbit": 12367,
             "shape": [4172, 215],
             "instruments": ["TROPOMI"],
-            "processing_mode":
-            "OFFL",
-            "product_type":
-            "L2__CH4___",
-            "spatial_resolution":
-            "5.5x7km2",
-            "geolocation_grid_from_band":
-            7,
+            "processing_mode": "OFFL",
+            "product_type": "L2__CH4___",
+            "spatial_resolution": "5.5x7km2",
+            "geolocation_grid_from_band": 7,
             "input_band": [
-                "L1B_RA_BD7", "L1B_RA_BD8", "L1B_RA_BD6", "L2__CO____",
-                "L2__FRESCO", "L2__NP_BD6", "L2__NP_BD7"
+                "L1B_RA_BD7",
+                "L1B_RA_BD8",
+                "L1B_RA_BD6",
+                "L2__CO____",
+                "L2__FRESCO",
+                "L2__NP_BD6",
+                "L2__NP_BD7",
             ],
-            "irradiance_accompanied": ["L1B_IR_SIR", "L1B_IR_UVN"]
+            "irradiance_accompanied": ["L1B_IR_SIR", "L1B_IR_UVN"],
         }
 
         for k, v in expected.items():
@@ -258,13 +229,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             self.assertEqual(s5p_props[k], v)
 
     def test_parses_cloud_metadata_properties(self):
-
         # Get the path of the test xml
-        manifest_path = test_data.get_path("data-files/"
-                                           "S5P_OFFL_L2__CLOUD__"
-                                           "20200303T013547_20200303T031717_"
-                                           "12367_01_010107_"
-                                           "20200306T032410.nc")
+        manifest_path = test_data.get_path(
+            "data-files/"
+            "S5P_OFFL_L2__CLOUD__"
+            "20200303T013547_20200303T031717_"
+            "12367_01_010107_"
+            "20200306T032410.nc"
+        )
 
         product_metadata = ProductMetadata(manifest_path)
 
@@ -291,26 +263,18 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         # Make a dictionary of the properties
         s5p_props = {
-            "bbox":
-            item.bbox,
-            "datetime":
-            item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
-            "absolute_orbit":
-            item.properties["sat:absolute_orbit"],
-            "shape":
-            item.properties["s5p:shape"],
-            "instruments":
-            item.properties["instruments"],
-            "processing_mode":
-            item.properties["s5p:processing_mode"],
-            "product_type":
-            item.properties["s5p:product_type"],
-            "spatial_resolution":
-            item.properties["s5p:spatial_resolution"],
-            "geolocation_grid_from_band":
-            item.properties["cloud:geolocation_grid_from_band"],
-            "cloud_mode":
-            item.properties["cloud:cloud_mode"],
+            "bbox": item.bbox,
+            "datetime": item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
+            "absolute_orbit": item.properties["sat:absolute_orbit"],
+            "shape": item.properties["s5p:shape"],
+            "instruments": item.properties["instruments"],
+            "processing_mode": item.properties["s5p:processing_mode"],
+            "product_type": item.properties["s5p:product_type"],
+            "spatial_resolution": item.properties["s5p:spatial_resolution"],
+            "geolocation_grid_from_band": item.properties[
+                "cloud:geolocation_grid_from_band"
+            ],
+            "cloud_mode": item.properties["cloud:cloud_mode"],
         }
 
         expected = {
@@ -331,13 +295,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             self.assertEqual(s5p_props[k], v)
 
     def test_parses_co_metadata_properties(self):
-
         # Get the path of the test xml
-        manifest_path = test_data.get_path("data-files/"
-                                           "S5P_OFFL_L2__CO_____"
-                                           "20200303T013547_20200303T031717_"
-                                           "12367_01_010302_"
-                                           "20200306T032410.nc")
+        manifest_path = test_data.get_path(
+            "data-files/"
+            "S5P_OFFL_L2__CO_____"
+            "20200303T013547_20200303T031717_"
+            "12367_01_010302_"
+            "20200306T032410.nc"
+        )
 
         product_metadata = ProductMetadata(manifest_path)
 
@@ -364,28 +329,19 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         # Make a dictionary of the properties
         s5p_props = {
-            "bbox":
-            item.bbox,
-            "datetime":
-            item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
-            "absolute_orbit":
-            item.properties["sat:absolute_orbit"],
-            "shape":
-            item.properties["s5p:shape"],
-            "instruments":
-            item.properties["instruments"],
-            "processing_mode":
-            item.properties["s5p:processing_mode"],
-            "product_type":
-            item.properties["s5p:product_type"],
-            "spatial_resolution":
-            item.properties["s5p:spatial_resolution"],
-            "geolocation_grid_from_band":
-            item.properties["co:geolocation_grid_from_band"],
-            "input_band":
-            item.properties["co:input_band"],
-            "irradiance_accompanied":
-            item.properties["co:irradiance_accompanied"]
+            "bbox": item.bbox,
+            "datetime": item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
+            "absolute_orbit": item.properties["sat:absolute_orbit"],
+            "shape": item.properties["s5p:shape"],
+            "instruments": item.properties["instruments"],
+            "processing_mode": item.properties["s5p:processing_mode"],
+            "product_type": item.properties["s5p:product_type"],
+            "spatial_resolution": item.properties["s5p:spatial_resolution"],
+            "geolocation_grid_from_band": item.properties[
+                "co:geolocation_grid_from_band"
+            ],
+            "input_band": item.properties["co:input_band"],
+            "irradiance_accompanied": item.properties["co:irradiance_accompanied"],
         }
 
         expected = {
@@ -399,7 +355,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "spatial_resolution": "5.5x7km2",
             "geolocation_grid_from_band": 7,
             "input_band": ["L1B_RA_BD7", "L1B_RA_BD8"],
-            "irradiance_accompanied": "L1B_IR_SIR"
+            "irradiance_accompanied": "L1B_IR_SIR",
         }
 
         for k, v in expected.items():
@@ -407,13 +363,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             self.assertEqual(s5p_props[k], v)
 
     def test_parses_hcho_metadata_properties(self):
-
         # Get the path of the test xml
-        manifest_path = test_data.get_path("data-files/"
-                                           "S5P_OFFL_L2__HCHO___"
-                                           "20200303T013547_20200303T031717_"
-                                           "12367_01_010107_"
-                                           "20200306T053811.nc")
+        manifest_path = test_data.get_path(
+            "data-files/"
+            "S5P_OFFL_L2__HCHO___"
+            "20200303T013547_20200303T031717_"
+            "12367_01_010107_"
+            "20200306T053811.nc"
+        )
 
         product_metadata = ProductMetadata(manifest_path)
 
@@ -440,26 +397,18 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         # Make a dictionary of the properties
         s5p_props = {
-            "bbox":
-            item.bbox,
-            "datetime":
-            item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
-            "absolute_orbit":
-            item.properties["sat:absolute_orbit"],
-            "shape":
-            item.properties["s5p:shape"],
-            "instruments":
-            item.properties["instruments"],
-            "processing_mode":
-            item.properties["s5p:processing_mode"],
-            "product_type":
-            item.properties["s5p:product_type"],
-            "spatial_resolution":
-            item.properties["s5p:spatial_resolution"],
-            "geolocation_grid_from_band":
-            item.properties["hcho:geolocation_grid_from_band"],
-            "cloud_mode":
-            item.properties["hcho:cloud_mode"]
+            "bbox": item.bbox,
+            "datetime": item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
+            "absolute_orbit": item.properties["sat:absolute_orbit"],
+            "shape": item.properties["s5p:shape"],
+            "instruments": item.properties["instruments"],
+            "processing_mode": item.properties["s5p:processing_mode"],
+            "product_type": item.properties["s5p:product_type"],
+            "spatial_resolution": item.properties["s5p:spatial_resolution"],
+            "geolocation_grid_from_band": item.properties[
+                "hcho:geolocation_grid_from_band"
+            ],
+            "cloud_mode": item.properties["hcho:cloud_mode"],
         }
 
         expected = {
@@ -472,7 +421,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "product_type": "L2__HCHO__",
             "spatial_resolution": "5.5x3.5km2",
             "geolocation_grid_from_band": 3,
-            "cloud_mode": "crb"
+            "cloud_mode": "crb",
         }
 
         for k, v in expected.items():
@@ -480,13 +429,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             self.assertEqual(s5p_props[k], v)
 
     def test_parses_no2_metadata_properties(self):
-
         # Get the path of the test xml
-        manifest_path = test_data.get_path("data-files/"
-                                           "S5P_OFFL_L2__NO2____"
-                                           "20200303T013547_20200303T031717_"
-                                           "12367_01_010302_"
-                                           "20200306T053815.nc")
+        manifest_path = test_data.get_path(
+            "data-files/"
+            "S5P_OFFL_L2__NO2____"
+            "20200303T013547_20200303T031717_"
+            "12367_01_010302_"
+            "20200306T053815.nc"
+        )
 
         product_metadata = ProductMetadata(manifest_path)
 
@@ -513,52 +463,39 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         # Make a dictionary of the properties
         s5p_props = {
-            "bbox":
-            item.bbox,
-            "datetime":
-            item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
-            "absolute_orbit":
-            item.properties["sat:absolute_orbit"],
-            "shape":
-            item.properties["s5p:shape"],
-            "instruments":
-            item.properties["instruments"],
-            "processing_mode":
-            item.properties["s5p:processing_mode"],
-            "product_type":
-            item.properties["s5p:product_type"],
-            "spatial_resolution":
-            item.properties["s5p:spatial_resolution"],
-            "geolocation_grid_from_band":
-            item.properties["no2:geolocation_grid_from_band"],
-            "input_band":
-            item.properties["no2:input_band"],
-            "irradiance_accompanied":
-            item.properties["no2:irradiance_accompanied"]
+            "bbox": item.bbox,
+            "datetime": item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
+            "absolute_orbit": item.properties["sat:absolute_orbit"],
+            "shape": item.properties["s5p:shape"],
+            "instruments": item.properties["instruments"],
+            "processing_mode": item.properties["s5p:processing_mode"],
+            "product_type": item.properties["s5p:product_type"],
+            "spatial_resolution": item.properties["s5p:spatial_resolution"],
+            "geolocation_grid_from_band": item.properties[
+                "no2:geolocation_grid_from_band"
+            ],
+            "input_band": item.properties["no2:input_band"],
+            "irradiance_accompanied": item.properties["no2:irradiance_accompanied"],
         }
 
         expected = {
             "bbox": [-179.94377, -85.99168, 179.66743, 86.48782],
-            "datetime":
-            "2020-03-03T02:26:33.500000Z",
-            "absolute_orbit":
-            12367,
+            "datetime": "2020-03-03T02:26:33.500000Z",
+            "absolute_orbit": 12367,
             "shape": [4172, 450],
             "instruments": ["TROPOMI"],
-            "processing_mode":
-            "OFFL",
-            "product_type":
-            "L2__NO2___",
-            "spatial_resolution":
-            "5.5x3.5km2",
-            "geolocation_grid_from_band":
-            4,
+            "processing_mode": "OFFL",
+            "product_type": "L2__NO2___",
+            "spatial_resolution": "5.5x3.5km2",
+            "geolocation_grid_from_band": 4,
             "input_band": [
-                "L1B_RA_BD4", "L2__FRESCO", "L2__AER_AI", "L2__CLOUD_",
-                "L2__O22CLD"
+                "L1B_RA_BD4",
+                "L2__FRESCO",
+                "L2__AER_AI",
+                "L2__CLOUD_",
+                "L2__O22CLD",
             ],
-            "irradiance_accompanied":
-            "L1B_IR_UVN"
+            "irradiance_accompanied": "L1B_IR_UVN",
         }
 
         for k, v in expected.items():
@@ -566,13 +503,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             self.assertEqual(s5p_props[k], v)
 
     def test_parses_o3_metadata_properties(self):
-
         # Get the path of the test xml
-        manifest_path = test_data.get_path("data-files/"
-                                           "S5P_OFFL_L2__O3_____"
-                                           "20200303T013547_20200303T031717_"
-                                           "12367_01_010107_"
-                                           "20200306T053811.nc")
+        manifest_path = test_data.get_path(
+            "data-files/"
+            "S5P_OFFL_L2__O3_____"
+            "20200303T013547_20200303T031717_"
+            "12367_01_010107_"
+            "20200306T053811.nc"
+        )
 
         product_metadata = ProductMetadata(manifest_path)
 
@@ -599,26 +537,18 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         # Make a dictionary of the properties
         s5p_props = {
-            "bbox":
-            item.bbox,
-            "datetime":
-            item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
-            "absolute_orbit":
-            item.properties["sat:absolute_orbit"],
-            "shape":
-            item.properties["s5p:shape"],
-            "instruments":
-            item.properties["instruments"],
-            "processing_mode":
-            item.properties["s5p:processing_mode"],
-            "product_type":
-            item.properties["s5p:product_type"],
-            "spatial_resolution":
-            item.properties["s5p:spatial_resolution"],
-            "geolocation_grid_from_band":
-            item.properties["o3:geolocation_grid_from_band"],
-            "cloud_mode":
-            item.properties["o3:cloud_mode"]
+            "bbox": item.bbox,
+            "datetime": item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
+            "absolute_orbit": item.properties["sat:absolute_orbit"],
+            "shape": item.properties["s5p:shape"],
+            "instruments": item.properties["instruments"],
+            "processing_mode": item.properties["s5p:processing_mode"],
+            "product_type": item.properties["s5p:product_type"],
+            "spatial_resolution": item.properties["s5p:spatial_resolution"],
+            "geolocation_grid_from_band": item.properties[
+                "o3:geolocation_grid_from_band"
+            ],
+            "cloud_mode": item.properties["o3:cloud_mode"],
         }
 
         expected = {
@@ -639,13 +569,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             self.assertEqual(s5p_props[k], v)
 
     def test_parses_o3tcl_metadata_properties(self):
-
         # Get the path of the test xml
-        manifest_path = test_data.get_path("data-files/"
-                                           "S5P_OFFL_L2__O3_TCL_"
-                                           "20200303T120623_20200309T125248_"
-                                           "12373_01_010108_"
-                                           "20200318T000106.nc")
+        manifest_path = test_data.get_path(
+            "data-files/"
+            "S5P_OFFL_L2__O3_TCL_"
+            "20200303T120623_20200309T125248_"
+            "12373_01_010108_"
+            "20200318T000106.nc"
+        )
 
         product_metadata = ProductMetadata(manifest_path)
 
@@ -672,68 +603,130 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         # Make a dictionary of the properties
         s5p_props = {
-            "bbox":
-            item.bbox,
-            "datetime":
-            item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
-            "shape_ccd":
-            item.properties["o3_tcl:shape_ccd"],
-            "shape_csa":
-            item.properties["o3_tcl:shape_csa"],
-            "instruments":
-            item.properties["instruments"],
-            "processing_mode":
-            item.properties["s5p:processing_mode"],
-            "product_type":
-            item.properties["s5p:product_type"],
-            "resolution":
-            item.properties["s5p:spatial_resolution"],
-            "stratosphere_start_datetime":
-            item.properties["o3_tcl:stratosphere_start_datetime"],
-            "stratosphere_end_datetime":
-            item.properties["o3_tcl:stratosphere_end_datetime"],
-            "troposphere_start_datetime":
-            item.properties["o3_tcl:troposphere_start_datetime"],
-            "troposphere_end_datetime":
-            item.properties["o3_tcl:troposphere_end_datetime"],
-            "input_orbits":
-            item.properties["o3_tcl:input_orbits"],
-            "input_files":
-            item.properties["o3_tcl:input_files"]
+            "bbox": item.bbox,
+            "datetime": item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
+            "shape_ccd": item.properties["o3_tcl:shape_ccd"],
+            "shape_csa": item.properties["o3_tcl:shape_csa"],
+            "instruments": item.properties["instruments"],
+            "processing_mode": item.properties["s5p:processing_mode"],
+            "product_type": item.properties["s5p:product_type"],
+            "resolution": item.properties["s5p:spatial_resolution"],
+            "stratosphere_start_datetime": item.properties[
+                "o3_tcl:stratosphere_start_datetime"
+            ],
+            "stratosphere_end_datetime": item.properties[
+                "o3_tcl:stratosphere_end_datetime"
+            ],
+            "troposphere_start_datetime": item.properties[
+                "o3_tcl:troposphere_start_datetime"
+            ],
+            "troposphere_end_datetime": item.properties[
+                "o3_tcl:troposphere_end_datetime"
+            ],
+            "input_orbits": item.properties["o3_tcl:input_orbits"],
+            "input_files": item.properties["o3_tcl:input_files"],
         }
 
         expected = {
             "bbox": [-179.5, -19.75, 179.5, 19.75],
-            "datetime":
-            "2020-03-06T12:29:35.500000Z",
+            "datetime": "2020-03-06T12:29:35.500000Z",
             "shape_ccd": [80, 360],
             "shape_csa": [8, 18],
             "instruments": ["TROPOMI"],
-            "processing_mode":
-            "OFFL",
-            "product_type":
-            "L2__O3_TCL",
-            "resolution":
-            "5.5x3.5km2",
-            "stratosphere_start_datetime":
-            "2020-03-03T12:06:23Z",
-            "stratosphere_end_datetime":
-            "2020-03-09T12:52:48Z",
-            "troposphere_start_datetime":
-            "2020-03-04T23:38Z",
-            "troposphere_end_datetime":
-            "2020-03-08T00:22Z",
+            "processing_mode": "OFFL",
+            "product_type": "L2__O3_TCL",
+            "resolution": "5.5x3.5km2",
+            "stratosphere_start_datetime": "2020-03-03T12:06:23Z",
+            "stratosphere_end_datetime": "2020-03-09T12:52:48Z",
+            "troposphere_start_datetime": "2020-03-04T23:38Z",
+            "troposphere_end_datetime": "2020-03-08T00:22Z",
             "input_orbits": [
-                12373, 12374, 12375, 12376, 12377, 12378, 12379, 12380, 12381,
-                12382, 12383, 12384, 12385, 12386, 12387, 12388, 12389, 12390,
-                12391, 12392, 12393, 12394, 12395, 12396, 12397, 12398, 12399,
-                12400, 12401, 12402, 12403, 12404, 12405, 12406, 12407, 12408,
-                12409, 12410, 12411, 12412, 12413, 12414, 12415, 12416, 12417,
-                12418, 12419, 12420, 12421, 12422, 12423, 12424, 12425, 12426,
-                12427, 12428, 12429, 12430, 12431, 12432, 12433, 12434, 12435,
-                12436, 12437, 12438, 12439, 12440, 12441, 12442, 12443, 12444,
-                12445, 12446, 12447, 12448, 12449, 12450, 12451, 12452, 12453,
-                12454, 12455, 12456, 12457, 12458
+                12373,
+                12374,
+                12375,
+                12376,
+                12377,
+                12378,
+                12379,
+                12380,
+                12381,
+                12382,
+                12383,
+                12384,
+                12385,
+                12386,
+                12387,
+                12388,
+                12389,
+                12390,
+                12391,
+                12392,
+                12393,
+                12394,
+                12395,
+                12396,
+                12397,
+                12398,
+                12399,
+                12400,
+                12401,
+                12402,
+                12403,
+                12404,
+                12405,
+                12406,
+                12407,
+                12408,
+                12409,
+                12410,
+                12411,
+                12412,
+                12413,
+                12414,
+                12415,
+                12416,
+                12417,
+                12418,
+                12419,
+                12420,
+                12421,
+                12422,
+                12423,
+                12424,
+                12425,
+                12426,
+                12427,
+                12428,
+                12429,
+                12430,
+                12431,
+                12432,
+                12433,
+                12434,
+                12435,
+                12436,
+                12437,
+                12438,
+                12439,
+                12440,
+                12441,
+                12442,
+                12443,
+                12444,
+                12445,
+                12446,
+                12447,
+                12448,
+                12449,
+                12450,
+                12451,
+                12452,
+                12453,
+                12454,
+                12455,
+                12456,
+                12457,
+                12458,
             ],
             "input_files": [
                 "S5P_OFFL_L2__O3_____20200303T114449_20200303T132620_"
@@ -907,8 +900,8 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
                 "S5P_OFFL_L2__O3_____20200309T095120_20200309T113250_"
                 "12457_01_010108_20200312T225108",
                 "S5P_OFFL_L2__O3_____20200309T113250_20200309T131421_"
-                "12458_01_010108_20200312T231414"
-            ]
+                "12458_01_010108_20200312T231414",
+            ],
         }
 
         for k, v in expected.items():
@@ -916,13 +909,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             self.assertEqual(s5p_props[k], v)
 
     def test_parses_so2_metadata_properties(self):
-
         # Get the path of the test xml
-        manifest_path = test_data.get_path("data-files/"
-                                           "S5P_OFFL_L2__SO2____"
-                                           "20200303T013547_20200303T031717_"
-                                           "12367_01_010107_"
-                                           "20200306T144427.nc")
+        manifest_path = test_data.get_path(
+            "data-files/"
+            "S5P_OFFL_L2__SO2____"
+            "20200303T013547_20200303T031717_"
+            "12367_01_010107_"
+            "20200306T144427.nc"
+        )
 
         product_metadata = ProductMetadata(manifest_path)
 
@@ -949,26 +943,18 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
 
         # Make a dictionary of the properties
         s5p_props = {
-            "bbox":
-            item.bbox,
-            "datetime":
-            item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
-            "absolute_orbit":
-            item.properties["sat:absolute_orbit"],
-            "shape":
-            item.properties["s5p:shape"],
-            "instruments":
-            item.properties["instruments"],
-            "processing_mode":
-            item.properties["s5p:processing_mode"],
-            "product_type":
-            item.properties["s5p:product_type"],
-            "spatial_resolution":
-            item.properties["s5p:spatial_resolution"],
-            "geolocation_grid_from_band":
-            item.properties["so2:geolocation_grid_from_band"],
-            "cloud_mode":
-            item.properties["so2:cloud_mode"]
+            "bbox": item.bbox,
+            "datetime": item.datetime.strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
+            "absolute_orbit": item.properties["sat:absolute_orbit"],
+            "shape": item.properties["s5p:shape"],
+            "instruments": item.properties["instruments"],
+            "processing_mode": item.properties["s5p:processing_mode"],
+            "product_type": item.properties["s5p:product_type"],
+            "spatial_resolution": item.properties["s5p:spatial_resolution"],
+            "geolocation_grid_from_band": item.properties[
+                "so2:geolocation_grid_from_band"
+            ],
+            "cloud_mode": item.properties["so2:cloud_mode"],
         }
 
         expected = {
@@ -989,13 +975,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             self.assertEqual(s5p_props[k], v)
 
     def test_parses_npbd3_metadata_properties(self):
-
         # Get the path of the test xml
-        manifest_path = test_data.get_path("data-files/"
-                                           "S5P_OFFL_L2__NP_BD3_"
-                                           "20200303T013547_20200303T031717_"
-                                           "12367_01_010002_"
-                                           "20200306T032410.nc")
+        manifest_path = test_data.get_path(
+            "data-files/"
+            "S5P_OFFL_L2__NP_BD3_"
+            "20200303T013547_20200303T031717_"
+            "12367_01_010002_"
+            "20200306T032410.nc"
+        )
 
         product_metadata = ProductMetadata(manifest_path)
 
@@ -1032,8 +1019,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "resolution": item.properties["s5p:spatial_resolution"],
             "analysed_s5p_band": item.properties["npbd3:analysed_s5p_band"],
             "VIIRS_band": item.properties["npbd3:VIIRS_band"],
-            "number_of_scaled_fov":
-            item.properties["npbd3:number_of_scaled_fov"]
+            "number_of_scaled_fov": item.properties["npbd3:number_of_scaled_fov"],
         }
 
         expected = {
@@ -1047,7 +1033,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "resolution": "5.5x3.5km2",
             "analysed_s5p_band": 3,
             "VIIRS_band": [7, 9, 11],
-            "number_of_scaled_fov": 4
+            "number_of_scaled_fov": 4,
         }
 
         for k, v in expected.items():
@@ -1055,13 +1041,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             self.assertEqual(s5p_props[k], v)
 
     def test_parses_npbd6_metadata_properties(self):
-
         # Get the path of the test xml
-        manifest_path = test_data.get_path("data-files/"
-                                           "S5P_OFFL_L2__NP_BD6_"
-                                           "20200303T013547_20200303T031717_"
-                                           "12367_01_010002_"
-                                           "20200306T032654.nc")
+        manifest_path = test_data.get_path(
+            "data-files/"
+            "S5P_OFFL_L2__NP_BD6_"
+            "20200303T013547_20200303T031717_"
+            "12367_01_010002_"
+            "20200306T032654.nc"
+        )
 
         product_metadata = ProductMetadata(manifest_path)
 
@@ -1098,8 +1085,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "resolution": item.properties["s5p:spatial_resolution"],
             "analysed_s5p_band": item.properties["npbd6:analysed_s5p_band"],
             "VIIRS_band": item.properties["npbd6:VIIRS_band"],
-            "number_of_scaled_fov":
-            item.properties["npbd6:number_of_scaled_fov"]
+            "number_of_scaled_fov": item.properties["npbd6:number_of_scaled_fov"],
         }
 
         expected = {
@@ -1113,7 +1099,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "resolution": "5.5x3.5km2",
             "analysed_s5p_band": 6,
             "VIIRS_band": [7, 9, 11],
-            "number_of_scaled_fov": 4
+            "number_of_scaled_fov": 4,
         }
 
         for k, v in expected.items():
@@ -1121,13 +1107,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             self.assertEqual(s5p_props[k], v)
 
     def test_parses_npbd7_metadata_properties(self):
-
         # Get the path of the test xml
-        manifest_path = test_data.get_path("data-files/"
-                                           "S5P_OFFL_L2__NP_BD7_"
-                                           "20200303T013547_20200303T031717_"
-                                           "12367_01_010002_"
-                                           "20200306T032925.nc")
+        manifest_path = test_data.get_path(
+            "data-files/"
+            "S5P_OFFL_L2__NP_BD7_"
+            "20200303T013547_20200303T031717_"
+            "12367_01_010002_"
+            "20200306T032925.nc"
+        )
 
         product_metadata = ProductMetadata(manifest_path)
 
@@ -1164,8 +1151,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "resolution": item.properties["s5p:spatial_resolution"],
             "analysed_s5p_band": item.properties["npbd7:analysed_s5p_band"],
             "VIIRS_band": item.properties["npbd7:VIIRS_band"],
-            "number_of_scaled_fov":
-            item.properties["npbd7:number_of_scaled_fov"]
+            "number_of_scaled_fov": item.properties["npbd7:number_of_scaled_fov"],
         }
 
         expected = {
@@ -1179,7 +1165,7 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
             "resolution": "5.5x3.5km2",
             "analysed_s5p_band": 7,
             "VIIRS_band": [7, 9, 11],
-            "number_of_scaled_fov": 4
+            "number_of_scaled_fov": 4,
         }
 
         for k, v in expected.items():

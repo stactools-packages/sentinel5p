@@ -10,6 +10,7 @@ logger = logging.getLogger(__name__)
 
 def create_sentinel5p_command(cli):
     """Creates the stactools-sentinel5p command line utility."""
+
     @cli.group(
         "sentinel5p",
         short_help="Commands for working with stactools-sentinel5p",
@@ -18,8 +19,8 @@ def create_sentinel5p_command(cli):
         pass
 
     @sentinel5p.command(
-        "create-item",
-        short_help="Convert a Sentinel5p scene into a STAC item")
+        "create-item", short_help="Convert a Sentinel5p scene into a STAC item"
+    )
     @click.argument("src")
     @click.argument("dst")
     def create_item_command(src, dst):

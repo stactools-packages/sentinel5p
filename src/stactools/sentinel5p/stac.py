@@ -4,8 +4,7 @@ import pystac
 from pystac.extensions.eo import EOExtension
 from pystac.extensions.sat import SatExtension
 
-from .constants import (SENTINEL_CONSTELLATION, SENTINEL_LICENSE,
-                        SENTINEL_PROVIDER)
+from .constants import SENTINEL_CONSTELLATION, SENTINEL_LICENSE, SENTINEL_PROVIDER
 from .metadata_links import MetadataLinks
 from .product_metadata import ProductMetadata
 from .properties import fill_sat_properties
