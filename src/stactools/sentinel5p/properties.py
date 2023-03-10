@@ -15,7 +15,7 @@ def fill_sat_properties(sat_ext, href):
         pystac.Asset: An asset with the SAT relevant properties.
     """
 
-    if href.endswith('.nc'):
+    if href.endswith(".nc"):
         root = nc.Dataset(href)
     else:
         root = json.load(open(href))
@@ -25,7 +25,7 @@ def fill_sat_properties(sat_ext, href):
     if "O3_TCL" in href:
         pass
     else:
-        if href.endswith('.nc'):
+        if href.endswith(".nc"):
             sat_ext.absolute_orbit = int(root.orbit)
-        elif href.endswith('.json'):
-            sat_ext.absolute_orbit = int(root['orbit'])
+        elif href.endswith(".json"):
+            sat_ext.absolute_orbit = int(root["orbit"])

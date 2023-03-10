@@ -2,15 +2,17 @@
 
 - Name: sentinel5p
 - Package: `stactools.sentinel5p`
-- PypI: https://pypi.org/project/stactools-sentinel5p/0.1.0/
+- PypI: <https://pypi.org/project/stactools-sentinel5p/0.1.0/>
 - Owner: @chorng
-- Dataset homepage: https://registry.opendata.aws/sentinel5p/
+- Dataset homepage: <https://registry.opendata.aws/sentinel5p/>
 - STAC extensions used:
   - [eo](https://github.com/stac-extensions/eo)
   - [proj](https://github.com/stac-extensions/projection/)
   - [sat](https://github.com/stac-extensions/sat)
 
-This repository will assist you in the generation of STAC files for Sentinel 5P Level 2 products listed below:
+This repository will assist you in the generation of STAC files for Sentinel 5P
+Level 2 products listed below:
+
 - Ultra Violet Aerosol Index (AER_AI)
 - Aerosol Layer Height (AER_LH)
 - Methane (CH4___)
@@ -46,7 +48,7 @@ This repository will assist you in the generation of STAC files for Sentinel 5P 
 Description of the command line functions
 
 ```bash
-$ stac sentinel5p create-item source destination
+stac sentinel5p create-item source destination
 ```
 
 Use `stac sentinel5p --help` to see all subcommands and options.
