@@ -1,7 +1,6 @@
 import logging
 
 import pystac
-from pystac.extensions.eo import EOExtension
 from pystac.extensions.sat import SatExtension
 
 from .constants import SENTINEL_CONSTELLATION, SENTINEL_LICENSE, SENTINEL_PROVIDER
@@ -40,9 +39,6 @@ def create_item(file_path: str) -> pystac.Item:
     sat = SatExtension.ext(item, add_if_missing=True)
     fill_sat_properties(sat, file_path)
 
-    # eo
-    EOExtension.ext(item, add_if_missing=True)
-
     # s5p product properties
     item.properties.update({**product_metadata.metadata_dict})
 
@@ -52,7 +48,8 @@ def create_item(file_path: str) -> pystac.Item:
     item.common_metadata.constellation = SENTINEL_CONSTELLATION
 
     # objects for bands
-    item.add_asset(*metalinks.create_band_asset())
+    asset_id, asset_obj, band_dict_list = metalinks.create_band_asset()
+    item.add_asset(asset_id, asset_obj)
 
     # license link
     item.links.append(SENTINEL_LICENSE)

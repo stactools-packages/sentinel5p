@@ -1354,30 +1354,13 @@
     {
       "rel": "license",
       "href": "https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice"
-    },
-    {
-      "rel": "self",
-      "href": "/opt/stactools-sentinel5p/examples/S5P_OFFL_L2__AER_AI_20200303T013547_20200303T031717_12367_01_010302_20200306T032414.json",
-      "type": "application/json"
     }
   ],
   "assets": {
     "S5P_OFFL_L2__AER_AI_20200303T013547_20200303T031717_12367_01_010302_20200306T032414": {
-      "href": "/opt/stactools-sentinel5p/tests/data-files/S5P_OFFL_L2__AER_AI_20200303T013547_20200303T031717_12367_01_010302_20200306T032414.nc",
+      "href": "../tests/data-files/S5P_OFFL_L2__AER_AI_20200303T013547_20200303T031717_12367_01_010302_20200306T032414.nc",
       "type": "application/x-netcdf",
       "description": "TROPOMI/S5P Aerosol Index 1-Orbit L2 Swath 7x3.5km",
-      "eo:bands": [
-        {
-          "name": "Band 3",
-          "spectrometer": "UVIS",
-          "performance range": "320-490",
-          "spectral range": "305-400",
-          "spectral resoluton": "0.45-0.65",
-          "slit width": 280,
-          "spectral dispersion": 0.195,
-          "spectral magnification": 0.231
-        }
-      ],
       "roles": [
         "data",
         "metadata"
@@ -1391,7 +1374,6 @@
     86.48782
   ],
   "stac_extensions": [
-    "https://stac-extensions.github.io/sat/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/sat/v1.0.0/schema.json"
   ]
 }

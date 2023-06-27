@@ -73,19 +73,10 @@ class MetadataLinks:
         else:
             data_href = self.file_path.replace(".json", ".nc")
             description = self._root["title"]
-        if not band_dict_list:
-            asset = pystac.Asset(
-                href=data_href,
-                media_type=media_type,
-                description=description,
-                roles=roles,
-            )
-        else:
-            asset = pystac.Asset(
-                href=data_href,
-                media_type=media_type,
-                description=description,
-                roles=roles,
-                extra_fields={"eo:bands": band_dict_list},
-            )
-        return asset_id, asset
+        asset = pystac.Asset(
+            href=data_href,
+            media_type=media_type,
+            description=description,
+            roles=roles,
+        )
+        return asset_id, asset, band_dict_list
