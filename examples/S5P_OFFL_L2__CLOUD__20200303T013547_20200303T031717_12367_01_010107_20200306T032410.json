@@ -20,8 +20,6 @@
       5500,
       3500
     ],
-    "cloud:geolocation_grid_from_band": 3,
-    "cloud:cloud_mode": "cal",
     "providers": [
       {
         "name": "ESA",
@@ -35,6 +33,12 @@
     ],
     "platform": "Sentinel 5 Precursor",
     "constellation": "Sentinel-5P",
+    "s5p:product_name": "cloud",
+    "s5p:collection_identifier": "01",
+    "s5p:cloud": {
+      "geolocation_grid_from_band": 3,
+      "cloud_mode": "cal"
+    },
     "datetime": "2020-03-03T02:26:33.500000Z"
   },
   "geometry": {
@@ -1354,18 +1358,19 @@
   },
   "links": [
     {
-      "rel": "license",
-      "href": "https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice"
+      "rel": "about",
+      "href": "http://www.tropomi.eu/data-products/cloud",
+      "type": "text/html"
     }
   ],
   "assets": {
-    "S5P_OFFL_L2__CLOUD__20200303T013547_20200303T031717_12367_01_010107_20200306T032410": {
+    "cloud": {
       "href": "../tests/data-files/S5P_OFFL_L2__CLOUD__20200303T013547_20200303T031717_12367_01_010107_20200306T032410.nc",
       "type": "application/x-netcdf",
+      "title": "Cloud Fraction, Albedo, and Top Pressure",
       "description": "TROPOMI/S5P Cloud",
       "roles": [
-        "data",
-        "metadata"
+        "data"
       ]
     }
   },

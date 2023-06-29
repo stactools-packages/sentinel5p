@@ -20,15 +20,6 @@
       5500,
       3500
     ],
-    "no2:geolocation_grid_from_band": 4,
-    "no2:input_band": [
-      "L1B_RA_BD4",
-      "L2__FRESCO",
-      "L2__AER_AI",
-      "L2__CLOUD_",
-      "L2__O22CLD"
-    ],
-    "no2:irradiance_accompanied": "L1B_IR_UVN",
     "providers": [
       {
         "name": "ESA",
@@ -42,6 +33,19 @@
     ],
     "platform": "Sentinel 5 Precursor",
     "constellation": "Sentinel-5P",
+    "s5p:product_name": "no2",
+    "s5p:collection_identifier": "01",
+    "s5p:no2": {
+      "geolocation_grid_from_band": 4,
+      "input_band": [
+        "L1B_RA_BD4",
+        "L2__FRESCO",
+        "L2__AER_AI",
+        "L2__CLOUD_",
+        "L2__O22CLD"
+      ],
+      "irradiance_accompanied": "L1B_IR_UVN"
+    },
     "datetime": "2020-03-03T02:26:33.500000Z"
   },
   "geometry": {
@@ -1361,18 +1365,19 @@
   },
   "links": [
     {
-      "rel": "license",
-      "href": "https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice"
+      "rel": "about",
+      "href": "http://www.tropomi.eu/data-products/nitrogen-dioxide",
+      "type": "text/html"
     }
   ],
   "assets": {
-    "S5P_OFFL_L2__NO2____20200303T013547_20200303T031717_12367_01_010302_20200306T053815": {
+    "no2": {
       "href": "../tests/data-files/S5P_OFFL_L2__NO2____20200303T013547_20200303T031717_12367_01_010302_20200306T053815.nc",
       "type": "application/x-netcdf",
+      "title": "Nitrogen Dioxide Total Column",
       "description": "TROPOMI/S5P NO2 1-Orbit L2 Swath 7x3.5km",
       "roles": [
-        "data",
-        "metadata"
+        "data"
       ]
     }
   },

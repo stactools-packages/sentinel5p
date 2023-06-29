@@ -20,8 +20,6 @@
       5500,
       3500
     ],
-    "so2:geolocation_grid_from_band": 3,
-    "so2:cloud_mode": "crb",
     "providers": [
       {
         "name": "ESA",
@@ -35,6 +33,12 @@
     ],
     "platform": "Sentinel 5 Precursor",
     "constellation": "Sentinel-5P",
+    "s5p:product_name": "so2",
+    "s5p:collection_identifier": "01",
+    "s5p:so2": {
+      "geolocation_grid_from_band": 3,
+      "cloud_mode": "crb"
+    },
     "datetime": "2020-03-03T02:26:33.500000Z"
   },
   "geometry": {
@@ -1354,18 +1358,19 @@
   },
   "links": [
     {
-      "rel": "license",
-      "href": "https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice"
+      "rel": "about",
+      "href": "http://www.tropomi.eu/data-products/sulphur-dioxide",
+      "type": "text/html"
     }
   ],
   "assets": {
-    "S5P_OFFL_L2__SO2____20200303T013547_20200303T031717_12367_01_010107_20200306T144427": {
+    "so2": {
       "href": "../tests/data-files/S5P_OFFL_L2__SO2____20200303T013547_20200303T031717_12367_01_010107_20200306T144427.nc",
       "type": "application/x-netcdf",
+      "title": "Sulphur Dioxide Total Column",
       "description": "TROPOMI/S5P Sulphur Dioxide SO2",
       "roles": [
-        "data",
-        "metadata"
+        "data"
       ]
     }
   },

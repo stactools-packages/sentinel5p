@@ -66,7 +66,7 @@ class MetadataLinks:
 
         asset_id = self.file_path.split("/")[-1].split(".")[0]
         media_type = "application/x-netcdf"
-        roles = ["data", "metadata"]
+        roles = ["data"]
         if self.file_path.endswith(".nc"):
             data_href = self.file_path
             description = self._root.title

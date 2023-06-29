@@ -1,10 +1,13 @@
 import logging
+from pathlib import Path
 from typing import Any, List
 
 import pystac
 from pystac.extensions.sat import SatExtension
 
 from .constants import (
+    ABOUT_LINKS,
+    ASSET_TITLES,
     FILENAME_EXPR,
     SENTINEL_CONSTELLATION,
     SENTINEL_LICENSE,
@@ -92,6 +95,8 @@ def create_item(file_path: str) -> pystac.Item:
         stac_extensions=[],
     )
 
+    s5p_naming = FILENAME_EXPR.match(Path(file_path).stem)
+
     # ---- Add Extensions ----
     # sat
     sat = SatExtension.ext(item, add_if_missing=True)
@@ -105,11 +110,33 @@ def create_item(file_path: str) -> pystac.Item:
     item.common_metadata.platform = product_metadata.platform
     item.common_metadata.constellation = SENTINEL_CONSTELLATION
 
-    # objects for bands
-    asset_id, asset_obj, band_dict_list = metalinks.create_band_asset()
+    # product specific properties
+    asset_spec_prefix = s5p_naming.group("product").strip("_").lower()
+    asset_id = asset_spec_prefix.replace("_", "-")
+    asset_spec_properties = {
+        k.replace(f"{asset_spec_prefix}:", ""): v
+        for k, v in item.properties.items()
+        if k.startswith(asset_spec_prefix + ":")
+    }
+    for key in asset_spec_properties:
+        del item.properties[f"{asset_spec_prefix}:{key}"]
+
+    product_type = s5p_naming.group("product_type")
+    s5p_properties = {
+        "s5p:product_name": asset_id,
+        "s5p:processing_mode": s5p_naming.group("mode"),
+        "s5p:collection_identifier": s5p_naming.group("collection"),
+        f"s5p:{asset_spec_prefix}": asset_spec_properties,
+    }
+    item.properties.update(s5p_properties)
+    _, asset_obj, band_dict_list = metalinks.create_band_asset()
+    asset_obj.title = ASSET_TITLES[product_type]
     item.add_asset(asset_id, asset_obj)
 
-    # license link
-    item.links.append(SENTINEL_LICENSE)
+    item.links.append(
+        pystac.Link(
+            rel="about", target=ABOUT_LINKS[product_type], media_type="text/html"
+        )
+    )
 
     return item

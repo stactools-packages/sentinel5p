@@ -20,20 +20,6 @@
       5500,
       7000
     ],
-    "ch4:geolocation_grid_from_band": 7,
-    "ch4:input_band": [
-      "L1B_RA_BD7",
-      "L1B_RA_BD8",
-      "L1B_RA_BD6",
-      "L2__CO____",
-      "L2__FRESCO",
-      "L2__NP_BD6",
-      "L2__NP_BD7"
-    ],
-    "ch4:irradiance_accompanied": [
-      "L1B_IR_SIR",
-      "L1B_IR_UVN"
-    ],
     "providers": [
       {
         "name": "ESA",
@@ -47,6 +33,24 @@
     ],
     "platform": "Sentinel 5 Precursor",
     "constellation": "Sentinel-5P",
+    "s5p:product_name": "ch4",
+    "s5p:collection_identifier": "01",
+    "s5p:ch4": {
+      "geolocation_grid_from_band": 7,
+      "input_band": [
+        "L1B_RA_BD7",
+        "L1B_RA_BD8",
+        "L1B_RA_BD6",
+        "L2__CO____",
+        "L2__FRESCO",
+        "L2__NP_BD6",
+        "L2__NP_BD7"
+      ],
+      "irradiance_accompanied": [
+        "L1B_IR_SIR",
+        "L1B_IR_UVN"
+      ]
+    },
     "datetime": "2020-03-03T02:26:33.500000Z"
   },
   "geometry": {
@@ -1366,18 +1370,19 @@
   },
   "links": [
     {
-      "rel": "license",
-      "href": "https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice"
+      "rel": "about",
+      "href": "http://www.tropomi.eu/data-products/methane",
+      "type": "text/html"
     }
   ],
   "assets": {
-    "S5P_OFFL_L2__CH4____20200303T013547_20200303T031717_12367_01_010302_20200306T053811": {
+    "ch4": {
       "href": "../tests/data-files/S5P_OFFL_L2__CH4____20200303T013547_20200303T031717_12367_01_010302_20200306T053811.nc",
       "type": "application/x-netcdf",
+      "title": "Methane Total Column",
       "description": "TROPOMI/S5P Methane 1-Orbit L2 Swath 7x7km",
       "roles": [
-        "data",
-        "metadata"
+        "data"
       ]
     }
   },

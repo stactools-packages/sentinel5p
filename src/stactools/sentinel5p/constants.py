@@ -115,7 +115,7 @@ SENTINEL_TROPOMI_BANDS = {
 }
 
 FILENAME_EXPR = re.compile(
-    r"S5P_(?P<mode>[A-Z]{4})_L(?P<level>[0-9]{1})_(?P<product>.{7})_"
+    r"S5P_(?P<mode>[A-Z]{4})_(?P<product_type>L(?P<level>[0-9]{1})_(?P<product>.{7}))_"
     r"(?P<start_datetime>[0-9,A-Z]{15})_(?P<end_datetime>[0-9,A-Z]{15})_"
     r"(?P<orbit>[0-9]{5})_(?P<collection>[0-9]{2})_(?P<processor_version>[0-9]{6})_"
     r"(?P<production_datetime>[0-9,A-Z]{15})"

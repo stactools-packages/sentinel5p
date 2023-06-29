@@ -20,9 +20,6 @@
       5500,
       3500
     ],
-    "aer_ai:geolocation_grid_from_band": 3,
-    "aer_ai:input_band": "L1B_RA_BD3",
-    "aer_ai:irradiance_accompanied": "L1B_IR_UVN",
     "providers": [
       {
         "name": "ESA",
@@ -36,6 +33,13 @@
     ],
     "platform": "Sentinel 5 Precursor",
     "constellation": "Sentinel-5P",
+    "s5p:product_name": "aer-ai",
+    "s5p:collection_identifier": "01",
+    "s5p:aer_ai": {
+      "geolocation_grid_from_band": 3,
+      "input_band": "L1B_RA_BD3",
+      "irradiance_accompanied": "L1B_IR_UVN"
+    },
     "datetime": "2020-03-03T02:26:33.500000Z"
   },
   "geometry": {
@@ -1355,18 +1359,19 @@
   },
   "links": [
     {
-      "rel": "license",
-      "href": "https://sentinel.esa.int/documents/247904/690755/Sentinel_Data_Legal_Notice"
+      "rel": "about",
+      "href": "http://www.tropomi.eu/data-products/uv-aerosol-index",
+      "type": "text/html"
     }
   ],
   "assets": {
-    "S5P_OFFL_L2__AER_AI_20200303T013547_20200303T031717_12367_01_010302_20200306T032414": {
+    "aer-ai": {
       "href": "../tests/data-files/S5P_OFFL_L2__AER_AI_20200303T013547_20200303T031717_12367_01_010302_20200306T032414.nc",
       "type": "application/x-netcdf",
+      "title": "Ultraviolet Aerosol Index",
       "description": "TROPOMI/S5P Aerosol Index 1-Orbit L2 Swath 7x3.5km",
       "roles": [
-        "data",
-        "metadata"
+        "data"
       ]
     }
   },
