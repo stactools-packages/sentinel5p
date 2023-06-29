@@ -1,4 +1,7 @@
+import re
+
 import pystac
+import shapely.geometry
 from pystac import ProviderRole
 from pystac.link import Link
 
@@ -110,3 +113,49 @@ SENTINEL_TROPOMI_BANDS = {
         "spectral magnification": 0.021,
     },
 }
+
+FILENAME_EXPR = re.compile(
+    r"S5P_(?P<mode>[A-Z]{4})_L(?P<level>[0-9]{1})_(?P<product>.{7})_"
+    r"(?P<start_datetime>[0-9,A-Z]{15})_(?P<end_datetime>[0-9,A-Z]{15})_"
+    r"(?P<orbit>[0-9]{5})_(?P<collection>[0-9]{2})_(?P<processor_version>[0-9]{6})_"
+    r"(?P<production_datetime>[0-9,A-Z]{15})"
+)
+
+ABOUT_LINKS = {
+    "L2__AER_AI": "http://www.tropomi.eu/data-products/uv-aerosol-index",
+    "L2__AER_LH": "http://www.tropomi.eu/data-products/aerosol-layer-height",
+    "L2__CH4___": "http://www.tropomi.eu/data-products/methane",
+    "L2__CLOUD_": "http://www.tropomi.eu/data-products/cloud",
+    "L2__CO____": "http://www.tropomi.eu/data-products/carbon-monoxide",
+    "L2__HCHO__": "http://www.tropomi.eu/data-products/formaldehyde",
+    "L2__NO2___": "http://www.tropomi.eu/data-products/nitrogen-dioxide",
+    "L2__O3____": "http://www.tropomi.eu/data-products/total-ozone-column",
+    "L2__O3_TCL": "http://www.tropomi.eu/data-products/tropospheric-ozone-column",
+    "L2__SO2___": "http://www.tropomi.eu/data-products/sulphur-dioxide",
+    "L2__NP_BD3": "https://sentinel.esa.int/web/sentinel/technical-guides/sentinel-5p/products-algorithms",  # noqa
+    "L2__NP_BD6": "https://sentinel.esa.int/web/sentinel/technical-guides/sentinel-5p/products-algorithms",  # noqa
+    "L2__NP_BD7": "https://sentinel.esa.int/web/sentinel/technical-guides/sentinel-5p/products-algorithms",  # noqa
+}
+
+ASSET_TITLES = {
+    "L2__AER_AI": "Ultraviolet Aerosol Index",
+    "L2__AER_LH": "Aerosol Layer Height",
+    "L2__CH4___": "Methane Total Column",
+    "L2__CLOUD_": "Cloud Fraction, Albedo, and Top Pressure",
+    "L2__CO____": "Carbon Monoxide Total Column",
+    "L2__HCHO__": "Formaldehyde Total Column",
+    "L2__NO2___": "Nitrogen Dioxide Total Column",
+    "L2__O3____": "Ozone Total Column",
+    "L2__O3_TCL": "Ozone Tropospheric Column",
+    "L2__SO2___": "Sulphur Dioxide Total Column",
+    "L2__NP_BD3": "VIIRS/NPP Band 3 Cloud Mask",
+    "L2__NP_BD6": "VIIRS/NPP Band 6 Cloud Mask",
+    "L2__NP_BD7": "VIIRS/NPP Band 7 Cloud Mask",
+}
+
+O3_TCL_GEOMETRY = shapely.geometry.mapping(
+    shapely.geometry.Polygon(
+        [(-180, -19.75), (180, -19.75), (180, 19.75), (-180, 19.75)]
+    )
+)
+O3_TCL_BBOX = [-180, -19.75, 180, 19.75]

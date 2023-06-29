@@ -9,7 +9,10 @@
     ],
     "s5p:processing_mode": "OFFL",
     "s5p:product_type": "L2__O3_TCL",
-    "s5p:spatial_resolution": "5.5x3.5km2",
+    "s5p:spatial_resolution": [
+      5500,
+      3500
+    ],
     "o3_tcl:shape_ccd": [
       80,
       360

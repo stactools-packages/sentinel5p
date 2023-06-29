@@ -16,7 +16,10 @@
       4172,
       450
     ],
-    "s5p:spatial_resolution": "5.5x3.5km2",
+    "s5p:spatial_resolution": [
+      5500,
+      3500
+    ],
     "aer_ai:geolocation_grid_from_band": 3,
     "aer_ai:input_band": "L1B_RA_BD3",
     "aer_ai:irradiance_accompanied": "L1B_IR_UVN",
