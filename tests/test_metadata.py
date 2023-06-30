@@ -61,14 +61,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         }
 
         expected = {
-            "bbox": [-179.94377, -85.99168, 179.66743, 86.48782],
+            "bbox": [-180.0, -90.0, 180.0, 90.0],
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 450],
             "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__AER_AI",
-            "spatial_resolution": "5.5x3.5km2",
+            "spatial_resolution": [5500, 3500],
             "geolocation_grid_from_band": 3,
             "input_band": "L1B_RA_BD3",
             "irradiance_accompanied": "L1B_IR_UVN",
@@ -129,14 +129,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         }
 
         expected = {
-            "bbox": [-179.90239, -86.10597, 179.70866, 86.44622],
+            "bbox": [-180.0, -90.0, 180.0, 90.0],
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 448],
             "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__AER_LH",
-            "spatial_resolution": "5.5x3.5km2",
+            "spatial_resolution": [5500, 3500],
             "geolocation_grid_from_band": 6,
             "input_band": [
                 "L1B_RA_BD6",
@@ -203,14 +203,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         }
 
         expected = {
-            "bbox": [-179.9934, -85.990204, 179.84909, 86.633255],
+            "bbox": [-180.0, -90.0, 180.0, 90.0],
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 215],
             "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__CH4___",
-            "spatial_resolution": "5.5x7km2",
+            "spatial_resolution": [5500, 7000],
             "geolocation_grid_from_band": 7,
             "input_band": [
                 "L1B_RA_BD7",
@@ -278,14 +278,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         }
 
         expected = {
-            "bbox": [-179.94377, -85.99168, 179.66743, 86.48782],
+            "bbox": [-180.0, -90.0, 180.0, 90.0],
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 450],
             "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__CLOUD_",
-            "spatial_resolution": "5.5x3.5km2",
+            "spatial_resolution": [5500, 3500],
             "geolocation_grid_from_band": 3,
             "cloud_mode": "cal",
         }
@@ -345,14 +345,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         }
 
         expected = {
-            "bbox": [-179.9934, -85.990204, 179.84909, 86.633255],
+            "bbox": [-180.0, -90.0, 180.0, 90.0],
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 215],
             "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__CO____",
-            "spatial_resolution": "5.5x7km2",
+            "spatial_resolution": [5500, 7000],
             "geolocation_grid_from_band": 7,
             "input_band": ["L1B_RA_BD7", "L1B_RA_BD8"],
             "irradiance_accompanied": "L1B_IR_SIR",
@@ -412,14 +412,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         }
 
         expected = {
-            "bbox": [-179.94377, -85.99168, 179.66743, 86.48782],
+            "bbox": [-180.0, -90.0, 180.0, 90.0],
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 450],
             "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__HCHO__",
-            "spatial_resolution": "5.5x3.5km2",
+            "spatial_resolution": [5500, 3500],
             "geolocation_grid_from_band": 3,
             "cloud_mode": "crb",
         }
@@ -479,14 +479,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         }
 
         expected = {
-            "bbox": [-179.94377, -85.99168, 179.66743, 86.48782],
+            "bbox": [-180.0, -90.0, 180.0, 90.0],
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 450],
             "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__NO2___",
-            "spatial_resolution": "5.5x3.5km2",
+            "spatial_resolution": [5500, 3500],
             "geolocation_grid_from_band": 4,
             "input_band": [
                 "L1B_RA_BD4",
@@ -552,14 +552,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         }
 
         expected = {
-            "bbox": [-179.94377, -85.99168, 179.66743, 86.48782],
+            "bbox": [-180.0, -90.0, 180.0, 90.0],
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 450],
             "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__O3____",
-            "spatial_resolution": "5.5x3.5km2",
+            "spatial_resolution": [5500, 3500],
             "geolocation_grid_from_band": 3,
             "cloud_mode": "crb",
         }
@@ -628,14 +628,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         }
 
         expected = {
-            "bbox": [-179.5, -19.75, 179.5, 19.75],
+            "bbox": [-180.0, -19.75, 180.0, 19.75],
             "datetime": "2020-03-06T12:29:35.500000Z",
             "shape_ccd": [80, 360],
             "shape_csa": [8, 18],
             "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__O3_TCL",
-            "resolution": "5.5x3.5km2",
+            "resolution": [5500, 3500],
             "stratosphere_start_datetime": "2020-03-03T12:06:23Z",
             "stratosphere_end_datetime": "2020-03-09T12:52:48Z",
             "troposphere_start_datetime": "2020-03-04T23:38Z",
@@ -958,14 +958,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         }
 
         expected = {
-            "bbox": [-179.94377, -85.99168, 179.66743, 86.48782],
+            "bbox": [-180.0, -90.0, 180.0, 90.0],
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 450],
             "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__SO2___",
-            "spatial_resolution": "5.5x3.5km2",
+            "spatial_resolution": [5500, 3500],
             "geolocation_grid_from_band": 3,
             "cloud_mode": "crb",
         }
@@ -1023,14 +1023,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         }
 
         expected = {
-            "bbox": [-179.94377, -85.99168, 179.66743, 86.48782],
+            "bbox": [-180.0, -90.0, 180.0, 90.0],
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 450],
             "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__NP_BD3",
-            "resolution": "5.5x3.5km2",
+            "resolution": [5500, 3500],
             "analysed_s5p_band": 3,
             "VIIRS_band": [7, 9, 11],
             "number_of_scaled_fov": 4,
@@ -1089,14 +1089,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         }
 
         expected = {
-            "bbox": [-179.90239, -86.10597, 179.70866, 86.44622],
+            "bbox": [-180.0, -90.0, 180.0, 90.0],
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 448],
             "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__NP_BD6",
-            "resolution": "5.5x3.5km2",
+            "resolution": [5500, 3500],
             "analysed_s5p_band": 6,
             "VIIRS_band": [7, 9, 11],
             "number_of_scaled_fov": 4,
@@ -1155,14 +1155,14 @@ class Sentinel3OLCIMetadataTest(unittest.TestCase):
         }
 
         expected = {
-            "bbox": [-179.9934, -85.990204, 179.84909, 86.633255],
+            "bbox": [-180.0, -90.0, 180.0, 90.0],
             "datetime": "2020-03-03T02:26:33.500000Z",
             "absolute_orbit": 12367,
             "shape": [4172, 215],
             "instruments": ["TROPOMI"],
             "processing_mode": "OFFL",
             "product_type": "L2__NP_BD7",
-            "resolution": "5.5x3.5km2",
+            "resolution": [5500, 3500],
             "analysed_s5p_band": 7,
             "VIIRS_band": [7, 9, 11],
             "number_of_scaled_fov": 4,

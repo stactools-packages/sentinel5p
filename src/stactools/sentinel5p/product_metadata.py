@@ -1,10 +1,14 @@
 import json  # type: ignore
+import re
 from datetime import datetime
 from typing import Any, Dict, Optional
 
+import antimeridian
 import netCDF4 as nc  # type: ignore
 from pystac.utils import str_to_datetime
 from shapely.geometry import Polygon, mapping  # type: ignore
+
+from .constants import O3_TCL_GEOMETRY
 
 
 class ProductMetadataError(Exception):
@@ -50,20 +54,22 @@ class ProductMetadata:
     @property
     def get_geometry(self):
         if "O3_TCL" in self.file_path:
-            if self.file_path.endswith(".nc"):
-                latitude_ccd = self._root["/PRODUCT/latitude_ccd"][:]
-                longitude_ccd = self._root["/PRODUCT/longitude_ccd"][:]
-            else:
-                latitude_ccd = self._root["PRODUCT"]["latitude_ccd"][:]
-                longitude_ccd = self._root["PRODUCT"]["longitude_ccd"][:]
-            footprint_polygon = Polygon(
-                list(
-                    [[coord, latitude_ccd[0]] for coord in longitude_ccd]
-                    + [[longitude_ccd[-1], coord] for coord in latitude_ccd]
-                    + [[coord, latitude_ccd[-1]] for coord in longitude_ccd[::-1]]
-                    + [[longitude_ccd[0], coord] for coord in latitude_ccd[::-1]]
-                )
-            )
+            # # Included metadata uses incorrect extent of data, so use hardcode for now
+            # if self.file_path.endswith(".nc"):
+            #     latitude_ccd = self._root["/PRODUCT/latitude_ccd"][:]
+            #     longitude_ccd = self._root["/PRODUCT/longitude_ccd"][:]
+            # else:
+            #     latitude_ccd = self._root["PRODUCT"]["latitude_ccd"][:]
+            #     longitude_ccd = self._root["PRODUCT"]["longitude_ccd"][:]
+            # footprint_polygon = Polygon(
+            #     list(
+            #         [[coord, latitude_ccd[0]] for coord in longitude_ccd]
+            #         + [[longitude_ccd[-1], coord] for coord in latitude_ccd]
+            #         + [[coord, latitude_ccd[-1]] for coord in longitude_ccd[::-1]]
+            #         + [[longitude_ccd[0], coord] for coord in latitude_ccd[::-1]]
+            #     )
+            # )
+            footprint_polygon = O3_TCL_GEOMETRY
         else:
             if self.file_path.endswith(".nc"):
                 footprint_text = self._root[
@@ -87,7 +93,10 @@ class ProductMetadata:
             footprint_points = [
                 point[::-1] for point in list(zip(*[iter(footprint_value)] * 2))
             ]
-            footprint_polygon = Polygon(footprint_points)
+            footprint_polygon_alpha = Polygon(footprint_points)
+            footprint_polygon = antimeridian.fix_polygon(
+                footprint_polygon_alpha, fix_winding=False
+            )
         geometry = mapping(footprint_polygon)
         self.footprint_polygon = footprint_polygon
         return geometry
@@ -188,6 +197,15 @@ class ProductMetadata:
         def _correct_resolution(resolution):
             return resolution.replace("7x", "5.5x")
 
+        def str_res_to_list(spatial_resolution: str):
+            resolution_pat = re.compile(r"^([0-9\.]+)x([0-9\.]+) *km2$")
+            resolution_match = resolution_pat.match(spatial_resolution)
+            if not resolution_match:
+                raise ValueError(
+                    f"Unexpected spatial_resolutio: '{spatial_resolution}'"
+                )
+            return [int(1000 * float(x)) for x in resolution_match.groups()]
+
         def _get_resolution(product_path, product_root, observed_after_res_upgraded):
             excludes = ["O3_TCL", "_BD3_", "_BD6_", "_BD7_"]
             if any([product in product_path for product in excludes]):
@@ -202,7 +220,7 @@ class ProductMetadata:
                     )
                 else:
                     spatial_resolution = product_root.spatial_resolution
-            return spatial_resolution
+            return str_res_to_list(spatial_resolution)
 
         def _get_start_datetime_from_json(product_path, product_root):
             if "O3_TCL" in product_path:
@@ -263,7 +281,7 @@ class ProductMetadata:
                         int(self._root["PRODUCT"].dimensions["scanline"].size),
                         int(self._root["PRODUCT"].dimensions["ground_pixel"].size),
                     ],
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "aer_ai:geolocation_grid_from_band": int(
                         self._root.geolocation_grid_from_band
                     ),
@@ -297,7 +315,7 @@ class ProductMetadata:
                         int(self._root["PRODUCT"].dimensions["scanline"].size),
                         int(self._root["PRODUCT"].dimensions["ground_pixel"].size),
                     ],
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "aer_lh:geolocation_grid_from_band": int(
                         self._root.geolocation_grid_from_band
                     ),
@@ -343,7 +361,7 @@ class ProductMetadata:
                         int(self._root["PRODUCT"].dimensions["scanline"].size),
                         int(self._root["PRODUCT"].dimensions["ground_pixel"].size),
                     ],
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "ch4:geolocation_grid_from_band": int(
                         self._root.geolocation_grid_from_band
                     ),
@@ -398,7 +416,7 @@ class ProductMetadata:
                         int(self._root["PRODUCT"].dimensions["scanline"].size),
                         int(self._root["PRODUCT"].dimensions["ground_pixel"].size),
                     ],
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "cloud:geolocation_grid_from_band": int(
                         self._root.geolocation_grid_from_band
                     ),
@@ -423,7 +441,7 @@ class ProductMetadata:
                         int(self._root["PRODUCT"].dimensions["scanline"].size),
                         int(self._root["PRODUCT"].dimensions["ground_pixel"].size),
                     ],
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "co:geolocation_grid_from_band": int(
                         self._root.geolocation_grid_from_band
                     ),
@@ -460,7 +478,7 @@ class ProductMetadata:
                         int(self._root["PRODUCT"].dimensions["scanline"].size),
                         int(self._root["PRODUCT"].dimensions["ground_pixel"].size),
                     ],
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "hcho:geolocation_grid_from_band": int(
                         self._root.geolocation_grid_from_band
                     ),
@@ -485,7 +503,7 @@ class ProductMetadata:
                         int(self._root["PRODUCT"].dimensions["scanline"].size),
                         int(self._root["PRODUCT"].dimensions["ground_pixel"].size),
                     ],
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "no2:geolocation_grid_from_band": int(
                         self._root.geolocation_grid_from_band
                     ),
@@ -531,7 +549,7 @@ class ProductMetadata:
                         int(self._root["PRODUCT"].dimensions["scanline"].size),
                         int(self._root["PRODUCT"].dimensions["ground_pixel"].size),
                     ],
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "o3:geolocation_grid_from_band": int(
                         self._root.geolocation_grid_from_band
                     ),
@@ -552,7 +570,7 @@ class ProductMetadata:
                             "ProductShortName"
                         )
                     ),
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "o3_tcl:shape_ccd": [
                         int(self._root["PRODUCT"].dimensions["latitude_ccd"].size),
                         int(self._root["PRODUCT"].dimensions["longitude_ccd"].size),
@@ -597,7 +615,7 @@ class ProductMetadata:
                         int(self._root["PRODUCT"].dimensions["scanline"].size),
                         int(self._root["PRODUCT"].dimensions["ground_pixel"].size),
                     ],
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "so2:geolocation_grid_from_band": int(
                         self._root.geolocation_grid_from_band
                     ),
@@ -636,7 +654,7 @@ class ProductMetadata:
                             .size
                         ),
                     ],
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "npbd3:analysed_s5p_band": int(
                         self._root["METADATA/ALGORITHM_SETTINGS"].getncattr(
                             "S5P_Band_Number"
@@ -783,7 +801,7 @@ class ProductMetadata:
                         int(self._root["PRODUCT"]["dimensions"]["scanline"]),
                         int(self._root["PRODUCT"]["dimensions"]["ground_pixel"]),
                     ],
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "aer_ai:geolocation_grid_from_band": int(
                         self._root["geolocation_grid_from_band"]
                     ),
@@ -813,7 +831,7 @@ class ProductMetadata:
                         int(self._root["PRODUCT"]["dimensions"]["scanline"]),
                         int(self._root["PRODUCT"]["dimensions"]["ground_pixel"]),
                     ],
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "aer_lh:geolocation_grid_from_band": int(
                         self._root["geolocation_grid_from_band"]
                     ),
@@ -847,7 +865,7 @@ class ProductMetadata:
                         int(self._root["PRODUCT"]["dimensions"]["scanline"]),
                         int(self._root["PRODUCT"]["dimensions"]["ground_pixel"]),
                     ],
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "ch4:geolocation_grid_from_band": int(
                         self._root["geolocation_grid_from_band"]
                     ),
@@ -884,7 +902,7 @@ class ProductMetadata:
                         int(self._root["PRODUCT"]["dimensions"]["scanline"]),
                         int(self._root["PRODUCT"]["dimensions"]["ground_pixel"]),
                     ],
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "cloud:geolocation_grid_from_band": int(
                         self._root["geolocation_grid_from_band"]
                     ),
@@ -909,7 +927,7 @@ class ProductMetadata:
                         int(self._root["PRODUCT"]["dimensions"]["scanline"]),
                         int(self._root["PRODUCT"]["dimensions"]["ground_pixel"]),
                     ],
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "co:geolocation_grid_from_band": int(
                         self._root["geolocation_grid_from_band"]
                     ),
@@ -940,7 +958,7 @@ class ProductMetadata:
                         int(self._root["PRODUCT"]["dimensions"]["scanline"]),
                         int(self._root["PRODUCT"]["dimensions"]["ground_pixel"]),
                     ],
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "hcho:geolocation_grid_from_band": int(
                         self._root["geolocation_grid_from_band"]
                     ),
@@ -965,7 +983,7 @@ class ProductMetadata:
                         int(self._root["PRODUCT"]["dimensions"]["scanline"]),
                         int(self._root["PRODUCT"]["dimensions"]["ground_pixel"]),
                     ],
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "no2:geolocation_grid_from_band": int(
                         self._root["geolocation_grid_from_band"]
                     ),
@@ -999,7 +1017,7 @@ class ProductMetadata:
                         int(self._root["PRODUCT"]["dimensions"]["scanline"]),
                         int(self._root["PRODUCT"]["dimensions"]["ground_pixel"]),
                     ],
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "o3:geolocation_grid_from_band": int(
                         self._root["geolocation_grid_from_band"]
                     ),
@@ -1022,7 +1040,7 @@ class ProductMetadata:
                             "ProductShortName"
                         ]
                     ),
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "o3_tcl:shape_ccd": [
                         int(self._root["PRODUCT"]["dimensions"]["latitude_ccd"]),
                         int(self._root["PRODUCT"]["dimensions"]["longitude_ccd"]),
@@ -1067,7 +1085,7 @@ class ProductMetadata:
                         int(self._root["PRODUCT"]["dimensions"]["scanline"]),
                         int(self._root["PRODUCT"]["dimensions"]["ground_pixel"]),
                     ],
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "so2:geolocation_grid_from_band": int(
                         self._root["geolocation_grid_from_band"]
                     ),
@@ -1094,7 +1112,7 @@ class ProductMetadata:
                             "ProductShortName"
                         ]
                     ),
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "s5p:shape": [
                         int(
                             self._root["BAND3_NPPC"]["STANDARD_MODE"]["dimensions"][
@@ -1143,7 +1161,7 @@ class ProductMetadata:
                             "ProductShortName"
                         ]
                     ),
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "s5p:shape": [
                         int(
                             self._root["BAND6_NPPC"]["STANDARD_MODE"]["dimensions"][
@@ -1192,7 +1210,7 @@ class ProductMetadata:
                             "ProductShortName"
                         ]
                     ),
-                    "s5p:spatial_resolution": str(spatial_resolution),
+                    "s5p:spatial_resolution": spatial_resolution,
                     "s5p:shape": [
                         int(
                             self._root["BAND7_NPPC"]["STANDARD_MODE"]["dimensions"][

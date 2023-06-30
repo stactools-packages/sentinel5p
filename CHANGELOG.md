@@ -9,6 +9,11 @@ number as needed.
 
 ## [Unreleased]
 
+### Changed
+
+- Update to stac items to follow best practices as seen in Planetary Computer
+  ([#3](https://github.com/stactools-packages/sentinel5p/pulls/3))
+
 ### Added
 
 - Nothing.
