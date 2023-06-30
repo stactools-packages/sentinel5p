@@ -198,7 +198,7 @@ class ProductMetadata:
             return resolution.replace("7x", "5.5x")
 
         def str_res_to_list(spatial_resolution: str):
-            shape_pat = re.compile(r"^([0-9\.]+)x([0-9\.]+)km2$")
+            shape_pat = re.compile(r"^([0-9\.]+)x([0-9\.]+) *km2$")
             shape_match = shape_pat.match(spatial_resolution)
             if not shape_match:
                 raise ValueError(

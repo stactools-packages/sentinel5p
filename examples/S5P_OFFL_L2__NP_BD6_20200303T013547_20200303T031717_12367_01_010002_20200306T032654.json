@@ -20,13 +20,6 @@
       5500,
       3500
     ],
-    "npbd6:analysed_s5p_band": 6,
-    "npbd6:VIIRS_band": [
-      7,
-      9,
-      11
-    ],
-    "npbd6:number_of_scaled_fov": 4,
     "providers": [
       {
         "name": "ESA",
@@ -42,7 +35,15 @@
     "constellation": "Sentinel-5P",
     "s5p:product_name": "np-bd6",
     "s5p:collection_identifier": "01",
-    "s5p:np_bd6": {},
+    "s5p:npbd6": {
+      "analysed_s5p_band": 6,
+      "VIIRS_band": [
+        7,
+        9,
+        11
+      ],
+      "number_of_scaled_fov": 4
+    },
     "datetime": "2020-03-03T02:26:33.500000Z"
   },
   "geometry": {

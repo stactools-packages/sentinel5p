@@ -94,6 +94,11 @@ def create_item(file_path: str) -> pystac.Item:
     # product specific properties
     asset_spec_prefix = s5p_naming.group("product").strip("_").lower()
     asset_id = asset_spec_prefix.replace("_", "-")
+
+    # special handling needed for np-bd products
+    if asset_spec_prefix.startswith("np_bd"):
+        asset_spec_prefix = asset_spec_prefix.replace("_", "")
+
     asset_spec_properties = {
         k.replace(f"{asset_spec_prefix}:", ""): v
         for k, v in item.properties.items()
