@@ -54,7 +54,6 @@ class ProductMetadata:
     @property
     def get_geometry(self):
         if "O3_TCL" in self.file_path:
-
             # # Included metadata uses incorrect extent of data, so use hardcode for now
             # if self.file_path.endswith(".nc"):
             #     latitude_ccd = self._root["/PRODUCT/latitude_ccd"][:]

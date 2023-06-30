@@ -10,7 +10,6 @@ from .constants import (
     ASSET_TITLES,
     FILENAME_EXPR,
     SENTINEL_CONSTELLATION,
-    SENTINEL_LICENSE,
     SENTINEL_PROVIDER,
 )
 from .metadata_links import MetadataLinks
@@ -24,29 +23,6 @@ logger = logging.getLogger(__name__)
 # This module includes copious contributions ported from the Microsoft Planetary
 # Computer Sentinel-5 dataset package:
 # https://github.com/microsoft/planetary-computer-tasks/blob/main/datasets/sentinel-5p/
-
-
-def recursive_round(coordinates: List[Any], precision: int) -> List[Any]:
-    """Rounds a list of numbers. The list can contain additional nested lists
-    or tuples of numbers.
-
-    Any tuples encountered will be converted to lists.
-
-    Args:
-        coordinates (List[Any]): A list of numbers, possibly containing nested
-            lists or tuples of numbers.
-        precision (int): Number of decimal places to use for rounding.
-
-    Returns:
-        List[Any]: The list of numbers rounded to the given precision.
-    """
-    rounded: List[Any] = []
-    for value in coordinates:
-        if isinstance(value, (int, float)):
-            rounded.append(round(value, precision))
-        else:
-            rounded.append(recursive_round(list(value), precision))
-    return rounded
 
 
 def recursive_round(coordinates: List[Any], precision: int) -> List[Any]:
@@ -96,6 +72,11 @@ def create_item(file_path: str) -> pystac.Item:
     )
 
     s5p_naming = FILENAME_EXPR.match(Path(file_path).stem)
+    if not s5p_naming:
+        raise ValueError(
+            "Granule name does not match Sentinel-5p naming convention(s):"
+            + Path(file_path).stem
+        )
 
     # ---- Add Extensions ----
     # sat

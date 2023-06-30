@@ -1,8 +1,10 @@
 import logging
-import shutil
 from pathlib import Path
 
 from stactools.sentinel5p import stac
+
+# import shutil
+
 
 logging.basicConfig(level=0)
 logging.getLogger("fsspec").propagate = False
