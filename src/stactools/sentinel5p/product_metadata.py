@@ -198,13 +198,13 @@ class ProductMetadata:
             return resolution.replace("7x", "5.5x")
 
         def str_res_to_list(spatial_resolution: str):
-            shape_pat = re.compile(r"^([0-9\.]+)x([0-9\.]+) *km2$")
-            shape_match = shape_pat.match(spatial_resolution)
-            if not shape_match:
+            resolution_pat = re.compile(r"^([0-9\.]+)x([0-9\.]+) *km2$")
+            resolution_match = resolution_pat.match(spatial_resolution)
+            if not resolution_match:
                 raise ValueError(
                     f"Unexpected spatial_resolutio: '{spatial_resolution}'"
                 )
-            return [int(1000 * float(x)) for x in shape_match.groups()]
+            return [int(1000 * float(x)) for x in resolution_match.groups()]
 
         def _get_resolution(product_path, product_root, observed_after_res_upgraded):
             excludes = ["O3_TCL", "_BD3_", "_BD6_", "_BD7_"]
