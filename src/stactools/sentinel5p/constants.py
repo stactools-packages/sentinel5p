@@ -153,9 +153,6 @@ ASSET_TITLES = {
     "L2__NP_BD7": "VIIRS/NPP Band 7 Cloud Mask",
 }
 
-O3_TCL_GEOMETRY = shapely.geometry.mapping(
-    shapely.geometry.Polygon(
-        [(-180, -19.75), (180, -19.75), (180, 19.75), (-180, 19.75)]
-    )
+O3_TCL_GEOMETRY = shapely.geometry.Polygon(
+    [(-180, -19.75), (180, -19.75), (180, 19.75), (-180, 19.75)]
 )
-O3_TCL_BBOX = [-180, -19.75, 180, 19.75]

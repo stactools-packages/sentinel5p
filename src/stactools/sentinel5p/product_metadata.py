@@ -3,9 +3,12 @@ import re
 from datetime import datetime
 from typing import Any, Dict, Optional
 
+import antimeridian
 import netCDF4 as nc  # type: ignore
 from pystac.utils import str_to_datetime
 from shapely.geometry import Polygon, mapping  # type: ignore
+
+from .constants import O3_TCL_GEOMETRY
 
 
 class ProductMetadataError(Exception):
@@ -51,20 +54,23 @@ class ProductMetadata:
     @property
     def get_geometry(self):
         if "O3_TCL" in self.file_path:
-            if self.file_path.endswith(".nc"):
-                latitude_ccd = self._root["/PRODUCT/latitude_ccd"][:]
-                longitude_ccd = self._root["/PRODUCT/longitude_ccd"][:]
-            else:
-                latitude_ccd = self._root["PRODUCT"]["latitude_ccd"][:]
-                longitude_ccd = self._root["PRODUCT"]["longitude_ccd"][:]
-            footprint_polygon = Polygon(
-                list(
-                    [[coord, latitude_ccd[0]] for coord in longitude_ccd]
-                    + [[longitude_ccd[-1], coord] for coord in latitude_ccd]
-                    + [[coord, latitude_ccd[-1]] for coord in longitude_ccd[::-1]]
-                    + [[longitude_ccd[0], coord] for coord in latitude_ccd[::-1]]
-                )
-            )
+
+            # # Included metadata uses incorrect extent of data, so use hardcode for now
+            # if self.file_path.endswith(".nc"):
+            #     latitude_ccd = self._root["/PRODUCT/latitude_ccd"][:]
+            #     longitude_ccd = self._root["/PRODUCT/longitude_ccd"][:]
+            # else:
+            #     latitude_ccd = self._root["PRODUCT"]["latitude_ccd"][:]
+            #     longitude_ccd = self._root["PRODUCT"]["longitude_ccd"][:]
+            # footprint_polygon = Polygon(
+            #     list(
+            #         [[coord, latitude_ccd[0]] for coord in longitude_ccd]
+            #         + [[longitude_ccd[-1], coord] for coord in latitude_ccd]
+            #         + [[coord, latitude_ccd[-1]] for coord in longitude_ccd[::-1]]
+            #         + [[longitude_ccd[0], coord] for coord in latitude_ccd[::-1]]
+            #     )
+            # )
+            footprint_polygon = O3_TCL_GEOMETRY
         else:
             if self.file_path.endswith(".nc"):
                 footprint_text = self._root[
@@ -88,7 +94,10 @@ class ProductMetadata:
             footprint_points = [
                 point[::-1] for point in list(zip(*[iter(footprint_value)] * 2))
             ]
-            footprint_polygon = Polygon(footprint_points)
+            footprint_polygon_alpha = Polygon(footprint_points)
+            footprint_polygon = antimeridian.fix_polygon(
+                footprint_polygon_alpha, fix_winding=False
+            )
         geometry = mapping(footprint_polygon)
         self.footprint_polygon = footprint_polygon
         return geometry
